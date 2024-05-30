@@ -118,10 +118,38 @@ Maybe you're used to seeing this symbol for division `thing = 2 ÷ 2`. Just like
 This raises a good point: Python DOES support decimal numbers, and they're written according to convention with a dot (period/full stop) to mark the decimal place. Doing division quite often leaves us with decimal numbers. Although, if you are familiar with division by remainder, we'll look at that in just a moment.
 
 ## Further maths operators
-We've seen the big four, let's look at some more.
+We've seen the big four, let's look at some more!
 * modular division
 * Powers
 * Brackets (parenthesis) *[Yes I know this isn't an operator leave me alone]*
+
+### Modular division
+We just looked at division, where we divided out first value, the *dividend*, by the second, the *divisor* to get some answer *[show example equation `ans = 3 / 2`, with key terms and answer added]*. We also know that this is full division, so if our divisor is not a multiple of our dividend, then our answer will not be a whole number *[highlight that ans = 1.5]*, because the second value does not 'fit into' the first a whole amount of times without some remainder.
+
+But what if it's exactly that remainder that we care about? This is when we use modular division, `quotient = 3 % 2` for which we use the percentage symbol (found on most keyboards on the 5 key), this will give us the value of the remainder (called the quotient) when the dividend is divided by the divisor.
+
+Don't get confused, this is NOT the same as doing full division, and then rounding down if we end up with a decimal *[show `11 % 2` = 5 with a big red line through it. Side note: we CAN do this with a double slash '//']*. Modular division gives us the quotient (the remainder) and ONLY the quotient. *[`11 % 2` = 1 with a big tick!]*. If we do modular division where the divisor IS a multiple of the dividend (IE when full division would give us a whole number) then the quotient will be 0 *[`10 / 2` = 5, `10 % 2` = 0]*
+
+*[maybe talk about how we can use this to see if a number is odd/even by doing `x % 2`, idk if this bit is too long already...]*
+
+### Powers
+Next up is powers. If you're unfamiliar, a power is when we take a number and multiply it by itself a certain number of times. This is most commonly seen in squaring (the power of 2) and cubing (the power of 3) *[examples of 2 squared and 2 cubed, with workings]* but we can raise a number to the power of any number we want *[examples of 2 to the power of 2, 100, and 1]*. We can EVEN use zero, negatives, and decimals! *[examples of 2 to the power of 0, -2, and 25 to the power 0.5]* Although exactly how these are worked out goes a little beyond the scope of this topic, just know that Python can do it! 
+
+To do this we use a double asterisk `2 ** 2` between two numbers, where the first number (the base) is raised to the power of the second number (the exponent)
+
+### Brackets (parenthesis) 
+While not technically an operator, now is a good time to talk about brackets. In python, we can add brackets to an expression to explicitly state the order of operation. If you're familiar with BIDMAS, Python follows the exact same rules. If not, remember that Python will evaluate expressions in brackets FIRST, then (if there are any) powers, then division and multiplication, then addition and subtraction. *[show expression `(1 + 1)**2 / 2 + 1` being evaluated step by step]*
+
+Here are some examples where adding brackets is important:
+`a1 = 2 * 2 + 1`
+`a2 = 2 * (2 + 1)`
+`b1 = 2 ** 1 + 1`
+`b2 = 2 ** (1 + 1)`
+
+Remember that any expression IN brackets still follows the same rules of order of evaluation. If we need to, we can nest brackets (brackets within brackets) just remember to make sure they're balanced!
+
+`c1 = 2 * (2 / 1 + 1)`
+`c1 = 2 * (2 / (1 + 1))`
 
 ## Boolean operators
 * Equality
