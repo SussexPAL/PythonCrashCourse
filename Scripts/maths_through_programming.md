@@ -20,11 +20,11 @@ Of course, it doesn't need to just be hello world it can be anything I want, I c
 *[subtitle card]*
 I mentioned I could use print to write out my favorite number - but what if I'm indecisive and I pick a new favorite number tomorrow, and don't want to go to the effort or re-writing my print statement? This is when we would use *variables*.
 
-It's very easy to define variables in Python, we just give it a name and then define what we want it to be using the equals symbol and some value on the right
+It's very easy to define variables in Python, we just give it a name and then define what we want it to be using the equals symbol and some value on the right.
 
 `my_number = 5`
 
-And we can then use this variable anywhere we want to refer back to whatever we defined it as.
+It's worth noting that variable names in Python cannot have spaces. If we want more than one word, we usually separate them using an underscore (like we've done here). Now we can then use this variable anywhere we want to refer back to whatever value we defined it as.
 
 `print(my_number)`
 
@@ -59,7 +59,7 @@ The only thing we CAN'T do is reference variables that don't exist, or at least 
 *[subtitle card]*
 Briefly, to lead us onto our next topic, we're going to introduce some mathematical operators we can use in Python. Have a look at this:
 
-`my_number = 1+1`
+`my_number = 1 + 1`
 `print(my_number)`
 
 This works pretty much how you'd expect it to. We've defined my_number as 1 plus one, which we know is 2, and now every time we reference my_number we get the value 2. This doesn't just work for variable definitions, we can use it directly in the print statement.
@@ -80,3 +80,52 @@ pretty much anywhere we can write a number or a variable, we can write a mathema
 # Video 2 : Maths through programming
 *[Title card]*
 We've introduced the idea that we can use code to manipulate numbers, now we're going to explore that in a bit more depth. Maths is one of the most fundamental elements of computing - arguably, ALL of computing is just maths, as everything a computer does it does by manipulating numbers behind the scenes! *[1s and 02 graphics or something]*
+
+## Basic maths operators - "the big four"
+We already looked at the plus operator last time, let's introduce a few more and round out the "big four" of maths operators: *[symbols written/appear, but with the traditional symbols (x, ÷) for multiplication and division as we'll explicitly 'correct' them in a moment]* 
+* Addition
+* Subtraction
+* Multiplication
+* Division
+
+### Subtraction
+Starting with subtraction *[zooming in/focusing/whatever on the symbol]*, we have the standard dash, which works pretty much exactly how you'd expect it to: much like for addition, we put it in between two numbers (or number expressions, or variables) remembering the space on either side, where the second number is subtracted for the first. Simple.
+
+*[some examples]*
+`my_var = 10 - 9`
+`my_other_var = 5 - 1 - 2`
+`my_negative_var = 0 - 1`
+
+We use this same symbol to indicate negative values, as well! Only this time, *no space!* we put the symbol immediately before the value, and it becomes negative. Or, a positive if the original value would be negative, remember the rule of double-negatives!
+
+`my_negative_var = -1`
+`my_other_negative_var = -my_other_var`
+`double_negative = -my_negative_var`
+
+### Multiplication
+Next multiplication. You may be used to seeing this symbol used for notification: `thing = 2 x 2`, this 'x' right here. But most programming languages don't use this, what if we had a variable called 'x'? how would the program know which one we were talking about? Instead we use this `thing = 2 * 2` *[cross out and replace 'x' symbol on original list of operation symbols]* asterisk instead. Most keyboards, including standard QWERTY ones, will have this on the 8 key. Beyond that there's no surprises, again this is an *infix* operator, so it goes *between* two values.
+
+`x = 12 * 3`
+`y = 1 * 1 * 1`
+`z = 2 * y`
+
+### Division
+Maybe you're used to seeing this symbol for division `thing = 2 ÷ 2`. Just like our last operator, this isn't the symbol used in most programming languages (including Python), but unlike multiplication this isn't done out of fear of confusion, just that most keyboards don't *have* a key for the division sign. Instead we use a simple forward slash `thing = 2 / 2` *[as above, replace '÷' symbol]*, meant to resemble fractions (which, after all, is division). let's see it in action:
+
+`it_in_action = 5 / 2`
+`print(it_in_action)`
+
+This raises a good point: Python DOES support decimal numbers, and they're written according to convention with a dot (period/full stop) to mark the decimal place. Doing division quite often leaves us with decimal numbers. Although, if you are familiar with division by remainder, we'll look at that in just a moment.
+
+## Further maths operators
+We've seen the big four, let's look at some more.
+* modular division
+* Powers
+* Brackets (parenthesis) *[Yes I know this isn't an operator leave me alone]*
+
+## Boolean operators
+* Equality
+* Inequality
+* Less than/greater than
+* Less than/greater than or equal
+* NOT, OR, and AND keywords
