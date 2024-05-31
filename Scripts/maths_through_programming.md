@@ -151,7 +151,16 @@ Remember that any expression IN brackets still follows the same rules of order o
 `c1 = 2 * (2 / 1 + 1)`
 `c1 = 2 * (2 / (1 + 1))`
 
-## Boolean operators
+# Video 3 : Boolean logic and operators
+*[title card]*
+Okay, by now we've seen how we can do maths on Python, and how variables and expressions work. We're now going to introduce the idea of boolean logic. This may feel a bit more like a leap into the abstract; compared to the simple numeric and mathematical logic we've been looking at, which everyone will have seen in their life before, boolean logic is a little more specific to computer science, and so it may or may not seem quite as familiar. But that doesn't mean it's complicated - it can actually be put very simply.
+
+A boolean can be only one of two things: *[some graphic here]* true, or false. No numbers, no in-betweens or maybes here - this is *binary* logic. A boolean expression is structured in much the same way as a maths expression *[show two expressions: (10 / 5) and (10 > 5)]*, only while a maths expression is evaluated down to a number, a boolean expression is evaluated to be either true of false *[previous expressions collapse to 2 and true respectively]*.
+
+Let's lake a look at our first couple of example:
+`1 + 1 == 2`
+`2 + 2 == 5`
+
 * Equality
 * Inequality
 * Less than/greater than
