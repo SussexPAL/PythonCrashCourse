@@ -110,7 +110,7 @@ Next multiplication. You may be used to seeing this symbol used for notification
 `z = 2 * y`
 
 ### Division
-Maybe you're used to seeing this symbol for division `thing = 2 ÷ 2`. Just like our last operator, this isn't the symbol used in most programming languages (including Python), but unlike multiplication this isn't done out of fear of confusion, just that most keyboards don't *have* a key for the division sign. Instead we use a simple forward slash `thing = 2 / 2` *[as above, replace '÷' symbol]*, meant to resemble fractions (which, after all, is division). let's see it in action:
+Maybe you're used to seeing this symbol for division `thing = 2 ÷ 2`. Just like our last operator, this isn't the symbol used in most programming languages (including Python), but unlike multiplication this isn't done out of fear of confusion, just that most keyboards don't *have* a key for the division sign. Instead we use a simple forward-slash `thing = 2 / 2` *[as above, replace '÷' symbol]*, meant to resemble fractions (which, after all, is division). let's see it in action:
 
 `it_in_action = 5 / 2`
 `print(it_in_action)`
@@ -152,17 +152,39 @@ Remember that any expression IN brackets still follows the same rules of order o
 `c1 = 2 * (2 / (1 + 1))`
 
 # Video 3 : Boolean logic and operators
-*[title card]*
-Okay, by now we've seen how we can do maths on Python, and how variables and expressions work. We're now going to introduce the idea of boolean logic. This may feel a bit more like a leap into the abstract; compared to the simple numeric and mathematical logic we've been looking at, which everyone will have seen in their life before, boolean logic is a little more specific to computer science, and so it may or may not seem quite as familiar. But that doesn't mean it's complicated - it can actually be put very simply.
-
-A boolean can be only one of two things: *[some graphic here]* true, or false. No numbers, no in-betweens or maybes here - this is *binary* logic. A boolean expression is structured in much the same way as a maths expression *[show two expressions: (10 / 5) and (10 > 5)]*, only while a maths expression is evaluated down to a number, a boolean expression is evaluated to be either true of false *[previous expressions collapse to 2 and true respectively]*.
-
-Let's lake a look at our first couple of example:
-`1 + 1 == 2`
-`2 + 2 == 5`
-
 * Equality
 * Inequality
 * Less than/greater than
 * Less than/greater than or equal
 * NOT, OR, and AND keywords
+
+*[title card]*
+Okay, by now we've seen how we can do maths on Python, and how variables and expressions work. We're now going to introduce the idea of boolean logic. This may feel a bit more like a leap into the abstract; compared to the simple numeric and mathematical logic we've been looking at, which everyone will have seen in their life before, boolean logic is a little more specific to computer science, and so it may or may not seem quite as familiar. But that doesn't mean it's complicated - it can actually be put very simply.
+
+A boolean can be only one of two things: *[some graphic here]* true, or false. No numbers, no in-betweens or maybes here - this is *binary* logic. A boolean expression is structured in much the same way as a maths expression *[show two expressions: (10 / 5) and (10 > 5)]*, only while a maths expression is evaluated down to a number, a boolean expression is evaluated to be either true of false *[previous expressions collapse to 2 and true respectively]*.
+
+## The equals operator, and introduction to boolean expressions
+Let's lake a look at a couple of examples:
+`1 + 1 == 2`
+`5 == 2 + 2`
+The first thing to note is the equals operator. We've already been using the equals sign for variable assignment, but that is NOT what we're doing here. Notice that we're using a double equals sign - just like how we use an asterisk for both multiplication and powers *[`5 * 2 == 10`, `5 ** 2 == 25`]*, the meaning of the equals sign is different when we double it up like this. The double equals `==` is the equality operator, which will evaluate to true if the value on the left is equal to the value on the right.
+
+All of this has been has been the long and technically-correct way of explaining what was probably intuitively obvious: *[back to examples]* 1 plus 1 *is* 2, so this first statement is true. 5 is *not* the same as 2 plus 2, that's 4, four and five are obviously not the same value, so this statement is false.
+
+But it was worth taking the time to explain this carefully, because not all boolean expressions are that simple. Let's look at another example
+`x = 3`
+`2 ** x == x + 4`
+This time we an expression on both sides, rather than a definite value. We also have a variable 'x'. But it works the exact same way, the expressions on either side. Remembering that x is 3:
+`2 ** x` is 9
+`x + 4` is 7
+So what we're really asking is:
+`9 == 7`
+9 and 7 are different numbers, so this expression is false.
+
+## Other common boolean operators
+Once we understand the basics of boolean logic that we've already talked about, introducing some more operators should not seem to intimidating. We're going to look at five more (although, at least 2 of them are just slightly different versions of each other...!). They're as follows:
+`x != y` this is the *inequality* operator, which will give you a true statement if x does NOT equal y.
+`x < y` this is the less-than operator, this statement will be true so long as x is LESS than y. Important to remember is that unlike equality which we can use for (pretty much) anything, this only works on numbers! We can't ask if one word or piece of text is "less" than another, that doesn't make sense! *[graphic `"hello" > "world"` showing some kind of error]*.
+`x <= y` This is the less-than OR EQUAL TO operator.  This is just like the above, only it will also give us true if x equals y.
+`x > y` lastly we have the greater-than...
+`x >= y` ... and greater-than-or-equal-to operators.
