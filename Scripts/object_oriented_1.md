@@ -21,7 +21,7 @@ We've learned what classes and objects are in theory. In practice, how can we im
 `   # More here in a sec...!`
 Here we've started to define our own class using the *class* keyword. We've given it a name, starting with a capital letter by convention. The block below this line will be where we define our properties and methods. See how this looks very similar to how we define functions, only this time the keyword is different *[highlight `class` keyword]* and we leave out the brackets.
 
-Before we move on, there's one more thing to explain. Most implementations of OO programming (including Python's) utilize something called a constructor. The constructor is a special method which all *[well, most]* classes will have, which is run as the very first thing after a new object is instanced, in order to populate it (fill out it's fields) and do any other set up work that might be needed.
+Before we move on, there's one more thing to explain. Most implementations of OO programming (including Python's) utilize something called a constructor. The constructor is a special method which all (most) *[SIDE NOTE -- but for out purposes all]* classes will have, which is run as the very first thing after a new object is instanced, in order to populate it (fill out it's fields) and do any other set up work that might be needed.
 
 *[show a newly created student with values of ??? for name and year, then being run through a constructor, and having it's fields filled in]*
 

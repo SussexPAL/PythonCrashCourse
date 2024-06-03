@@ -40,7 +40,7 @@ We call each one of these template-values "fields" or "properties"
 
 Next, we might think about what we want individual students to be able to DO, or what might happen with them
 
-Lets's say we want a student to be able to introduce themselves with a short message *[speech bubble "hello, my name's __, I'm a year __ student" from student box]*, and to continue into the next year, thus increasing their year of study by 1
+Lets's say we want a student to be able to introduce themselves with a short message, and to continue into the next year, thus increasing their year of study by 1
 
 If fields were like variables inside class, think of methods as being like functions
 
@@ -76,6 +76,6 @@ Before we move on, there's one more thing to explain
 
 Most implementations of OO programming (including Python's) utilize something called a constructor
 
-The constructor is a special method which all *[well, most]* classes will have, which is run as the very first thing after a new object is instanced, in order to populate it (fill out it's fields) and do any other set up work that might be needed
+The constructor is a special method which all (most) classes will have, which is run as the very first thing after a new object is instanced, in order to populate it (fill out it's fields) and do any other set up work that might be needed
 
 -- Fields and methods

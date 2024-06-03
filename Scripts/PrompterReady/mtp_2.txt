@@ -1,0 +1,56 @@
+# Video 2 : Maths through programming
+
+We've introduced the idea that we can use code to manipulate numbers, now we're going to explore that in a bit more depth. Maths is one of the most fundamental elements of computing - arguably, ALL of computing is just maths, as everything a computer does it does by manipulating numbers behind the scenes!
+
+## Basic maths operators - "the big four"
+
+We already looked at the plus operator last time, let's introduce a few more and round out the "big four" of maths operators:
+* Addition
+* Subtraction
+* Multiplication
+* Division
+
+### Subtraction
+
+Starting with subtraction, we have the standard dash, which works pretty much exactly how you'd expect it to: much like for addition, we put it in between two numbers (or number expressions, or variables) remembering the space on either side, where the second number is subtracted for the first. Simple.
+
+We use this same symbol to indicate negative values, as well! Only this time, *no space!* we put the symbol immediately before the value, and it becomes negative. Or, a positive if the original value would be negative, remember the rule of double-negatives!
+
+### Multiplication
+Next multiplication. You may be used to seeing this symbol used for notification: `thing = 2 x 2`, this 'x' right here. But most programming languages don't use this, what if we had a variable called 'x'? how would the program know which one we were talking about? Instead we use this asterisk instead. 
+
+Most keyboards, including standard QWERTY ones, will have this on the 8 key. Beyond that there's no surprises, again this is an *infix* operator, so it goes *between* two values.
+
+### Division
+Maybe you're used to seeing this symbol for division 
+
+Just like our last operator, this isn't the symbol used in most programming languages (including Python), but unlike multiplication this isn't done out of fear of confusion, just that most keyboards don't *have* a key for the division sign. Instead we use a simple forward-slash, meant to resemble fractions (which, after all, is division). let's see it in action:
+
+This raises a good point: Python DOES support decimal numbers, and they're written according to convention with a dot (period/full stop) to mark the decimal place. Doing division quite often leaves us with decimal numbers. Although, if you are familiar with division by remainder, we'll look at that in just a moment.
+
+## Further maths operators
+We've seen the big four, let's look at some more!
+* modular division
+* Powers
+* Brackets (parenthesis)
+
+### Modular division
+We just looked at division, where we divided out first value, the *dividend*, by the second, the *divisor* to get some answer *[show example equation `ans = 3 / 2`, with key terms and answer added]*. We also know that this is full division, so if our divisor is not a multiple of our dividend, then our answer will not be a whole number *[highlight that ans = 1.5]*, because the second value does not 'fit into' the first a whole amount of times without some remainder.
+
+But what if it's exactly that remainder that we care about? This is when we use modular division, `quotient = 3 % 2` for which we use the percentage symbol (found on most keyboards on the 5 key), this will give us the value of the remainder (called the quotient) when the dividend is divided by the divisor.
+
+Don't get confused, this is NOT the same as doing full division, and then rounding down if we end up with a decimal. Modular division gives us the quotient (the remainder) and ONLY the quotient. If we do modular division where the divisor IS a multiple of the dividend (IE when full division would give us a whole number) then the quotient will be 0.
+
+### Powers
+Next up is powers. If you're unfamiliar, a power is when we take a number and multiply it by itself a certain number of times. This is most commonly seen in squaring (the power of 2) and cubing (the power of 3) but we can raise a number to the power of any number we want 
+
+We can EVEN use zero, negatives, and decimals! Although exactly how these are worked out goes a little beyond the scope of this topic, just know that Python can do it! 
+
+To do this we use a double asterisk `2 ** 2` between two numbers, where the first number (the base) is raised to the power of the second number (the exponent)
+
+### Brackets (parenthesis) 
+While not technically an operator, now is a good time to talk about brackets. In python, we can add brackets to an expression to explicitly state the order of operation. If you're familiar with BIDMAS, Python follows the exact same rules. If not, remember that Python will evaluate expressions in brackets FIRST, then (if there are any) powers, then division and multiplication, then addition and subtraction.
+
+Here are some examples where adding brackets is important:
+
+Remember that any expression IN brackets still follows the same rules of order of evaluation. If we need to, we can nest brackets (brackets within brackets) just remember to make sure they're balanced!
