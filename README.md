@@ -11,7 +11,7 @@ Algorithmic thinking (0.33) Max
 
 Installing and setting up VS Code + Python Environment (simple step-by-step video)
 
-Step by step - maths through programming, operators, variables (0.33) Hugo
+✓ -- Step by step - maths through programming, operators, variables (0.33) Hugo
 
 Primitive data types & Arrays and dictionaries (0.33) George
 
