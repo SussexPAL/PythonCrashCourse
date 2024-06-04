@@ -87,4 +87,33 @@ The problem space here:
 * we can't add, change, or remove and numbers from the list
 * we want the list to be in order, smallest to largest
 
-We're going to take a look a famous solution to this problem: the bubble sort algorithm.
+We're going to take a look a famous solution to this problem: the bubble sort algorithm. We'll be talking through this algorithm in simple English (which remember is all we really need), then taking a brief look at some other, perhaps more formal, ways of it being written out.
+
+*[Okay I'm trusting you to come up with the suitable graphics so I'll leave sufficient space between steps]*
+
+Bubble sort starts like this: compare the first and second elements (that is, numbers) in the list. 1 and 17. Are they in the right order? In this case they are, so we move on.
+
+Next, we compare the second and third elements in the list, so 17 and 3. Again we ask, are they in the right order? In a sorted list, we'd expect 3 to come before 17, so they cannot be in the correct order here. So what we do is reverse the order of just these two numbers, before moving on.
+
+*[1, 3, 17, 16...]*
+
+Next we compare the third and fourth elements of the list as it is NOW (remember, we just swapped the last two numbers) so here we're comparing 17 and 16. Again, we'd expect 16 to come before 17, so we swap them around...
+
+... and we move on to the 4th and 5th, then the 5th and 6th, then the 6th and 7th and so on until we reach the end of the list, with the 2nd to last and last elements.
+
+Although, even after one pass this list isn't fully sorted. So, we go again, starting again from the 1st and 2nd elements. And we keep repeating until we manage one complete pass of the list without changing any numbers.
+
+We'll know we're done then, as if no numbers in the list come before any numbers that are smaller than themselves, then the list must* be sorted.
+
+This algorithm can be applied to any list of any length, with any numbers in it. It will always work: whether we only needed to swap two number around, whether it would take hundreds of cycles to order it correctly, or even if it was in the right order to begin with, we will ALWAYS end up with a perfectly sorted list.
+
+And that's it, that's bubble sort. So called because the number rise or 'bubble up' through the list into the correct position over time. We can represent this same algorithm in several different ways:
+* pseudocode
+* flowchart
+* step-by-step
+
+And also worth noting is that this is far from the only way to order a list, that is there are multiple correct algorithms for this problem space. In fact bubble sort is actually one of the slowest ways of doing it! but it does have a certain simplicity and elegance to it, which makes it a favorite example in education.
+
+## summery
+
+So that's it, we know what an algorithm is. Ideally, we should always have some idea of what algorithm, that is what step by step solution, we want to implement after looking at a problem, but before we even write our first line of code. With this in mind, you're ready to learn to code.
