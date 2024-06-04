@@ -175,11 +175,11 @@ But it was worth taking the time to explain this carefully, because not all bool
 `x = 3`
 `2 ** x == x + 4`
 This time we an expression on both sides, rather than a definite value. We also have a variable 'x'. But it works the exact same way, the expressions on either side. Remembering that x is 3:
-`2 ** x` is 9
+`2 ** x` is 8
 `x + 4` is 7
 So what we're really asking is:
-`9 == 7`
-9 and 7 are different numbers, so this expression is false.
+`8 == 7`
+8 and 7 are different numbers, so this expression is false.
 
 ## Other common boolean operators
 Once we understand the basics of boolean logic that we've already talked about, introducing some more operators should not seem to intimidating. We're going to look at five more (although, at least 2 of them are just slightly different versions of each other...!). They're as follows:
