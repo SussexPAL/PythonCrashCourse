@@ -35,3 +35,6 @@ When run, this will overwrite the self's year property to be it's original value
 `student1.say_hello()`
 `student1.continue_year()`
 `student1.say_hello()`
+
+# More about properties
+Now we've seen how we define and access class fields (or properties) for classes in python. So far it's been pretty simple: we define a field in the class definition, we write our constructor such that it takes an argument for that field, then every time we run that constructor we pass in the values we want. But, don't get the idea that there's a strict 1 to 1 relationship between properties, and constructor parameters.
