@@ -167,5 +167,5 @@ cython_debug/
 # VS code peasent moment
 .vscode
 
-# VS code peasent moment
-.vscode
+# Hugo's junk
+whiteboard.py

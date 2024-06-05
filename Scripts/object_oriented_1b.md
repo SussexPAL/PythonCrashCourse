@@ -1,10 +1,8 @@
 ## Rounding out the basics of OO in Python
-## Rounding out the basics of OO in Python
 By now, we have a good idea of what Object Oriented programming is, even if it still seems like a relatively new concept. We know about classes, how have fields and methods, and how multiple separate objects can come from one class. We've also taken our first look at how OO is done in Python, how a special method called the constructor (or 'init' short for initializer) should work, how we define it, and how we use it to instance new objects of a class.
 
 We're now going to explore in greater detail the different fields and methods a class might have, what they might be used for, and crucially how we implement and handle them in our own Python code.
 
-## Defining our own methods
 ## Defining our own methods
 The first thing we'll look at is how we define and call methods for a class, beyond just the constructor. Once we understand the constructor, moving onto other methods should not be too complicated as the syntax is mostly the same. Let's see this done with our Student class from last time:
  `class Student:`
