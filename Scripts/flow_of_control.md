@@ -10,7 +10,7 @@ We have a few "operators" for checking conditions. The first and simplest is two
 
 For example, `2 == 2`, but, also, `2 == 3 - 1`. This seems fine, but, we can also use variables in place here. Let's say we have a variable named "foo", and, we put the word "hello" into it. In our program, we can write `if foo == "hello"`, and, some code will execute. If we change the value of "foo", the program will do something else instead.
 
-There are other equality statements too. We can use the angle brackets as greather than and less than - it's always nice to remember the sign as being a mouth that's trying to eat the bigger one. For example `4 > 2` and `10 * 3 < 29 + 5`
+There are other equality statements too. We can use the angle brackets as greater than and less than - it's always nice to remember the sign as being a mouth that's trying to eat the bigger one. For example `4 > 2` and `10 * 3 < 29 + 5`
 
 We can also use exclamation equals as shorthand for "Not equals". For example, `"hello" != "world"`, `3 != 1`, and, `foo != "other_word"` (assuming `foo` is still `"hello"`).
 

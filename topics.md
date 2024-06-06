@@ -14,7 +14,7 @@
 * parameters
 * return values
 * default parameters
-* maybe static vs dynamic typing of params and return values...?
+* maybe type hints...?
 * maybe recursions...?
 
 ## Understanding errors
