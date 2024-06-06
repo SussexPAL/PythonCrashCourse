@@ -94,11 +94,52 @@ string(10)
 Worth noting is that you can't necessarily cast from anything into anything else, it depends on the types and the data. You can convert any number into a string easily, but not every sting can be converted into a number: if we try this `int("one")` we get an error.
 
 # Summary
-Understanding data-types is an essential part of learning programming. It helps us better understand how the program "thinks", or perhaps more accurately how it doesn't, and how everything it DOES do needs to follow some kind of logic. It is out of these base data types we can start to piece together more complex objects, and use them in programs of our own. With this in mind, we're ready to start exploring the rest of what programming has to offer.  
+Understanding data-types is an essential part of learning programming. It helps us better understand how the program "thinks", or perhaps more accurately how it doesn't, and how everything it DOES do needs to follow some kind of logic. It is out of these base data types we build more complex data structures, and use them in programs of our own. With this in mind, we're ready to start exploring the rest of what programming has to offer.  
 
 # Basic data structures
+When we finished off last time we hinted at how we can "build more complex data structures" from the basic types we covered last time.that's exactly what we'll be doing today. Let's get straight into it.
 
 ## Lists
+In every day speech, a 'list' means a sequence of something, anything, all written down in the same place for convenience. This is pretty much exactly what list means, too. In Python, a list is declared using square brackets, like this:
+`my_list = []`
+inside those brackets we write the elements, or items, we want, separated by commas:
+`my_list  = ["bread", "milk", "apples", "eggs"]`
+Those items can be pretty much whatever we want them to be: strings, floats, integers, booleans - we can even mix and match different data types in the same list. We can define elements as literal values, using expressions, or even with variables.
+
+Important to know is that lists are ordered, they're not just a jumbled set of elements! Each item comes after one item, and before another one (with the obvious exception of the start and end of the list). 
+
+We access individual elements of a list like this
+~~~
+print(my_list[0])
+print(my_list[1])
+print(my_list[2])
+~~~
+That is, the name of the list followed by square brackets containing the number of the element we want. We call this number the index. Note that in Python the index starts at 0; so what we might think of as the 1st element is stored at the 0th index, the 2nd at the 1st index, and so on.
+
+We can also use this syntax to redefine elements in a list:
+~~~
+my_list[0] = "cereal"
+print(my_list)
+~~~
+What we can't do is reference an item number that doesn't exist, or an "index out of bounds" as Python will call it in the error message you'll get if you try.
+~~~
+# remember idx 4 would be the 5th element, and the 5th element doesn't exist, there are only 4!
+print(my_list[4])
+~~~
+
+We can add items to the end of a list using `.append()`, or insert them at a specific point using `.insert()` which will shift everything afterwards up an index.
+~~~
+my_list.append("orange juice")
+my_list.insert(1, "coffee")
+print(my_list)
+~~~
+We can also remove elements of a certain value using `.remove()` or at a specific index using `.pop()`
+~~~
+my_list.remove("eggs")
+my_list.pop(0)
+print(my_list)
+~~~
+There are actually more list methods (that is 'list.something()') than this, but these are four of the most important. Lists are our first example of a 'collection' data type, IE one used to store multiple items of data, and we're about to meet a few more.
 
 ## Dictionaries
 
