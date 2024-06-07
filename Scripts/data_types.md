@@ -1,5 +1,5 @@
 # Primitive data types
-Programs, and programming languages, need to somehow encode information at the low level to represent different kinds of things to us at the high level. How is a number `10` different from a name `"Jimmy"`. To us - the human - observer, they're obviously fundamental different things: with a number we can count up to it, or down from it, or do all sorts of crazy maths; a name we can read, or write, or swap the letters around, or search through an article for.
+Programs, and programming languages, need to somehow encode information at the low level to represent different kinds of things to us at the high level. How is a number `10` different from a name `"Jimmy"`. To us - the human observer - they're obviously fundamental different things: with a number we can count up to it, or down from it, or do all sorts of crazy maths; a name we can read, or write, or swap the letters around, or search through an article for.
 
 But remember what we said about computers in our very first session: smart, but extremely stupid and stubborn. If we want a program that includes both, we need to somehow account for the differences between them. This is where data types come in.
 
@@ -27,10 +27,10 @@ In Python, strings can have pretty much any characters you want:
 * "lower case"
 * "123 numbers"
 * "Punctuation?! (and spaces)"
-and literally thousands of other including alphabets from several languages and many mathematical, scientific, even musical symbols. They even encode special characters such as linebreaks (that is, the new line when you press enter) and tab indents with their own special characters.
+and literally thousands of other including alphabets from several languages and many mathematical, scientific, even musical symbols. They can even encode special characters such as linebreaks (that is, the new line when you press enter) and tab indents with their own special characters.
 * "that is \n and \t respectively"
 
-An important trick with strings is concatenation, which means to attach two strings together. In Python we can still use addition to 'add' two strings:
+An important trick with strings is concatenation, which means to attach two strings together. In Python we can use addition to 'add' two strings:
 `message = "Hello, " + "World!"`
 Only we're not really adding them at all. A plus sign between two strings (and they do BOTH need to be strings) denotes concatenation - the two strings will be joined together:
 `print(message)`
@@ -40,11 +40,10 @@ Next a quick review of numbers. Storing numbers in Python was one of the very fi
 * my_number = 1
 with a decimal point if we need it
 * my_number = 1.5
-Except what we *haven't* covered yet, is that whether or not that decimal point is included is important.
 
-Python actually has two data types for representing numbers! The first is integers: integers are strictly whole numbers (including negatives and zero) which can be as large or as small as you need them to be, but strictly NO decimals. 1 is an integer, -1 is an integer, 1.1 is not.
+Except that Python actually has two data types for representing numbers! The first is integers: integers are strictly whole numbers (including negatives and zero) which can be as large or as small as you need them to be, but strictly NO decimals. 1 is an integer, -1 is an integer, 1.1 is not.
 
-Float are, well, everything else. That is decimals, fractions, even special numbers like pi or infinity. You can encode 2.5, -100.1, 7/11, even the square root of 3975 using floats. This even includes numbers we would think of as being whole, like 1.0, 2.0 etc.
+Float are, well, everything else. That is decimals, fractions, even special numbers like pi or infinity. You can encode 2.5, -100.1, 7/11, even the square root of 3975 using floats. This even includes numbers which we would think of as being whole, like 1.0, 2.0 etc.
 
 So does that mean all integers are also floats, but only some floats are integers? Well... kind of... but not really. That is a true statement to make about numbers in the real world, but that's not how Python sees it. In Python, a data object can only be one type or another. if we write this:
 ~~~
@@ -61,7 +60,20 @@ Python will see it as a float, it all depends on how we initially define it.
 Worth noting is that we can still use all the same mathematical operators on both, Python will even convert integers to floats when we need to (for instance when division leaves us with a decimal). Any yes, this includes equality, so `1.0 == 1` will be true. *[SIDENOTE: if you want them to be EXACTLY the same you can use the is keyword. `1 is 1` is true, but `1.0 is 1` is false]*
 
 ## Booleans
-Lastly, let's recap booleans. Booleans are their own data type in Python, IE either true or false - which In python, we write as the english words 'True' and 'False' with a capital T and F respectively. Also, any boolean expressions, which remember ultimately evaluate to either true or false, are included in the boolean data type. That's really all there is to say.
+Next, let's recap booleans. Booleans are their own data type in Python, IE either true or false - which In python, we write as the english words 'True' and 'False' with a capital T and F respectively. Also, any boolean expressions, which remember ultimately evaluate to either true or false, are included in the boolean data type. That's really all there is to say.
+
+## A quick word about None
+One last big important data type we haven't discussed yet is None.
+
+None is nothing.
+
+*[If it's not too "unprofessional", I would love a fake-out cut to the next section here...!]*
+Okay no let's explain that in a bit more detail!
+
+None is a value with it's own data type: the None type. None is used to encoded the absence of data. Surely we could already do that with 0 or 'False', but no! 0 is still an integer with a definite value *[SIDENOTE: or 0.0 for a float]*, the empty string is still a string, and false is still the boolean false and not true!
+
+We still need a way to represent data that just isn't there or hasn't been defined yet. This is quite often used is data collections (which we're going to learn about next time) to represent empty or missing values:
+`cookie_recipe = ["get some flour", None, None, "..?", "cookies!"]`
 
 ## Implicit casting and operators
 These are four of the most important data types in Python. To recap:
@@ -91,29 +103,19 @@ Explicit casting is when WE, the programmer, TELL the program we want to convert
 int("1")
 string(10)
 ~~~
-Worth noting is that you can't necessarily cast from anything into anything else, it depends on the types and the data. You can convert any number into a string easily, but not every sting can be converted into a number: if we try this `int("one")` we get an error.
-
-## A quick word about None
-One last big important data type we haven't discussed yet is None.
-
-None is nothing.
-
-*[If it's not too "unprofessional", I would love a fake-out cut to the next section here...!]*
-Okay no let's explain that in a bit more detail!
-
-None is a value with it's own data type: the None type. None is used to encoded the absence of data. Surely we could already do that with 0 or 'False', but no! 0 is still an integer with a definite value *[SIDENOTE: or 0.0 for a float]*, the empty string is still a string, false is still the boolean false and not true!
-
-We still need a way to represent data that just isn't there or hasn't been defined yet. This is quite often used is data collections (which we're going to learn about next time) to represent empty or missing values:
-`cookie_recipe = ["get some flour", None, None, "..?", "cookies!"]`
+Worth noting is that you can't necessarily cast from anything into anything else, it depends on the types and the data. You can convert any number into a string easily, but not every sting can be converted into a number. Attempting to convert data of one type to another where no such casted value exists gives us an error:
+`int("one")` 
 
 ## Summary
 Understanding data-types is an essential part of learning programming. It helps us better understand how the program "thinks", or perhaps more accurately how it doesn't, and how everything it DOES do needs to follow some kind of logic. It is out of these base data types we build more complex data structures, and use them in programs of our own. With this in mind, we're ready to start exploring the rest of what programming has to offer.  
+
+
 
 # Basic data structures
 When we finished off last time we hinted at how we can "build more complex data structures" from the basic types we covered last time.that's exactly what we'll be doing today. Let's get straight into it.
 
 ## Lists
-In every day speech, a 'list' means a sequence of something, anything, all written down in the same place for convenience. This is pretty much exactly what list means, too. In Python, a list is declared using square brackets, like this:
+In every day speech, a 'list' means a sequence of something, anything, all written down in the same place for convenience. This is pretty much exactly what list means in programming, too. In Python, a list is declared using square brackets, like this:
 `my_list = []`
 inside those brackets we write the elements, or items, we want, separated by commas:
 `my_list  = ["bread", "milk", "apples", "eggs"]`
@@ -152,12 +154,9 @@ my_list.remove("eggs")
 my_list.pop(0)
 print(my_list)
 ~~~
-There are actually more list methods (that is 'list.something()') than this, but these are four of the most important. You'll easily be able to find all of them by looking at online documentation *[SIDENOTE: "Documentation" - something that tells you how to use the language you're writing in, and what methods do what - like an instruction manual]*. Lists are our first example of a 'collection' data type, IE one used to store multiple items of data, and we're about to meet a few more.
+These are examples of list methods. There are actually more than this, but these are four of the most important. You'll easily be able to find all of them by looking at online documentation *[SIDENOTE: "Documentation" - something that tells you how to use the language you're writing in, and what methods do what - like an instruction manual]*. 
 
-*[WRITER'S NOTE: I went back and forth on this bit coming up, whether to include it or not. would appreciate someone elses input]*
-In Python, lists are sometimes referred to as 'arrays'. Although, in in computer science (which remember is a MUCH broader field than just Python) lists and arrays actually mean two different thing: what Python uses is much closer to a a list - which is why "list" is what we call it most of the time.
-
-In fact, calling them arrays isn't really accurate at all, but using the two terms interchangeably is a bad - if ultimately forgivable - habit we Python developers can get into sometimes. Nothing to worry about, but it is something to be aware of when learning, using, or discussing the language. 
+Lists are our first example of a 'collection' data type, IE one used to store multiple items of data, and we're about to meet a few more.
 
 ## Dictionaries
 Next up is dictionaries, another collection data type. Again think what the word dictionary means in common English: with a dictionary, you look up a word, and find that word's meaning:
@@ -171,7 +170,7 @@ In Python we can declare an empty dictionary like this:
 `my_dict = dict()`
 Let's see how it works with a simple example, by mapping people by their names to their favorite colour. Dictionary items use a very similar syntax *[REFRESHER - syntax: the way code needs to be written in a certain language]* to lists, that is: the name of the dictionary followed by square brackets.
 `my_dict[]`
-Only, where instead of an index number (like for lists) it is in these square brackets we write our key. We then define that key (that is, assign it's value) as whatever we want.
+Only, instead of an index number (like for lists) it is in these square brackets we write our key. We then define it (that is, assign a value to the key) as whatever we want.
 `my_dict["alice"] = "blue"`
 we access the value in much the same way.
 `print(my_dict["alice"])`
@@ -181,7 +180,7 @@ my_dict["bob"] = "red"
 my_dict["charlie"] = "yellow"
 my_dict["dio"] = "red"
 ~~~
-This raises an important point. We ARE allowed duplicate values, that is two separate keys pointing to the same value - se how Dio *[It was me, Dio!]* and and Bob both have the same favorite colour, "red".
+This raises an important point. We ARE allowed duplicate values, that is two separate keys pointing to the same value - see how Dio *[It was me, Dio!]* and and Bob both have the same favorite colour, "red".
 *[maybe the classic map diagram, keys on left values on right arrows in between. Both Dio and Bob pointing to red]*
 What we cannot do is have two values assigned to the same key, that is one key pointing to two things at once. If we try this in Python:
 ~~~
@@ -197,23 +196,23 @@ A key can only have one value, but that value can be a collection - with multipl
 my_dict["charlie"] = ["yellow", "pink"]
 print(my_dict["charlie"])
 ~~~
-And yes, if you were curious, you can have a value in a dictionary be another dictionary. In fact you can pretty much nest any data collections you want: you can have lists of lists, dictionaries of lists, lists of lists of dictionaries of lists. etc. This is actually quite common up to a certain point, just keep in mind that it can get very messy, very quickly.
+And yes, if you were curious, you can have a value in a dictionary be another dictionary. In fact you can pretty much nest any data collections you want: you can have lists of lists, dictionaries of lists, lists of lists of dictionaries of lists. etc. Just keep in mind that it can get messy, very quickly.
 
-Dictionaries, like lists and like all data types in fact, dictionaries have several inbuilt methods to make working with them easier. We won't be going over them all - and you'd be unlikely to use them all in a single program - but we recommend taking a look at them: they're easy to find documentation for online.
+Dictionaries, like lists, and like all data types in fact, have several built in methods to make working with them easier. We won't be going over them all - and you'd be unlikely to use them all in a single program - but we recommend taking a look at them: they're easy to find documentation for online.
 
 ## A brief pause
-Dictionaries and lists are by far the most commonly used data collection in python, and thus the two most important to understand - hence why we went over them in as much detail as we did. There are two more types built into Python, with their own special syntax. While not used as much, they ARE still important, and both have cases where they are the best (or even only) choice.
+Dictionaries and lists are by far the most commonly used data collection in python, and thus the two most important to understand - hence why we went over them in as much detail as we did. But there are still two more types built into Python, with their own special syntax. While not used as much, they ARE still important, and both have cases where they are the best (or even only) choice.
 
-Thankfully, once we do understand lists and dictionaries, the remaining two can be explained pretty simply. We're oging to go over them briefly.
+Thankfully, once we do understand lists and dictionaries, the remaining two can be explained pretty simply. We're going to go over them briefly.
 
 ## Sets
-Sets are actually very simple: they're like lists, but they're completely unordered. Sets really ARE like a jumbled bag of items. They also can't have duplicate items, an item has to be in there once, or not at all. In Python, sets are written with curly brackets.
+Sets are actually very simple: they're like lists, but they're completely unordered. Sets really ARE like a jumbled bag of items. They also can't have duplicate items, an item is included once, or not at all. In Python, sets are written with curly brackets.
 ```
 primes = {2, 3, 5, 7}
 ```
 You might be thinking "if they're un ordered, how to we access specific elements of a set?". And, well, you don't...
 
-you can add items, remove items (if you know they're in there), get all or some of the items one at a time or all at once. But you can't pick, say, the first one because there IS not first one. They're all mixed together.
+you can add items, remove items, get all or some of the items at random. But you can't pick, say, the first one because there IS no first one. They're all mixed together.
 
 ## Tuples
 Tuples, also very similar to lists, are written with round brackets, and comma separated items, and accessed with the index number in square brackets.
@@ -227,7 +226,7 @@ full_name[1] = 'alan'
 ```
 you get an error.
 
-You can change the elements without completely overriding them, if that's possible (which depends on what kind of data type it is). For example you can do this:
+You can change the elements without completely overriding them, if that's possible (which depends on what kind of data type the elements are). For example you can do this:
 ```
 l1 = [1, 2]
 l2 = [4, 5]
