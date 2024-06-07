@@ -93,7 +93,20 @@ string(10)
 ~~~
 Worth noting is that you can't necessarily cast from anything into anything else, it depends on the types and the data. You can convert any number into a string easily, but not every sting can be converted into a number: if we try this `int("one")` we get an error.
 
-# Summary
+## A quick word about None
+One last big important data type we haven't discussed yet is None.
+
+None is nothing.
+
+*[If it's not too "unprofessional", I would love a fake-out cut to the next section here...!]*
+Okay no let's explain that in a bit more detail!
+
+None is a value with it's own data type: the None type. None is used to encoded the absence of data. Surely we could already do that with 0 or 'False', but no! 0 is still an integer with a definite value *[SIDENOTE: or 0.0 for a float]*, the empty string is still a string, false is still the boolean false and not true!
+
+We still need a way to represent data that just isn't there or hasn't been defined yet. This is quite often used is data collections (which we're going to learn about next time) to represent empty or missing values:
+`cookie_recipe = ["get some flour", None, None, "..?", "cookies!"]`
+
+## Summary
 Understanding data-types is an essential part of learning programming. It helps us better understand how the program "thinks", or perhaps more accurately how it doesn't, and how everything it DOES do needs to follow some kind of logic. It is out of these base data types we build more complex data structures, and use them in programs of our own. With this in mind, we're ready to start exploring the rest of what programming has to offer.  
 
 # Basic data structures
@@ -139,9 +152,99 @@ my_list.remove("eggs")
 my_list.pop(0)
 print(my_list)
 ~~~
-There are actually more list methods (that is 'list.something()') than this, but these are four of the most important. Lists are our first example of a 'collection' data type, IE one used to store multiple items of data, and we're about to meet a few more.
+There are actually more list methods (that is 'list.something()') than this, but these are four of the most important. You'll easily be able to find all of them by looking at online documentation *[SIDENOTE: "Documentation" - something that tells you how to use the language you're writing in, and what methods do what - like an instruction manual]*. Lists are our first example of a 'collection' data type, IE one used to store multiple items of data, and we're about to meet a few more.
+
+*[WRITER'S NOTE: I went back and forth on this bit coming up, whether to include it or not. would appreciate someone elses input]*
+In Python, lists are sometimes referred to as 'arrays'. Although, in in computer science (which remember is a MUCH broader field than just Python) lists and arrays actually mean two different thing: what Python uses is much closer to a a list - which is why "list" is what we call it most of the time.
+
+In fact, calling them arrays isn't really accurate at all, but using the two terms interchangeably is a bad - if ultimately forgivable - habit we Python developers can get into sometimes. Nothing to worry about, but it is something to be aware of when learning, using, or discussing the language. 
 
 ## Dictionaries
+Next up is dictionaries, another collection data type. Again think what the word dictionary means in common English: with a dictionary, you look up a word, and find that word's meaning:
+*[YOU: what is "python"?, DICT: "NOUN: a type of snake found in Africa, Asia, and Australia"]*
+*[YOU: what is "recursion"?, DICT: "NOUN: recursion is recursion"]*
+In computer science, we call this "mapping", that is the idea that one value points - is mapped to - another. We call this fist value the 'key', and the other the 'value'. A bit like a chart, or map legend, or - well - a dictionary!
+*[annotate/highlight dictionary examples with KEY for words and VALUE for definition]*
+Python's in-built dictionaries implement this mapping, that is they allow you to store and retrieve key-value pairs.
+
+In Python we can declare an empty dictionary like this:
+`my_dict = dict()`
+Let's see how it works with a simple example, by mapping people by their names to their favorite colour. Dictionary items use a very similar syntax *[REFRESHER - syntax: the way code needs to be written in a certain language]* to lists, that is: the name of the dictionary followed by square brackets.
+`my_dict[]`
+Only, where instead of an index number (like for lists) it is in these square brackets we write our key. We then define that key (that is, assign it's value) as whatever we want.
+`my_dict["alice"] = "blue"`
+we access the value in much the same way.
+`print(my_dict["alice"])`
+Let's add a few more:
+~~~
+my_dict["bob"] = "red"
+my_dict["charlie"] = "yellow"
+my_dict["dio"] = "red"
+~~~
+This raises an important point. We ARE allowed duplicate values, that is two separate keys pointing to the same value - se how Dio *[It was me, Dio!]* and and Bob both have the same favorite colour, "red".
+*[maybe the classic map diagram, keys on left values on right arrows in between. Both Dio and Bob pointing to red]*
+What we cannot do is have two values assigned to the same key, that is one key pointing to two things at once. If we try this in Python:
+~~~
+my_dict["dio"] = "blue"
+print(my_dict["dio"])
+~~~
+you'll see that we only end up replacing the original value.
+
+Maybe now you have a question: "surely that's not like a dictionary at all, with a dictionary a word can have more than one meaning". Say "rock", which can either be a big lump of mineral, or a type of music. Unfortunately, in Python we can't do this; but we can fake it.
+
+A key can only have one value, but that value can be a collection - with multiple items inside it. If Charlie has two favorite colours, we can assign their value as a list:
+~~~
+my_dict["charlie"] = ["yellow", "pink"]
+print(my_dict["charlie"])
+~~~
+And yes, if you were curious, you can have a value in a dictionary be another dictionary. In fact you can pretty much nest any data collections you want: you can have lists of lists, dictionaries of lists, lists of lists of dictionaries of lists. etc. This is actually quite common up to a certain point, just keep in mind that it can get very messy, very quickly.
+
+Dictionaries, like lists and like all data types in fact, dictionaries have several inbuilt methods to make working with them easier. We won't be going over them all - and you'd be unlikely to use them all in a single program - but we recommend taking a look at them: they're easy to find documentation for online.
+
+## A brief pause
+Dictionaries and lists are by far the most commonly used data collection in python, and thus the two most important to understand - hence why we went over them in as much detail as we did. There are two more types built into Python, with their own special syntax. While not used as much, they ARE still important, and both have cases where they are the best (or even only) choice.
+
+Thankfully, once we do understand lists and dictionaries, the remaining two can be explained pretty simply. We're oging to go over them briefly.
 
 ## Sets
+Sets are actually very simple: they're like lists, but they're completely unordered. Sets really ARE like a jumbled bag of items. They also can't have duplicate items, an item has to be in there once, or not at all. In Python, sets are written with curly brackets.
+```
+primes = {2, 3, 5, 7}
+```
+You might be thinking "if they're un ordered, how to we access specific elements of a set?". And, well, you don't...
 
+you can add items, remove items (if you know they're in there), get all or some of the items one at a time or all at once. But you can't pick, say, the first one because there IS not first one. They're all mixed together.
+
+## Tuples
+Tuples, also very similar to lists, are written with round brackets, and comma separated items, and accessed with the index number in square brackets.
+```
+full_name = ('john', 'william', 'smith')
+print(full_name[0])
+```
+The big difference with tuples, is that once they're defined, you cannot add or remove any elements to them; they're like lists that get locked shut as soon as you define them. You can't replace any items either, if you try:
+```
+full_name[1] = 'alan'
+```
+you get an error.
+
+You can change the elements without completely overriding them, if that's possible (which depends on what kind of data type it is). For example you can do this:
+```
+l1 = [1, 2]
+l2 = [4, 5]
+t = (l1, l2)
+t[0].append(3)
+print(t)
+```
+but not this:
+```
+l1 = [1, 2]
+l2 = [4, 5]
+t = (l1, l2)
+l1 = [1, 2, 3]
+print(t)
+```
+
+## Summary
+Data structures like these allow our program to be a lot more flexible. They also introduce organization which is essential for many different algorithms, and is also just nice to have for us. It can be a lot easier to visualize one variable with a list of 10 things, all in a set order, than 10 different variables with different names and no way to order them. Although of course which is actually better always depends on the problem you're trying to solve.
+
+Not only is learning these data structures important for learning programming, but observing how they build off the fundamental data types, and how in turn we could see more complex functionality emerging by using *them*, is exactly the kind of logic that will serve us well not just int learning *to* code, but in coding itself.
