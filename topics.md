@@ -40,3 +40,15 @@
 * overriding
 * multiple inheritance, and why Python doesn't allow it
 * maybe the idea of abstract classes...?
+
+## Regression
+* data engineering practices
+* simple linear regression
+* multiple linear regression
+* logistic linear regression
+* evaluating and visualising results from models
+
+## Neural networks
+* artificial neural network
+* convolutional neural network
+* standardisation and imputing
