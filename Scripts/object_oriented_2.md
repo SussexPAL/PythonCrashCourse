@@ -1,37 +1,79 @@
-# Further OO programming
-This session, we're going to take a look using multiple classes together in a single program, and how methods can allow different objects to interact with each other. We shouldn't actually be covering any new ground, that is you probably and syntax here that we haven't already introduced, but we'll be using them in new ways just to demonstrate how it all works together, and to see the kind of things that are possible in Python code.
+## Rounding out the basics of OO in Python
+By now, we have a good idea of what Object Oriented programming is, even if it still seems like a relatively new concept. We know about classes, how they have fields and methods, and how multiple separate objects can come from one class. We've also taken our first look at how OO is done in Python, how a special method called the constructor (or 'init' short for initializer) works, how we define it, and how we use it to instance new objects of a class.
 
-Also, if you haven't already, it would be a good idea to make sure you understand (or at least be aware of) the difference between passing by reference and passing by value, and when and why Python does each. This should make it easier for you to follow what we'll be doing from now on, and to have a basic understanding of how Python handles it behind the curtain. We do have a video on this, which you may also go back and review at any point. 
+We're now going to explore in greater detail the different fields and methods a class might have, what they might be used for, and crucially how we implement and use them in our own Python code.
 
-## Defining multiple classes
-As you probably assumed, we can absolutely define multiple classes in the same Python program, just like how we can define multiple functions or variables. Let's add some more classes to our student example:
+## Defining our own methods
+The first thing we'll look at is how we define and call methods for a class, beyond just the constructor. Once we understand the constructor, moving onto other methods should not be too complicated as the syntax is mostly the same. Let's see this done with our Student class from last time:
+ `class Student:`
+`   def __init__(self, name, year):`
+`       self.name = name`
+`       self.year = year`
+`   `
+`   def say_hello(self):`
+`       print("Hello!")`
+The `def` keyword is still used, and we still need to include the `self` as the first parameter. Now, however, we can give the method whatever name we want, so long as it doesn't clash with any others in the class. Calling it is also very simple.
+`student1 = Student("Grace", 1)`
+`student1.say_hello()`
+This is mostly the same as calling any other function, only this time we need to specify which object we're calling it for *[underline `student1.`]*. If it looks like we're missing a parameter, remember we don't need to explicitly pass the self parameter for method calls in Python, as this is done automatically.
 
-Say in our model model university program we don't just want students, we want books and a library as well. Let's consider writing classes for each.
+Let's add a bit more. We don't just want our student to say hello, we also want them to introduce themselves with *their* name and year of study. Here's how we'd do that:
+`   def say_hello(self):`
+`       print("Hello! My name's" + self.name + " , I'm in year " + self.year)`
+it's as simple as calling fields by name which we defined in the constructor, remembering to use the `self.` syntax. If you're wondering if these fields have been defined yet, remember that *by definition* the constructor is the very first that is called when a new object is created. If we're calling any other method from an object, that means the constructor MUST have ran otherwise we wouldn't HAVE an object in the first place! So long as the field has been defined in the constructor, we can reference it later at any time.
 
-*[cut away to class diagrams here]*
-Our books should have:
-* a title
-* an author
-* a year of publication
+*[demo method being run]*
 
-Our library should have:
-* a list of books
-* a set of students who are 'members'
+Methods don't just refer back to an object's properties, they can also change them! Let's define a "continue year" method which will increase the student's year of study by one.
+`   def continue_year(self):`
+`       self.year = self.year + 1`
+When run, this will overwrite the self's year property to be it's original value plus one.
 
-*[Extra requirements on a separate list]*
-We should be able to:
-* register students at a library
-* have students check out a book from a library, but ONLY if they are registered
-* have students return books to a library
+*[demo the following being run]*
+`student1.say_hello()`
+`student1.continue_year()`
+`student1.say_hello()`
 
-Let's get started.
+Beyond that, class methods are really just like any other functions. They can take any number of parameters of any type, they can return value, and they can even call on other functions and methods themselves.
 
-Simplest to define will be the books. We're going to write a book class with 3 fields, all of which are passed as arguments to the constructor.
-~~~ py
-class Book():
-    def __init__(self, title: str, author: str, year: int):
-        self.title = title
-        self.author = author
-        self.year = year
-~~~
-See also that we've added type hints! Remember from our lesson on functions that these are not required, but they can improve the clarity of our code, and provide an additional layer of security - preventing someone passing a string or other object to `year` when we are expecting an integer.
+## More about properties
+Now we've seen how we define and access class fields (or properties) for classes in python. So far it's been pretty simple: we define a field in the class definition, we write our constructor such that it takes an argument for that field, then every time we run that constructor we pass in the values we want. 
+
+But, don't get the idea that there's a strict 1 to 1 relationship between properties, and constructor parameters. To illustrate how this is not always so, we'll introduce an entirely new example. Let's define a class to represent a 2d square, with a single property for it's area.
+*[some kind of class diagram for class square with 1 property area]*
+
+You may be imagining a constructor that looks something like this:
+`class Square:`
+`   def __init__(self, area):`
+`       self.area = area`
+And you wouldn't be wrong, this is a perfectly good solution, but it's not what I want to show you for this example. As you probably know, the area of a square can be calculated as the length of one of it's sides squared. We can define a constructor that does exactly this: takes a parameter for length, and from that calculates area.
+`class Square:`
+`   def __init__(self, length):`
+`       area = length ** 2`
+`       self.area = area`
+This proves our point. The constructor for this class takes a parameter, which is not directly stored in a field. Similarly, the area property is not directly given as parameter. Instead, it is calculated based on the parameter given.
+*[in action]*
+rect = Rectangle(2, 4)
+print(rect.area)
+*[but this line gives an error, because there IS no length field]*
+print(rect.length)
+
+It's also not uncommon for classes to assign default values to certain fields in the constructor. We can tweak our earlier Student example to always start with a default value of 0 for year_of_study:
+ `class Student:`
+`   def __init__(self, name):`
+`       self.name = name`
+`       self.year = 0`
+See that the `year` parameter has been removed all together, but the `self.year` property remains, and is assigned the same default value each time. But this doesn't mean the value has to STAY at 0 for the lifetime of each object, we can see this by using the `continue_year()` method we defined earlier:
+`stu1 = Student("Alan")`
+`stu2 = Student("Ada")`
+`print(stu1.year)`
+`print(stu2.year)`
+
+`stu2.continue_year()`
+`print(stu1.year)`
+`print(stu2.year)`
+
+## roundup
+This pretty much covers the basics of OO in Python, although we've only just scratched the surface of how we can actually apply them. Again, practice is key: having a play around, and doing some simple challenges with what we've show so far is a great way to digest these concepts.
+
+In the next few sessions, we'll explore "passing by reference" and "passing by value", how their different, and when each is used. Then, we'll move on to some more complex use of Objects, and interaction between multiple classes.
