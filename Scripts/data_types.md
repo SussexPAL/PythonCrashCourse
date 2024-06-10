@@ -46,12 +46,12 @@ Except that Python actually has two data types for representing numbers! The fir
 Float are, well, everything else. That is decimals, fractions, even special numbers like pi or infinity. You can encode 2.5, -100.1, 7/11, even the square root of 3975 using floats. This even includes numbers which we would think of as being whole, like 1.0, 2.0 etc.
 
 So does that mean all integers are also floats, but only some floats are integers? Well... kind of... but not really. That is a true statement to make about numbers in the real world, but that's not how Python sees it. In Python, a data object can only be one type or another. if we write this:
-~~~
+~~~ py
 num = 1
 type(num)
 ~~~
 Python will see 'num' as an integer, but if we write this
-~~~
+~~~ py
 num = 1.0
 type(num)
 ~~~
@@ -85,24 +85,24 @@ These are four of the most important data types in Python. To recap:
 As you can probably imagine, we have to use certain data types for certain things, for example only numeric data types (ints and floats) can be used for mathematical expressions. However this does not mean that we can never convert between types: converting something from one data-type to another is called *casting*.
 
 Python does a lot of casting automatically, a good example of this division between integers, which we already discussed, which gives us a float:
-~~~
+~~~ py
 num1 = 5
 num2 = num1 / 2
 print(type(num1))
 print(type(num2))
-~~~
+~~~ 
 print itself is actually another very good example. Technically, print only works with strings, which means anything else has to be casted to a string before it can be printed. Lucky for us, Python does this automatically.
-~~~
+~~~ py
 print(2.5)
 print(False)
-~~~
+~~~ 
 This kind of automatic type conversion is called 'implicit casting'
 
 Explicit casting is when WE, the programmer, TELL the program we want to convert from one data-type to another. We do this by calling the name of the type we want to convert to as a function, and passing in brackets the value with whatever we want to convert from.
-~~~
+~~~ py
 int("1")
 string(10)
-~~~
+~~~ 
 Worth noting is that you can't necessarily cast from anything into anything else, it depends on the types and the data. You can convert any number into a string easily, but not every sting can be converted into a number. Attempting to convert data of one type to another where no such casted value exists gives us an error:
 `int("one")` 
 
@@ -124,36 +124,36 @@ Those items can be pretty much whatever we want them to be: strings, floats, int
 Important to know is that lists are ordered, they're not just a jumbled set of elements! Each item comes after one item, and before another one (with the obvious exception of the start and end of the list). 
 
 We access individual elements of a list like this
-~~~
+~~~ py
 print(my_list[0])
 print(my_list[1])
 print(my_list[2])
-~~~
+~~~ 
 That is, the name of the list followed by square brackets containing the number of the element we want. We call this number the index. Note that in Python the index starts at 0; so what we might think of as the 1st element is stored at the 0th index, the 2nd at the 1st index, and so on.
 
 We can also use this syntax to redefine elements in a list:
-~~~
+~~~ py
 my_list[0] = "cereal"
 print(my_list)
-~~~
+~~~ 
 What we can't do is reference an item number that doesn't exist, or an "index out of bounds" as Python will call it in the error message you'll get if you try.
-~~~
+~~~ py
 # remember idx 4 would be the 5th element, and the 5th element doesn't exist, there are only 4!
 print(my_list[4])
-~~~
+~~~ 
 
 We can add items to the end of a list using `.append()`, or insert them at a specific point using `.insert()` which will shift everything afterwards up an index.
-~~~
+~~~ py
 my_list.append("orange juice")
 my_list.insert(1, "coffee")
 print(my_list)
-~~~
+~~~ 
 We can also remove elements of a certain value using `.remove()` or at a specific index using `.pop()`
-~~~
+~~~ py
 my_list.remove("eggs")
 my_list.pop(0)
 print(my_list)
-~~~
+~~~ 
 These are examples of list methods. There are actually more than this, but these are four of the most important. You'll easily be able to find all of them by looking at online documentation *[SIDENOTE: "Documentation" - something that tells you how to use the language you're writing in, and what methods do what - like an instruction manual]*. 
 
 Lists are our first example of a 'collection' data type, IE one used to store multiple items of data, and we're about to meet a few more.
@@ -175,7 +175,7 @@ Only, instead of an index number (like for lists) it is in these square brackets
 we access the value in much the same way.
 `print(my_dict["alice"])`
 Let's add a few more:
-~~~
+~~~ py
 my_dict["bob"] = "red"
 my_dict["charlie"] = "yellow"
 my_dict["dio"] = "red"
@@ -183,7 +183,7 @@ my_dict["dio"] = "red"
 This raises an important point. We ARE allowed duplicate values, that is two separate keys pointing to the same value - see how Dio *[It was me, Dio!]* and and Bob both have the same favorite colour, "red".
 *[maybe the classic map diagram, keys on left values on right arrows in between. Both Dio and Bob pointing to red]*
 What we cannot do is have two values assigned to the same key, that is one key pointing to two things at once. If we try this in Python:
-~~~
+~~~ py
 my_dict["dio"] = "blue"
 print(my_dict["dio"])
 ~~~
@@ -192,7 +192,7 @@ you'll see that we only end up replacing the original value.
 Maybe now you have a question: "surely that's not like a dictionary at all, with a dictionary a word can have more than one meaning". Say "rock", which can either be a big lump of mineral, or a type of music. Unfortunately, in Python we can't do this; but we can fake it.
 
 A key can only have one value, but that value can be a collection - with multiple items inside it. If Charlie has two favorite colours, we can assign their value as a list:
-~~~
+~~~ py
 my_dict["charlie"] = ["yellow", "pink"]
 print(my_dict["charlie"])
 ~~~
@@ -207,7 +207,7 @@ Thankfully, once we do understand lists and dictionaries, the remaining two can 
 
 ## Sets
 Sets are actually very simple: they're like lists, but they're completely unordered. Sets really ARE like a jumbled bag of items. They also can't have duplicate items, an item is included once, or not at all. In Python, sets are written with curly brackets.
-```
+``` py
 primes = {2, 3, 5, 7}
 ```
 You might be thinking "if they're un ordered, how to we access specific elements of a set?". And, well, you don't...
@@ -216,18 +216,18 @@ you can add items, remove items, get all or some of the items at random. But you
 
 ## Tuples
 Tuples, also very similar to lists, are written with round brackets, and comma separated items, and accessed with the index number in square brackets.
-```
+``` py
 full_name = ('john', 'william', 'smith')
 print(full_name[0])
 ```
 The big difference with tuples, is that once they're defined, you cannot add or remove any elements to them; they're like lists that get locked shut as soon as you define them. You can't replace any items either, if you try:
-```
+``` py
 full_name[1] = 'alan'
 ```
 you get an error.
 
 You can change the elements without completely overriding them, if that's possible (which depends on what kind of data type the elements are). For example you can do this:
-```
+``` py
 l1 = [1, 2]
 l2 = [4, 5]
 t = (l1, l2)
@@ -235,7 +235,7 @@ t[0].append(3)
 print(t)
 ```
 but not this:
-```
+``` py
 l1 = [1, 2]
 l2 = [4, 5]
 t = (l1, l2)

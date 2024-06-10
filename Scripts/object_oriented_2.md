@@ -27,7 +27,7 @@ We should be able to:
 Let's get started.
 
 Simplest to define will be the books. We're going to write a book class with 3 fields, all of which are passed as arguments to the constructor.
-~~~
+~~~ py
 class Book():
     def __init__(self, title: str, author: str, year: int):
         self.title = title
