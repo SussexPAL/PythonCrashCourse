@@ -1,6 +1,6 @@
 [MAIN CAM]
 # Flow of control 1: If, then, else
-So; we've started exploring some basic programming. right now we're kind of using Python like a simple calculator. There's nothing wrong with this, but, we could go further and have a program where the output vary a lot more. Everything we've written so far does the same thing every time we run it, that is we write lines of code, and when we run the program, those lines are executed on at a time, in the order they were written. 
+So; we've started exploring some basic programming. right now we're kind of using Python like a simple calculator. There's nothing wrong with this, but, we could go further. Everything we've written so far does the same thing every time we run it, that is we write lines of code, and when we run the program, those lines are executed one at a time, in the order they were written. 
 ``` py
 thing1 = "Hello"
 thing2 = "World!"
@@ -8,7 +8,8 @@ print(thing1 + ", " + thing2)
 ```
 but what if we want our program to be more flexible? This is where we start looking at flow of control, ie the ways in which we can manage which lines of code are executed, and when.
 
-Think back to data types and expressions, remember that we covered something called a "boolean" - a value that can be either True, or False, 1 or 0, yes or no. One of the primary uses of these booleans is control flow statements. Say we have a block of code and some boolean expression, and we want that block of code to run if, and ONLY if, that statement evaluates to True. Here's an example
+## If
+Think back to data types and expressions, remember that we covered something called a "boolean" - a value that can be either True, or False, 1 or 0, yes or no. One of the primary uses of these booleans is flow control statements. Say we have a block of code and some boolean expression, and we want that block of code to run if, and ONLY if, that statement evaluates to True. Here's an example
 [SIDE CAM OR CUT AWAY]
 ``` py
 password = "321"
@@ -20,28 +21,100 @@ print("welcome!")
 # Otherwise...
 print("incorrect password!")
 ```
-Ignoring that "123" *[zoom in to face for emphasis]* terrible password that you should never use in real life - let's clarify: what we want to happen here, why its impossible knowing only what we've seen so far, and what we CAN actually do to make it work.
+Ignoring that "123" *[zoom in to face for emphasis]* is a terrible password that you should never ever use in real life - let's clarify: what we want to happen here, why its impossible knowing only what we've seen so far, and what we CAN actually do to make it work.
 
 We have some variable, which we have called 'password' *[underline/highlight password]*. Here, we've given it a definite value, but let's say we don't know what that value is for now *[black out/cross out "321"]*. We want the rest of our code to behave differently, depending on whether or not 'password' has the value "123", IE if the boolean expression `password == "123"` evaluates to true. If it does, then we want to print out "welcome", otherwise "incorrect password". But we can't do this because so far our code runs line by line, meaning BOTH print statements would run. But there is a solution, and it comes in the form of the if statement.
 
-You can think of "if" as asking the computer "When executing this code, only run it **if** this *condition* is true". The condition being some statement that will result in either True, or False.
+[CENTER CAM]
+You can think of "if" as asking the computer "When executing this code, only run it **if** this *condition* is true". The condition being some statement that will result in either True, or False. In Python, they're very simple to write:
+```py
+if password == "123":
+    # The 'body' of our if statement
+    print("welcome!")
+```
+There's really only three things to it: the `if` keyword which starts the expression, the condition (that is the boolean) and the actual code inside the if statement - which we call the body. Once a running program reaches an if statement, the body will be run only if the condition is `True`, otherwise it will be completely ignored and skipped over, moving onto the next thing.
 
-We have a few "operators" for checking conditions. The first and simplest is two equals signs - this allows us to check if two values are the same.
+One thing worth explaining is the syntax of the body here *[REMINDER: Syntax - how the code needs to be written, what words and punctuation to use etc.]* as we'll be seeing things that look like this very often from here on out.
 
-For example, `2 == 2`, but, also, `2 == 3 - 1`. This seems fine, but, we can also use variables in place here. Let's say we have a variable named "foo", and, we put the word "hello" into it. In our program, we can write `if foo == "hello"`, and, some code will execute. If we change the value of "foo", the program will do something else instead.
+[SIDE CAM]
+*[look at above code again]*
+Notice two things - the colon at the end of the first line, and space from the second line onwards between the left-side border. This is the way Python structures 'blocks' - that is groups of lines - of code. The colon indicates that we're ready to enter into a new block of code. The space to the left that comes afterwards we call 'indentation' - this is done using the tab key on you keyboard, but should be added automatically by most IDEs *[REMINDER: IDE - the software your writing your code in]*. It is once this indentation stops that we will have left whichever block of code we were writing in, and have gone back to the one we were in before.
+```py
+# No indentation - block A
 
-There are other equality statements too. We can use the angle brackets as greater than and less than - it's always nice to remember the sign as being a mouth that's trying to eat the bigger one. For example `4 > 2` and `10 * 3 < 29 + 5`
+if password == "123":
+    # Colon followed by indentation - block B
+    print("welcome!")
 
-We can also use exclamation equals as shorthand for "Not equals". For example, `"hello" != "world"`, `3 != 1`, and, `foo != "other_word"` (assuming `foo` is still `"hello"`).
+# Indentation stops - back to block A
+```
 
-All these operators will resolve down to either True or False - for example, if you write `print("hello" == "hi!")`, you will just see `False`! We can then use other keywords to chain multiple conditions together - for example, `not` will invert the output (e.g. `not "hello" == "hi!"` is `True`).
+[CENTER CAM]
+Remember that the body of the if statement is only the block that comes immediately afterwards - any code after we've come out of that block is NOT part of the if statement, and will be run no matter what.
 
-`or` will be true if one or more conditions are true - e.g. `"4 > 2 or 5 > 10`. Five isn't greater than 10, but, because 4 is greater than 2, the entire statement is true.
+[CENTER/CUT AWAY]
+## Else
+So, we can use if statements. And once we understand how code blocks work, we can use multiple if statements. Our example from earlier should now look something like this.
+``` py
+if password == "123":
+    print("welcome!")
 
-Finally, `and` requires *all* conditions in a statement to be true. Taking the same example, `4 > 2 and 5 > 10` - we will get `False` because five still isn't greater than 10. This is regardless of the fact 4 is bigger than 2 - because not *all* of the conditions are satisfied, the entire thing will return `False`.
+if print != "123": # Remember '!=' the inequality operator
+    print("incorrect password!")
+```
+Our first if block will run if password is 123, the second will run if password is NOT 123. And this works perfectly for what we wanted. But we can make it better. It seems kind of silly to explicitly define another condition to just be the inverse of our first one - that is "if the password is NOT 123", "did they get it wrong?" *[underline/highlight `print != "123"`]*, we should already know that based on whether or not the previous if statement worked. This is the perfect time to talk about the 'else' statement.
 
-- For loops
+[SIDE CAM]
+``` py
+if password == "123":
+    print("welcome!")
+else:
+    print("incorrect password!")
+```
+The else statement is, put simply, the inverse of an if statement. Notice how it doesn't have a condition, just the 'else' keyword, and a body - this is because it doesn't need one: an else statement wil run it's body if the previous if statement's condition was false. If you like, you can think of every else statement having an invisible condition which is added automatically...
+``` py
+if password == "123":
+    print("welcome!")
+else: # (NOT password == "123")
+    print("incorrect password!")
+```
+... and is the opposite of the the previous if's condition.
 
-- Refresher on Range keyword (brought up in George's worksheet, but, let's properly explain it)
+[CENTER CAM]
+And yes, this does mean that an else needs to follow an if statement. We can't write else on its own, that wouldn't make sense. We can't write an if an an else with more code in the middle, as Python won't see them as being related, and thus won't make sense. Not every if needs an else, but every else needs an if.
 
-- While loops
+## elif, and chaining conditions
+The thing about else/if pairs is that they're binary - that is when the code is run, you can only get one or the other - never both, and never neither. In the context of the example we've been looking at, you either get the password right, or you get it wrong.
+
+But in many situations there may be more than two options - we may want to check against three or four more possible conditions. This is where `elif` statements come in.
+
+[SIDE CAM]
+``` py
+if password == "123":
+    print("welcome!")
+elif password == "321":
+    print("almost...!")
+else:
+    print("incorrect password!")
+```
+Elif (which is short for else-if) statements go between if and else statements. See that, like ifs and unlike elses, they DO have a condition. They run if the previous statement did not, AND their condition is true. They must come after either an if statement, OR another elif statement. They don't need an else statement at the end, but the cannot come after one.
+
+[CUT AWAY or STAY ON SIDE CAM]
+an if, flowed by at least one elifs, make a chain. For each of the blocks - that is the bodies of each statement - in that chain, only one can end up actually being run...
+``` py
+if num = 1:
+    print("That's a one!")
+elif num = 2:
+    print("That's a two!")
+elif num = 3:
+    print("That's a three!")
+```
+... because if at any point in the chain a condition is met, that then the corresponding body is run and the rest is just skipped. If the chain ends in an else...
+``` py
+else:
+    print("I don't know what number that is...")
+```
+... and no other conditions before it in the chain have been met (not the first if, not any of the later elifs), than that if statement is guaranteed to run.
+
+## Summary
+With the introduction of conditional statements, we've began to see our first real emerging complexity. We're starting to see that, even though at their core programs are just line by line instructions, this is by no means all we can do with them. We've also introduced blocks - a fundamental element of our code we'll see coming up again and again from now on. Next, we're going to be looking at some different flow-control statements, their similarities and differences, and when we might need to use them.
