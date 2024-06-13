@@ -45,9 +45,7 @@ while True:
 So what actually happens if we press go on this thing. Well - it depends. Some IDEs and environments are clever, they'll see what's going on and call the program to a stop early - but this is actually surprisingly difficult so we can't count on it. 
 
 [CENTER CAM]
-Usually what happens is that it really does just keep going until something forces it to stop. This could be you - for instance by closing a window or pressing stop on your IDE - or possibly your OS *[SIDE NOTE: OS - Operating System, the software that runs your whole computer]* may step in and gently suggest you let it stop the process, or just stop it without asking.
-
-If you're very VERY unlucky, and depending on how many resources that infinite loop starts taking up, your entire computer might start to slow down, or even crash all together. Don't panic *[PAL'S GUIDE TO THE GALAXY: DON'T PANIC]*, modern systems are VERY unlikely to just let this happen, but still - much better to be careful.
+Usually what happens is that it really does just keep going until something forces it to stop. This could be you - for instance by closing a window or pressing stop on your IDE. Most of the time this is fine, sometimes it can even be very useful for things like servers or background tasks, but depending what it's doing, how long it's been going, and how many resources that loop is taking up (and crucially whether or not that amount is growing) it can be a problem. In these cases quite often some other software, like the IDE or possibly your OS *[SIDE NOTE: OS - Operating System, the software that runs your whole computer]* may step in and gently suggest you let it stop the process, or just stop it without asking.
 
 ## For loops
 For loops are a bit different, they're also our first example of a statement that needs two keywords:
