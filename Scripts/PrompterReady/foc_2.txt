@@ -17,7 +17,7 @@ Where an if statement will just continue on with the rest of the code, a while l
 
 Let's walk through this example. 't' starts with a value of 10 - the condition of the while loop is 't > 0'. t IS greater than 0, so this statement is true, and the condition is met. We enter into this block of code. 
 
-See how the last line of the body re-assigns t to be one less than it's only value, so 9. Once we reach the end of the body, we check the condition again - t is now 9, 9 is still greater than 0, so true. We go again.
+See how the last line of the body re-assigns t to be one less than it's original value, so 9. Once we reach the end of the body, we check the condition again - t is now 9, 9 is still greater than 0, so true. We go again.
 
 And we keep going, counting t down until we reach t = 0. 0 is not greater than 0, so this statement is now false, and the condition fails - and we properly exit out of the while loop. 
 
@@ -29,12 +29,7 @@ Indeed we can - while there are a few cases for loops that are, or at least COUL
 [SIDE CAM]
  But we can, if we're feeling mischievous, do it deliberately just to see what happens. Just for fun, here's an example of the infamous 'while true' loop.
 
-So what actually happens if we press go on this thing. Well - it depends. Some IDEs and environments are clever, they'll see what's going on and call the program to a stop early - but this is actually surprisingly difficult so we can't count on it. 
-
-[CENTER CAM]
-Usually what happens is that it really does just keep going until something forces it to stop. This could be you - for instance by closing a window or pressing stop on your IDE. Most of the time this is fine, sometimes it can even be very useful for things like servers or background tasks, but depending what it's doing, how long it's been going, and how many resources that loop is taking up (and crucially whether or not that amount is growing) it can be a problem. In these cases quite often some other software, like the IDE or possibly your OS may step in and gently suggest you let it stop the process, or just stop it without asking.
-
-If you're very VERY unlucky, and depending on how many resources that infinite loop starts taking up, your entire computer might start to slow down, or even crash all together. Don't panic, modern systems are VERY unlikely to just let this happen, but still - much better to be careful.
+Usually what happens is that it really does just keep going until something forces it to stop. This could be you - for instance by closing a window or pressing stop on your IDE. Most of the time this is fine, sometimes it can even be very useful for things like servers or background tasks, but depending what it's doing, how long it's been going, and how many resources that loop is taking up (and crucially whether or not that amount is growing) it can be a problem.
 
 ## For loops
 For loops are a bit different, they're also our first example of a statement that needs two keywords:
@@ -57,6 +52,8 @@ For the above example, "member", "name" or even "person" would have all been per
 That's it, just two different kinds of loops - 'for' and 'while'. But before we wrap up, there are a couple of fun features of loops that python has built in. They're also examples of what we call "syntactic sugar" - that is features of a language that don't add anything new, and don't make anything possible that wouldn't have been possible without them, but make the actual code simpler to write and easier to read.
 
 Computer Scientists often like food metaphors, so, we use the metaphor that it makes the code "sweeter" for the human writing and reading it.
+
+[MAYBE TWO TAKES...?]
 
 [SIDE CAM]
 The first is the 'continue' keyword
