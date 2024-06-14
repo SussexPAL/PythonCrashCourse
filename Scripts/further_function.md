@@ -129,22 +129,30 @@ None of these function calls ever stop - ever return - because they're all waiti
 If you're very VERY unlucky, your entire computer might start to slow down, or even crash all together. Don't panic *[PAL'S GUIDE TO THE GALAXY: DON'T PANIC]*, modern systems are VERY unlikely to just let this happen, but still - much better to be careful.
 
 [SIDE CAM]
-This has all been doom and gloom, does this mean recursion is just stupid and dangerous? Actually, no - we just need to make sure that the call stack doesn't just keep growing in perpetuity. We do this by introducing a "base case", a case in which in which a recursive call is NOT made, and the process can return. Take a look:
+This has all been doom and gloom, does this mean recursion is just stupid and dangerous? Actually, no - we just need to make sure that the call stack doesn't just keep growing in perpetuity. We do this by introducing a "base case", a case in which a recursive call is NOT made, and the process can return. Take a look:
 ``` py
 def foo(i):
     print(i)
     i = i + 1
 
-    if i <>= 10:
+    if i >= 10:
         # This is our base case
         print("DONE!")
-        return
-    foo(i)
+        return i
+    base = foo(i)
+    return base
 
-foo(1)
+print(foo(1))
 ```
 All we've done here is introduce an if statement that will return out of the function once i reaches 10. Let's walk through it in action:
 
-The first time we call foo we pass it a value of i=1. It increases this to 2, and checks to see if it's greater than or equal to 10. It's not - so it calls foo again with i=2. 
+The first time we call foo we pass it a value of i=1. It increases this to 2, and checks to see if it's greater than or equal to 10. It's not - so it calls foo again with i=2. This new call then does the same, increasing i to 3, and making a new call - and so on this continues until finally a call to foo is made with i = 9.
+
+This call increases i to 10 - which means the base case is met, and it gets to terminate without making another call: it returns 10. You can see that this value then gets returned all the way down the call stack until the call at the bottom finally terminates. We're done,and we get our final value - 10.
+
+This is classic example of a base-and-recursive case function, where the call stack only grows as high as it needs to - that is it keeps growing until some condition (the base case) it met, and the whole stack sort of collapses back to the original call, passing down any return value from the top call with it.
+
+## Type hints
 
 ## Summary
+With this we've covered everything we need to about functions. Throughout your coding career, you'll be seeing these a lot. You'll be writing your own functions of course, but you'll also have to use ones that have been written by other people. Having a solid understanding of Python functions - both how they work inside, and how they are used - is essential.
