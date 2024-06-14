@@ -48,7 +48,7 @@ Python will see 'num' as an integer, but if we write this
 Python will see it as a float, it all depends on how we initially define it.
 
 [CENTER CAM]
-Worth noting is that we can still use all the same mathematical operators on both, Python will even convert integers to floats when we need to (for instance when division leaves us with a decimal). Any yes, this includes equality, so `1.0 == 1` will be true. *[SIDENOTE: if you want them to be EXACTLY the same you can use the is keyword. `1 is 1` is true, but `1.0 is 1` is false]*
+Worth noting is that we can still use all the same mathematical operators on both, Python will even convert integers to floats when we need to (for instance when division leaves us with a decimal). Any yes, this includes equality, so `1.0 == 1` will be true.
 
 
 ## Booleans
