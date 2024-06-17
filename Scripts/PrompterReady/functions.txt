@@ -34,7 +34,7 @@ But, luckily for us, there's a solution. And it's got everything to do with thos
 If we want our function to not just work, but work in lots of different contexts, we can start introducing parameters.
 
 [SIDE CAM]
-A parameter is like a piece of information which needs to go into a function in order for it to know what to do, and we use them pretty much just like variables, only instead of declaring them the first time we just name them inside the brackets.
+A parameter is like a piece of information which needs to go into a function in order for it to know what to do, and we use them pretty much just like variables, only instead of declaring and defining them, we just name them inside the brackets.
 
 That parameter can then be referenced by name inside the function code block.
 
@@ -49,11 +49,9 @@ We can now apply this to our is_even example:
 See how x is now a parameter, meaning it will take whatever value gets passed to the function each time it is called. We can now use it again and again whenever we want, passing whatever value we need (IE the number we want to know if it's even or not) as the argument each time.
 
 [CENTER CAME/CUT AWAY]
-Let's take another look. We want to avoid a misconception you might have at this point: parameters are not the same as the variables we define ourselves - similar, but not the same. The important difference is in how they are declared. 
+We want to avoid a misconception you might have at this point: parameters are not the same as the variables we define ourselves - similar, but not the same. The important difference is in how they are declared. While variables require an explicit value to be defined as, parameters wait to be given the value that is passed to the functions. 
 
-You might look at this function and ask how we're referencing this x which we never actually define, IE there is no `x = 3` or `x = 2 + 2` or anything, so how can we be referencing it here? 
-
-The thing to remember here is that we don't need to - we declare x as a parameter in these brackets - similar to a variable, only we don't give it a definite value, x is left blank, if you like, until the function is called, at which point it takes on the value of whatever argument was passed in brackets:
+For this example, x is left blank until the function is called, at which point it takes on the value of whatever argument was passed in brackets:
 
 ## Multiple parameters
 It's important to remember that whenever we call a function, it needs to be passed the right number of values, that is one for each parameter we defined. If we forget to do this, we get an error!
@@ -77,6 +75,7 @@ This is where we use return statements. The return statement is actually very ea
 
 Once a function hits a return statement it will exit out of the call with whatever value we've given it. This value can be a variable, and expression, even another function call - here we're giving it a literal boolean. Now, depending on what value x is passed to it, is_even will output either True or False. It's ready to be used in an if statement.
 
+## Recap
 [CENTER CAM]
 Learning about functions is probably the biggest leap forward we've taken since we started all the way back with "hello world", so it's okay if it takes a little while for these new concepts to properly sink in, or if you still have questions. We're going to take just a minute to review.
 
@@ -89,6 +88,7 @@ This works no matter how many, or how few, parameters your function takes, what 
 
 And maybe now you're wondering "do we need a return statement? earlier we left it out and the function worked just fine?". Well, no! If a function has no return statement it gets evaluated to None - remember we learned about None when we looked at data types! This is just one of the reasons why having the NoneType is so important.
 
+## Summary
 [CENTER CAM]
 In computer science, we like to generalize functions as black box. That is, when we call a function, we put values in, and a value comes out again. Once we have that final value in return we can no longer know, nor should we really care, about exactly how the function works inside.
 

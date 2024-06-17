@@ -113,7 +113,7 @@ We know we can call other functions from inside a functions. You can also define
 ## Introducing recursion
 Maybe by now you've thought to ask "hang on, if we can call one function from inside another, can we call a function from inside itself!?". Yes. Yes, you can.
 
-This is called recursion, and it opens up a whole world of exciting possibilities (as well as things that could potentially go wrong) which can be super useful, but also can be difficult to get your head around. It's a topic that deserves its own topic - but we're going to briefly go over it now. 
+This is called recursion, and it opens up a whole world of exciting possibilities (as well as things that could potentially go wrong) which can be super useful, but also can be difficult to get your head around. It's something that really deserves it's own session - but we're going to briefly go over it now. 
 
 Take a look at this example:
 ``` py
@@ -122,11 +122,13 @@ def foo(i):
     i = i + 1
     foo(i)
 ```
-Maybe you think this is just like like an infinite for loop, and will keep running quite happily forever. Unfortunately its not so simple. Say we call our function foo for the first time, it increases i, and then it calls foo again. Remember that that first function call hasn't stopped yet - and it WON'T stop, not until the new foo call which IT made has stopped. And, of course, THAT one wont stop until its called ANOTHER foo, which will then call another, and another and so on all piled on top of each other.
+Maybe you think this is just like like an infinite for loop, and will keep running quite happily forever. Unfortunately it's not so simple. Say we call our function foo for the first time, it increases i, and then it calls foo again. Remember that that first function call hasn't stopped yet - and it WON'T stop, not until the new foo call which IT made has stopped. And, of course, THAT one wont stop until its called ANOTHER foo, which will then call another, and another and so on all piled on top of each other.
 
-None of these function calls ever stop - ever return - because they're all waiting for the one above them to stop. Unlike while loop iterations, all these function calls need to be kept in memory until they terminate, which we know they never will - so eventually we ARE GOING to run out of space. What happens then, usually, is that the program environment sees what's happening, calls it a stack overflow, and brings the whole thing to a stop. Sometimes this doesn't happen in time and the OS has to step in, freezing or terminating the program.
+Unlike while loop iterations, function calls need to be kept active in memory until they terminate. - so eventually we ARE GOING to run out of space. For this example, none of these function calls ever stop - ever return - because they're all waiting for the one above them to stop. Eventually, we ARE GOING to run out of space! 
 
-If you're very VERY unlucky, your entire computer might start to slow down, or even crash all together. Don't panic *[PAL'S GUIDE TO THE GALAXY: DON'T PANIC]*, modern systems are VERY unlikely to just let this happen, but still - much better to be careful.
+What happens then, usually, is that the program environment sees what's happening, calls it a stack overflow (a special kind of error), and brings the whole thing to a stop. Sometimes this doesn't happen in time and the OS has to step in, freezing or terminating the program.
+
+If you're very very VERY unlucky, your entire computer might start to slow down, or even crash all together. Don't panic *[PAL'S GUIDE TO THE GALAXY: DON'T PANIC]*, modern systems are VERY unlikely to just let this happen. But still, much better to be careful.
 
 [SIDE CAM]
 This has all been doom and gloom, does this mean recursion is just stupid and dangerous? Actually, no - we just need to make sure that the call stack doesn't just keep growing in perpetuity. We do this by introducing a "base case", a case in which a recursive call is NOT made, and the process can return. Take a look:
@@ -153,6 +155,45 @@ This call increases i to 10 - which means the base case is met, and it gets to t
 This is classic example of a base-and-recursive case function, where the call stack only grows as high as it needs to - that is it keeps growing until some condition (the base case) it met, and the whole stack sort of collapses back to the original call, passing down any return value from the top call with it.
 
 ## Type hints
+Finally, a brief word on how different data types are used in functions by Python. Say we write a Python function which is meant to take a number, divide it by two, and return it. We'll define it as follows:
+``` py
+def bazz(x):
+    x_div = x / 2
+    return x_div
+```
+How can we know that when bazz gets called x will be a number we can divide, and not some other data type we can't use like a string or a dictionary? 
+
+The short answer is that we can't. This is because Python follows a philosophy called 'dynamic typing' where the types of objects like variables and parameters don't need to be explicitly labeled in the code itself - Python is perfectly happy to wait until the program is actually running and just trust everything is the data type it's supposed to be.
+
+But if something ISN'T the right data type, say we call bazz with a boolean, then this is obviously a problem. Luckily there is something we can do to prevent this. We can introduce type hints for our parameters.
+``` py
+def bazz(x: int):
+    x_div = x / 2
+    return x_div
+```
+See how after variable x we added a colon, plus the name of the type we were expecting.
+
+So what does this actually do? The short answer is: nothing. They're really only there for you, and anyone else you're sharing the code with.
+
+The longer answer is technically nothing, that is Python runtime environment (the thing that actually makes your program run at the very core) completely ignores them. But depending on what extra tools you're using (such as your editor) these type hints can be picked up on, and used to automatically check for potential mistakes or inconsistencies in the code.
+``` py
+# Uh oh.
+bazz("twenty")
+```
+If one such mistake is flagged up, your editor may alert you to it, a bit like a spelling mistake in a word processor. Some extra tools may even stop the program running before any inconsistencies are resolved.
+
+You can also use type hints for variables...
+``` py
+number: int = 20
+```
+and the return type of functions, although the syntax is slightly different: we use this funny arrow, written with a dash and a triangle bracket.
+``` py
+def bazz(x: int) -> float:
+    x_div = x / 2
+    return x_div
+```
+
+Remember type hints are completely optional! They actually change nothing at the low level. But they are favoured by a lot of people - it can just make your code feel neater if you know what every type is meant to - especially people used to other programming languages like Java where this kind of explicit (or *static* typing) is mandatory.
 
 ## Summary
 With this we've covered everything we need to about functions. Throughout your coding career, you'll be seeing these a lot. You'll be writing your own functions of course, but you'll also have to use ones that have been written by other people. Having a solid understanding of Python functions - both how they work inside, and how they are used - is essential.

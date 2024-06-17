@@ -68,7 +68,7 @@ Okay, so maybe we leave the definition of x outside the function.
 x = 4
 
 def is_even():
-    # Reference f inside the function
+    # Reference x inside the function
     if x % 2 == 0:
         print(str(x) + " is even!")
     else:
@@ -93,7 +93,7 @@ If we want our function to not just work, but work in lots of different contexts
 `def is_even(parameter):` *[highlight brackets]*
 
 [SIDE CAM]
-A parameter is like a piece of information which needs to go into a function in order for it to know what to do, and we use them pretty much just like variables, only instead of declaring them the first time we just name them inside the brackets.
+A parameter is like a piece of information which needs to go into a function in order for it to know what to do, and we use them pretty much just like variables, only instead of declaring and defining them, we just name them inside the brackets.
 ``` py
 def say_hello(name):
     print("Hello, " + name + "!")
@@ -139,7 +139,9 @@ for i in range(3, 6):
 *[WRITER'S NOTE: Not sure if this bit is overkill, just wanted to go over these points incase some people are confused, baring in mind that for some students this is their first exposure to programming]*
 [CENTER CAME/CUT AWAY]
 *[take another look at is_even definition above]*
-We want to avoid a misconception you might have at this point: parameters are not the same as the variables we define ourselves - similar, but not the same. The important difference is in how they are declared. You might look at this function and ask how we're referencing this x *[highlight all occurrences of x in function definition, including is the def line]* which we never actually define, IE there is no `x = 3` or `x = 2 + 2` or anything, so how can we be referencing it here? The thing to remember here is that we don't need to - we declare x as a parameter in these brackets *[highlight/circle/whatever x param]* - similar to a variable, only we don't give it a definite value, x is left blank, if you like, until the function is called, at which point it takes on the value of whatever argument was passed in brackets:
+We want to avoid a misconception you might have at this point: parameters are not the same as the variables we define ourselves - similar, but not the same. The important difference is in how they are declared. While variables require an explicit value to be defined as, parameters wait to be given the value that is passed to the functions. 
+
+For this example, x is left blank until the function is called, at which point it takes on the value of whatever argument was passed in brackets:
 ```py
 is_even(5) # So function runs with x = 5
 is_even(50) # So function runs with x = 50 
@@ -187,7 +189,7 @@ def is_even(x):
 Once a function hits a return statement it will exit out of the call with whatever value we've given it. This value can be a variable, and expression, even another function call - here we're giving it a literal boolean. Now, depending on what value x is passed to it, is_even will output either True or False. It's ready to be used in an if statement.
 
 [CENTER CAM]
-## Recap and summary
+## Recap
 Learning about functions is probably the biggest leap forward we've taken since we started all the way back with "hello world" *[some little "Hello, World!" graphic here would be cute!]*, so it's okay if it takes a little while for these new concepts to properly sink in, or if you still have questions. We're going to take just a minute to review.
 
 [CUT AWAY]
@@ -222,6 +224,7 @@ exp4 = no_return(100)
 print(exp4)
 ```
 
+## Summary
 [CENTER CAM]
 In computer science, we like to generalize functions as black box. That is, when we call a function, we put values in, and a value comes out again. Once we have that final value in return we can no longer know, nor should we really care, about exactly how the function works inside.
 
