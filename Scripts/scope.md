@@ -20,7 +20,7 @@ NameError: name 'scope' is not defined
 ```
 
 ## Recapping blocks
-By now we should have looked at flow of control statements - that is our if, elifs, elses, and loops. We may even have taken our first look at functions, and how we define them. This means we should be comfortable with the idea of code blocks.
+By now we should have looked at flow of control statements - that is our if, elifs, elses, and loops. We will have also taken our first look at functions, and how we define them. This means we should be comfortable with the idea of code blocks.
 ``` py
 # Old block, boring
 my_bool = True
@@ -32,7 +32,6 @@ if my_bool:
 # Back to the old block...
 my_bool = false
 ```
-
 We know that blocks are the ways we separate out lines of code into groups - which is essential for things like flow-control statements to work, otherwise we wouldn't know which lines were part of a statement's body and which were just at the base level.
 
 We know that, in Python, we open a new block with a colon and indentation (that is, whitespace to the left of each line) and stay in that block until the indentation stops.
@@ -55,13 +54,13 @@ def foo():
 
 print("Nothing interesting, anyway.")
 ```
-And that, because blocks are nested, if block b is inside block a and code inside block b is still technically part of block a as well.
+And we know that blocks can be nested inside of each other: if block b is inside block a, all the code inside block b is still technically is included in block a.
 *[class ic blue-j style highlighting of the colours of different blocks overladed onto above]*
 
 In programming, 'scope' has got everything to do with what code is in which block.
 
 # What is scope?
-Put very simply, scope means anything your program stores for later, like variables or function definitions, it only keeps for as long as your program stays in that block.
+Put very simply, scope means anything your program stores for later, like variables or function definitions, it only keeps for as long as your program stays in a given block.
 
 But it is best explained with an example:
 ``` py
@@ -80,13 +79,13 @@ def update_store(new_val):
 update_store("buzz")
 print(store)
 ```
-See how now we've introduced a function, 'update_var' which takes one argument, and assigned that argument to the variable var. Now what happens?
+See now we've introduced a function, 'update_var' which takes one argument, and assigns that argument to the variable store. Now what happens?
 
 *[surprise, it's still "fizz"!]*
 
-Now it says that store is still fizz? How can that be, didn't we change it to be buzz? Well yes and no. You see, this is a prime example of variable scope in action - when the function tries to update the value of store, Python does not let it, instead treating it as a new variable (one that just so happens to share the same name) which is then forgotten about as soon as we exit out of the function, in favour of the old variable.
+Now it says that store is still fizz? How can that be, didn't we change it to be buzz? Well yes and no. You see, this is a prime example of variable scope in action.
 
-If this is confusing, and don't worry it can be especially when learning, let's look at it from another angle. Say we didn't define store at the star at all, and only defined it in the function:
+By the end of this session, we're going to explain why this happened, but first let's look at it from another angle. Say we didn't define store at the start at all, and only defined it in the function:
 ``` py
 def update_store(new_val):
     store = new_val
@@ -102,9 +101,44 @@ NameError: name 'store' is not defined
 ```
 It's telling us that that store 'is not defined', which is the same error message we get when we try and access a variable that doesn't exist. But surely 'store' DOES exist, we defined it in our function!
 
-But that's just the thing, we defined it in our function AND ONLY our function - not outside. This means that 'store' will be local only to the block of the body of the function. As soon as we leave that block in runtime, Python sort of 'forgets' that variable - it assumes it will no longer be needed and clears it from memory.
+But that's just the thing, we defined it in our function AND ONLY our function - not outside. This means that 'store' will be local. As soon as we leave that block in runtime, Python sort of 'forgets' that variable - it assumes it will no longer be needed and clears it from memory.
 
-We call the block in which that variable still exists - and therefore any sub-blocks - it's 'scope'. *[highlight scope of 'store' in above example]*. Scope is determined by the block in which a variable is first declared - if that block is inside the body of a function, then the cope is confined to that function.
+We call the space in which that variable still exists it's 'scope'. *[highlight scope of 'store' in above example]*.
+
+## How does it work?
+In Python, the scope of any object definition (that is functions, variables and *classes* - which we'll get to later) is determined by which block it first appears in. This is easiest to see at the base level:
+``` py
+# A global scope variable!
+my_var = "hello!"
+
+# A global scope function!
+def foo():
+    print(my_var)
+
+foo()
+
+''' OUTPUT
+hello!
+'''
+```
+Any statements written outside of any blocks - that is no indentation - are said to be 'global' and will be accessible from anywhere in the program. See how we are still able to reference the global variable "my_var" from inside a function block. That function 'foo' will also be global, meaning we can reference it later even from inside a new function definition.
+``` py
+# Later in the same program
+def bar():
+    other_var = "Inside 'bar':"
+    print(other_var)
+    foo()
+
+bar()
+
+''' OUTPUT
+Inside 'bar':
+hello!
+'''
+```
+See how now we've defined a second variable, 'other_var'. This variable is NOT global, it is defined for the first time inside bar - we say that it is 'local' to bar. But of course, we can still use it inside that function like we've done here, passing it to a print statement.
+
+
 
 We can only reference variables that are in-scope. If we try and reference any variables that have fallen out of scope, that is the program has moved on from whichever block they were first defined in, it's like they never existed.
 

@@ -6,11 +6,15 @@ class Student:
         self.name = name
         self.year = 0
         self.book = None
+    
+    def register(self, library: 'Library'):
+        # Just a call to another method, in disguise...!
+        library.register(self)
 
     def return_to_library(self, library: 'Library'):
         # This demonstrates calling a method from one object inside of another
         # Also that we can use the self object just like any other field to represent the object as a whole.
-        library.return_book(self, self.book)
+        library.return_book(self.book, self)
 
 
 # This class represents a book with a name, an author, and a year of publication
@@ -30,24 +34,25 @@ class Book:
 
 
 # This is our library class - the most complex class we've done so far!
-# But don't be intimidated, everything we do here we HAVE done before (if maybe in simple contexts)
+# But don't be intimidated, everything we do here we HAVE done before (if maybe in more simple contexts)
 # and we'll explain everything as we go along, both here in the comments, and in the video/transcript where we introduced it
 class Library:
     def __init__(self):
         # Notice the constructor doesn't take any parameters: all properties are given default values
         self.book_shelf = []
         self.members = set()
-        self.loans = []
 
     def new_book(self, title: str, author: str, year: int, idx=0):
-        # This method instances a NEW book based on the parameters given
-        # and stores it in the book shelf.
-        # The book can be put at a specific index, or is put in the front by default
-        self.book_shelf.append(Book(title, author, year))
+        book = Book(title, author, year)
+        self.book_shelf.append(book)
 
     def register(self, student: Student):
         # This method registers an existing student to be a member of the library
         # unlike new_book, this doesn't create a new Student, instead one is passed-by-reference as an argument
+        if student in self.members:
+            print(student.name + " is already a member.")
+            return
+        
         self.members.add(student)
         print(student.name + ", welcome to our library!")
 
@@ -57,31 +62,20 @@ class Library:
             print("sorry, you're not a member of the library, why not register?")
             return
 
-        # The 'pop' method of a list removes the item at that index and returns it, we're storing it here as a variable
-        book = self.book_shelf.pop(book_idx)
-        # We are storing records of each loan as a 'tuple'
-        # tuples are like list, but one cannot add, remove, or replace the items after the tuple has been instanced
-        # we are logging:
-        # * the book that was borrowed
-        # * the student who borrowed it
-        # * where they took it off the shelf
-        new_loan_log = (book, student, book_idx)
-        self.loans.append(new_loan_log)
+        if student.book:
+            print("Sorry, you already have a book on loan")
+            return
+        
+        if not self.book_shelf[book_idx]:
+            print("Sorry, that book has already been taken out")
+            return
+
+        # Take the book of the shelf
+        # Fill in the index-space we took it from with None
+        book = self.book_shelf[book_idx]
+        self.book_shelf[book_idx] = None
+    
         # We then give the book to the student
         student.book = book
-        print("Thank you, " + student.name + ", enjoy " + str(book))
 
-    def return_book(self, book, student):
-        # This method searches for a loan record of the book and student
-        for loan in self.loans:
-            # This involves iterating through our loan log using a for loop until
-            # until we find one which matches what we're looking for 
-            if loan[0] == book and loan[1] == student:
-                self.book_shelf.insert(loan[2], book)
-                student.book = None
-                print("You have returned " + book)
-                return
-
-        # If we have reached this point without returning, then we have not returned the book successfully
-        # meaning no record of the lone can have been found
-        print("sorry, we have no record of " + student.name + "borrowing " + str(book))
+        print("Thank you, " + student.name + ", enjoy " + book.title)
