@@ -42,12 +42,7 @@ Algorithms are completely scalable for as much or as little detail as you need t
 `* ... etc`
 
 Or on the other hand if 'making tea' was just one step of a much larger algorithm (say making breakfast), and we knew whoever we were writing for knew how to make tea, we could condense it down to just one line.
-`GET apple FROM fridge`
-`GET bread FROM cupboard`
-`PUT bread toaster`
-`toaster.start`
-`make_tea`
-`WAIT UNTIL toaster.done`
+
 It depends entirely on what already HAVE, what we assume we KNOW, and what we NEED. That is what we mean by the problem space. 
 
 # Bubble sort
