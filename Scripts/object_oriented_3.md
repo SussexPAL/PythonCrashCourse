@@ -220,7 +220,9 @@ campus_library.register(student4)
 # Borrowing books
 campus_library.loan_book(1, student2)
 campus_library.loan_book(2, student3)
-
+```
+We should also see that no student can borrow another book if they have already taken one out, and no student can borrow a book that someone else has taken out.
+``` py
 # Trying to borrow a second book
 campus_library.loan_book(0, student2)
 campus_library.loan_book(0, student3)
@@ -229,3 +231,12 @@ campus_library.loan_book(0, student3)
 campus_library.loan_book(1, student1)
 campus_library.loan_book(2, student4)
 ```
+
+## Summary
+This has been a run through of how we can get multiple classes to interact with each other - which we've seen by writing our first real complex, multi-part program! We should be proud! 
+
+If this felt like a lot - even if you didn't really understand all of it - do not worry! This material isn't going anywhere, you can review it and take it at your own pace as long as you need. 
+
+The complete code for what we wrote in todays session is available, its a good idea to look through it yourself whatever level of understanding you feel you're currently at. Go through it, use it, tweak it, even try re-writing it for yourself!
+
+We're almost at the end of the programming fundamentals section of this corse. We have one last feature of OO programming yet to cover - inheritance - then you'll have everything you need to begin tackling programming and moving onto machine learning for yourself.
