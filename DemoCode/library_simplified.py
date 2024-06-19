@@ -11,11 +11,6 @@ class Student:
         # Just a call to another method, in disguise...!
         library.register(self)
 
-    def return_to_library(self, library: 'Library'):
-        # This demonstrates calling a method from one object inside of another
-        # Also that we can use the self object just like any other field to represent the object as a whole.
-        library.return_book(self.book, self)
-
 
 # This class represents a book with a name, an author, and a year of publication
 # beyond that it doesn't do much exciting
@@ -24,13 +19,6 @@ class Book:
         self.title = title
         self.author = author
         self.year = year
-
-    def __str__(self) -> str:
-        # Here's another one of our magic methods!
-        # This method is called whenever we pass a book to str(), and is just used to make it look nice and human readable.
-        # Without it, it would default to a string including the object's address in memory
-        # ... very helpful if your a computer, not so much for us!
-        return self.title + " -- " + self.author + ", " + str(self.year)
 
 
 # This is our library class - the most complex class we've done so far!
