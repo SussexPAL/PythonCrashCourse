@@ -36,3 +36,16 @@ Regression Adnan <font color="green">DONE</font>
 Day 5
 
 Neural networks Adnan <font color="green">DONE</font>
+
+
+## Introduction
+
+Welcome to the Python crash course! In this course we have prepared videos and worksheets to teach you the basics of thee topics. We have split the topics into days, but go at your own pace. Maybe you speed through all the work sheets in one day, maybe it takes you a number of weeks. This page will still be here for you to use as educational material long after you start the cash course. 
+
+
+## The course
+
+### Day One
+Today we have prepared a few work sheets to get you started. 
+
+[![Test video](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE](https://www.youtube.com/watch?v=HSeTorzswvc))
