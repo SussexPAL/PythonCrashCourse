@@ -48,4 +48,4 @@ Welcome to the Python crash course! In this course we have prepared videos and w
 ### Day One
 Today we have prepared a few work sheets to get you started. 
 
-[![Test video](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)]([https://www.youtube.com/watch?v=HSeTorzswvc])
+[![Test video](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
