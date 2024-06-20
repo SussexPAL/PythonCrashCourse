@@ -3,6 +3,8 @@ This topic will be a brief one, as there's not too much to cover, but it's both:
 * an important enough topic that it is essential to understand
 * a general enough topic that it wouldn't make sense to squeeze it in anywhere else - it deserves it's own video.
 We are of course talking about scope.
+
+We've hinted at scope before, and you may seen some of its effects in your own code - maybe something didn't work the way you expected, or you got an error you didn't understand. Today we're going to break it down.
 ``` py
 def What_is_scope():
     scope = "Let's find out!"
@@ -20,19 +22,9 @@ NameError: name 'scope' is not defined
 ```
 
 ## Recapping blocks
-By now we should have looked at flow of control statements - that is our if, elifs, elses, and loops. We will have also taken our first look at functions, and how we define them. This means we should be comfortable with the idea of code blocks.
-``` py
-# Old block, boring
-my_bool = True
+We've already looked at flow of control statements like ifs and loops, and we've looked at how we define functions. This meens we should be familiar with the idea of blocks.
 
-if my_bool:
-    # New block, exiting!
-    print("Wow, blocks are so exciting!")
-
-# Back to the old block...
-my_bool = false
-```
-We know that blocks are the ways we separate out lines of code into groups - which is essential for things like flow-control statements to work, otherwise we wouldn't know which lines were part of a statement's body and which were just at the base level.
+To recap, blocks are the ways we separate out lines of code into groups. We need them for flow-control statements to work, otherwise we wouldn't know which lines were part of a statement's body and which were just at the base level.
 
 We know that, in Python, we open a new block with a colon and indentation (that is, whitespace to the left of each line) and stay in that block until the indentation stops.
 
@@ -59,54 +51,8 @@ And we know that blocks can be nested inside of each other: if block b is inside
 
 In programming, 'scope' has got everything to do with what code is in which block.
 
-# What is scope?
-Put very simply, scope means anything your program stores for later, like variables or function definitions, it only keeps for as long as your program stays in a given block.
-
-But it is best explained with an example:
-``` py
-store = "fizz"
-if store == "fizz":
-    store = "buzz"
-print(store)
-```
-What do you think this program will print? It's not a trick question: the answer is "buzz". *[running through the code]* We declare a variable, our 'store' at the start, we then enter into a new block (the body of an if statement) where that variable gets redefined. When we print it out, this variable still has it's new value.
-
-Let's change the code a bit:
-``` py
-store = "fizz"
-def update_store(new_val):
-    store = new_val
-update_store("buzz")
-print(store)
-```
-See now we've introduced a function, 'update_var' which takes one argument, and assigns that argument to the variable store. Now what happens?
-
-*[surprise, it's still "fizz"!]*
-
-Now it says that store is still fizz? How can that be, didn't we change it to be buzz? Well yes and no. You see, this is a prime example of variable scope in action.
-
-By the end of this session, we're going to explain why this happened, but first let's look at it from another angle. Say we didn't define store at the start at all, and only defined it in the function:
-``` py
-def update_store(new_val):
-    store = new_val
-update_store("buzz")
-print(store)
-```
-You'll see that this time, no only do we not get to see "buzz" printed out, we get an error!
-```
-File "c:\Users\PAL\learn_python\scope.py", line 4, in <module>
-print(store)
-      ^^^^^
-NameError: name 'store' is not defined
-```
-It's telling us that that store 'is not defined', which is the same error message we get when we try and access a variable that doesn't exist. But surely 'store' DOES exist, we defined it in our function!
-
-But that's just the thing, we defined it in our function AND ONLY our function - not outside. This means that 'store' will be local. As soon as we leave that block in runtime, Python sort of 'forgets' that variable - it assumes it will no longer be needed and clears it from memory.
-
-We call the space in which that variable still exists it's 'scope'. *[highlight scope of 'store' in above example]*.
-
-## How does it work?
-In Python, the scope of any object definition (that is functions, variables and *classes* - which we'll get to later) is determined by which block it first appears in. This is easiest to see at the base level:
+## What is scope?
+In short, scope is about when and for how long Python stores things in memory. In Python, the scope of any definition (that is functions, variables and *classes* - which we'll get to later) is determined by which block it first appears in. This is easiest to see at the base level:
 ``` py
 # A global scope variable!
 my_var = "hello!"
@@ -121,12 +67,13 @@ foo()
 hello!
 '''
 ```
-Any statements written outside of any blocks - that is no indentation - are said to be 'global' and will be accessible from anywhere in the program. See how we are still able to reference the global variable "my_var" from inside a function block. That function 'foo' will also be global, meaning we can reference it later even from inside a new function definition.
+Any statements written outside of any blocks - that is no indentation - are said to be 'global' and will be accessible from anywhere in the program. See how we are still able to reference the global variable "my_var" from inside a function block. 
+
+That function 'foo' is also global, so we can call it from anywhere in the program.
 ``` py
 # Later in the same program
 def bar():
-    other_var = "Inside 'bar':"
-    print(other_var)
+    print("inside 'bar':")
     foo()
 
 bar()
@@ -136,55 +83,60 @@ Inside 'bar':
 hello!
 '''
 ```
-See how now we've defined a second variable, 'other_var'. This variable is NOT global, it is defined for the first time inside bar - we say that it is 'local' to bar. But of course, we can still use it inside that function like we've done here, passing it to a print statement.
 
+Now let's look at another example. We're doing to define a new function, and we're going to decare a new variable inside it. Watch what happens if we try to reference that variable outside the function.
+``` py
+def bazz():
+    bazz_var = "Hello from bazz!"
+    print(bazz_var)
 
+bazz()
+print(bazz_var)
 
-We can only reference variables that are in-scope. If we try and reference any variables that have fallen out of scope, that is the program has moved on from whichever block they were first defined in, it's like they never existed.
-
-## Some more examples
-See this code:
-```py
-x = 2
-y = 3
-def foo():
-    y = x + y
-    print(x)
-    print(y)
-    print("added:")
-print(z)
-
-'''
-2
-3
-added:
+''' OUTPUT
+Hello from bazz!
 Traceback (most recent call last):
-  File "c:\Users\PAL\learn_python\scope.py", line 9, in <module>
-    print(z)
-          ^
-NameError: name 'z' is not defined
+  File "c:\Users\PAL\learn_python\scope.py", line 8, in <module>
+    print(bazz_var)
+          ^^^^^^^^
+
+NameError: name 'bazz_var' is not defined
 '''
 ```
-You'll se that when we run this we, of course, get an 'is not defined' error. As you may have spotted, this is because we tried to reference the variable 'z' at the top-most, or 'global' scope, when we only define it in the scope of function 'foo'.
+We get an error telling us that 'bazz_var' is not defined. But surely it must be? We declared it earlier, and we were able to reference it again at least once inside the function okay *[highlight the printed line in the output, before the error, as it might be easy to miss]*, why is it now a problem?
 
-But not before that function runs, and successfully accesses the variables x and y which ARE defined at the global scope. Remember that scopes, like the block's they've tied to, are nested.
-*[Highlight different scopes in different coloured overlays, along with which variables they have]*
-Worth noting is that functions are also included in scopes, so here the function 'foo' is part of the global scope.
+This is because 'bazz_var' is not global. We defined it in bazz, which means we can only use it in bazz. It's a 'local' variable. Once the program exits, or 'returns', out of a function, all local variables are cleared from memory. The program sort of 'forgets' them, because it assumes they're no longer needed.
 
-Let's go back to our example from earlier.
+Py the time the program we just looked at gets to line 8 - the problem line - 'bazz_var' is gone. It only ever existed inside bazz.
+
+So why does Python do this? Well, there are a few reasons. The main one is to save space and stop programs taking up too much memory when they run. All those variables and function definitions DO NEED to be stored somewhere. As programs can grow to be very large, with potentially hundreds of functions and thousands of variables, can you imagine if the computer had to hold onto all of them at once? Much better to only load them when they're needed, and clear them away once they're not.
+
+The second is neatness. variables being local to the scope of a function means that multiple variables in different scopes can share the same name, without having to worry about one overriding the other. It also just encourages good practice when designing and writing your code.
+
+## Global vs Local
+Take a look at this:
 ``` py
 store = "fizz"
 def update_store(new_val):
     store = new_val
 update_store("buzz")
 print(store)
+
+''' OUTPUT
+fizz
+'''
 ```
-We know why this wouldn't work if we remove the top line, but surely as 'store' is part of the global scope, it should be fine? Well, no. You can access variables from a higher scope, and you can do certain operations to alter them (like adding elements to a list) but what you can't do is completely redefine or replace them.
+You might have been expecting it to print out 'buzz', after all, we called the function 'update_store' the change the value of our variable to buzz, why is it now back to fizz again?
 
-We can try, we won't get an error, but it will be treaded like a new variable in memory; a new variable which will eventually 'fall out' of scope in favour of the old one.
+Sure if we removed that top line, 'store' would be a local variable and we'd get an error if we tried to reference it out of scope. But surely as 'store' is global, it should be fine? Well, no. You can access variables from a higher scope, and you can do certain operations to alter them (like adding elements to a list) but what you can't do is completely redefine or replace them.
+
+This means that for immutable data types (like strings, booleans, and numbers), we cannot change their values.
+
+We can try, we won't get an error, but it will be treaded like a new variable in memory; a new variable which will eventually be cleared away in favour of the old one.
 *[highlight above scopes, annotate variable names with 'new' and 'original' score]*
+So far as the computer is concerned, we've defined a completely new, local variable. One which coincidentally shares the name as a global one. But it's not the same.
 
-But what if we need to? Well generally speaking we don't, if a function is intended to override a variable, its more common to have it return that value, so it can be assigned at the right scope.
+But what if we need to replace a global variable at the local level? Well generally speaking we don't. If a function is intended to override a variable, its more common to have it return that value, so it can be assigned at the right scope.
 ``` py
 x = 1
 def add_one(y):
@@ -201,7 +153,7 @@ def x_and_y():
     global x
     global y
     x = x + 1
-    y = x + 1
+    y = 3
 
 x_and_y()
 
@@ -210,8 +162,49 @@ print(y)
 ```
 Although, overusing this feature, or really using it at all if it isn't absolutely necessary, is generally considered a bad habit as it can lead to some pretty messy code. By all means have a play around with it to see how it works, but try not to rely on it.
 
-## Summary
-Understanding scope is vital to making sure your code will behave the way you expect it. Scope works the way it does to help program scale better as they get larger and start taking up more memory - it also serves to allow and encourage better practices when programming.
+## What about if, else, and loops?
+Do flow-control statements have their own local scopes, too? After all, they use code blocks just like function definitions.
 
-Remember that in Python, scope is determined by the blocks of functions and classes (which we'll get to later). Ideally, if you've designed your code right, scope should never be a problem - but of course even the most experienced of us get caught out occasionally! But the more practice you get, the better!  
+Well, actually no. Some languages, like java...
+``` java
+if (1 + 2 == 3) {
+    String ohNo = "Oh no! This won't work!"
+}
+System.out.println(ohNo)
+```
+... this is the case, but Python only scopes objects inside functions and classes. 
+``` py
+if 1 + 2 == 3:
+    phew = "Phew, that worked!"
+
+print(phew)
+```
+
+But a lot of time it's a good idea to write your code as if they do. Remember that the whole point of flow-control statements like if is that they're flexible. They can run as you need, as many times as you want, or even not at all. If your 'if' statement is meant do define some important variable you need to reference later, and that if statement ends up not running, you're stuck!
+``` py
+if 2 + 2 == 5:
+    uh_oh = "Uh oh! Not again!"
+
+print(uh_oh)
+'''
+Traceback (most recent call last):
+  File "c:\Users\PAL\learn_python\scope.py", line 6, in <module>
+    print(uh_oh)
+          ^^^^^
+NameError: name 'uh_oh' is not defined
+'''
+```
+Better define them before, with some placeholder or default value
+``` py
+aah = ""
+if 2 + 2 == 5:
+    aah = "Aah, much better!"
+
+print(aah)
+```
+
+## Summary
+This all works the way it does to help program scale better as they get larger and start taking up more memory. Understanding scope is vital to making sure your code will behave the way you expect it.
+
+Ideally, if we've designed our code right, scope should never be a problem - but of course even the most experienced of us get caught out occasionally! But the more practice we get, the better!  
 
