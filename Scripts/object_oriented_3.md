@@ -1,4 +1,4 @@
-# Further OO programming
+# Object Oriented Programming part 3 - Class interaction
 This session, we're going to take a look using multiple classes together in a single program, and how methods can allow different objects to interact with each other. We wont't actually be covering any new ground, that is we won't be introducing any new features we haven't seen already, but we'll be using them in new and more complex ways. 
 
 In fact, we'll be seeing our first real emergent complexity from everything we've learned so far working together in a single relatively big, program.

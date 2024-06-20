@@ -12,7 +12,7 @@ print(scope)
 
 '''
 Traceback (most recent call last):
-  File "c:\Users\PAL\python\scope.py", line 5, in <module>
+  File "c:\Users\PAL\learn_python\scope.py", line 5, in <module>
     print(scope)
           ^^^^^
 NameError: name 'scope' is not defined
@@ -94,7 +94,7 @@ print(store)
 ```
 You'll see that this time, no only do we not get to see "buzz" printed out, we get an error!
 ```
-File "c:\Users\PAL\python\scope.py", line 4, in <module>
+File "c:\Users\PAL\learn_python\scope.py", line 4, in <module>
 print(store)
       ^^^^^
 NameError: name 'store' is not defined
@@ -159,7 +159,7 @@ print(z)
 3
 added:
 Traceback (most recent call last):
-  File "c:\Users\PAL\python\scope.py", line 9, in <module>
+  File "c:\Users\PAL\learn_python\scope.py", line 9, in <module>
     print(z)
           ^
 NameError: name 'z' is not defined
