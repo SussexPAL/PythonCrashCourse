@@ -46,6 +46,6 @@ See that the `year` parameter has been removed all together, but the `self.year`
 
 [CENTER CAM]
 ## roundup
-This pretty much covers the basics of OO in Python, although we've only just scratched the surface of how we can actually apply them. Again, practice is key: having a play around, and doing some simple challenges with what we've show so far is a great way to digest these concepts.
+This pretty much covers the basics of OO in Python, although we've only just scratched the surface of how we can actually apply them. Again, practice is key: having a play around, and doing some simple challenges with what we've shown so far is a great way to digest these concepts.
 
-In the next few sessions, we'll explore "passing by reference" and "passing by value", how their different, and when each is used. Then, we'll move on to some more complex use of Objects, and interaction between multiple classes.
+In the next few sessions, we'll explore "passing by reference" and "passing by value", how they're different, and when each is used. Then, we'll move on to some more complex use of Objects, and interaction between multiple classes.
