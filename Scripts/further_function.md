@@ -20,14 +20,14 @@ def register(username, fname, lname):
     return True
 
 ```
-Here is an example of a simple which takes three arguments - it's meant to be registering a new user in some system or database. Obviously a real life example would be a lot more compicated than this, but this is just meant to be an illustration. This function takes a username, a first name, and a last name. It then checks to see if that username has already been taken. If it hasn't, the new user's details are stored as a list in the dictionary 'accounts' with the username as the key, and the function returns true - as, in successful. If the username HAS been taken the function exits early and returns false - as in, no something went wrong.
+Here is an example of a simple function which takes three arguments. This function takes a username, a first name, and a last name. It then checks to see if that username has already been taken. If it hasn't, the new user's details are stored as a list in the dictionary 'accounts' with the username as the key, and the function returns true - as in 'yes, executed successfully'. If the username HAS been taken the function exits early and returns false - as in, 'no something went wrong'.
 
 *[SIDE NOTE: Having true/false return values as success or failure codes from functions is very useful and quite common!]*
 
 [CENTER CAM]
 So far so good - but it's not very flexible; it can ONLY take two argument, can't take less, can't take more - always two. Maybe that's not so much of a problem now, but what if we wanted to extend this to take extra optional details like phone number or email address, or what if we wanted the option to override existing usernames some but not all of the time.
 
-Well we could just define multiple functions. This would work sure, and in some cases it's enough, but all of those functions would have to have different names - you'd need to impliment them all seperatly and then remember which one was which when you needed them. You might end up with...
+Well we could just define multiple functions. This would work sure, and in some cases it's enough, but all of those functions would have to have different names - you'd need to implement them all separately and then remember which one was which when you needed them. You might end up with...
 * register(username, fname, lname)
 * register_and_override(username, fname, lname)
 * register_with_phone(username, fname, lname, phone_no)
@@ -43,7 +43,7 @@ Key word arguments - sometimes called "kwargs", opposed to "args": arguments - a
 def foo(a_kwarg=0):
     # etc...
 ```
-That is,the same as regular arguments, but with an equals and a defualt value. We can have as many key-word arguments as we want, we can even include both regular arguments and key-word arguments - although if we do this all your mandatory arguments must come first.
+They are written the same as regular arguments, but with an equals and a default value. We can have as many key-word arguments as we want, we can even include both regular arguments and key-word arguments - although if we do this all your non keyword arguments must come first.
 ```py
 def bar(an_arg, a_kwarg=0, another_kwarg=1):
     # etc...
@@ -62,9 +62,9 @@ def register(username, fname, lname, phone="n/a", email="n/a"):
     print("registered okay!")
     return True
 ```
-Here, we've given both new parameters defualt values of "n/a", as in not aplicaple, which seems like a sensible defualt value. You'll now see that we can call this function with or without these last two arguments.
+Here, we've given both new parameters default values of "n/a", as in not applicable. You'll now see that we can call this function with or without these last two arguments.
 ``` py
-register("mrBlueBox", "David", "Tennant")
+register("mrBlueBox", "David", "Tenant")
 register("I<3onions", "Jean", "Pierre", "4321 5678", "chef@kitchen.com")
 
 # HELLO EDITOR! THIS IS THE OUTPUT BTW!!!
@@ -74,17 +74,17 @@ for item in accounts.items():
 '''
 registered okay!
 registered okay!
-mrBlueBox ['David', 'Tennant', 'n/a', 'n/a']
+mrBlueBox ['David', 'Tenant', 'n/a', 'n/a']
 I<3onions ['Jean', 'Pierre', '4321 5678', 'chef@kitchen.com']
 '''
 ```
-But what if we wanted to include email and NOT phone number, surely that's impossible because the email parameter hast to come after the phone number. Well actually no, this is whats so good about kwargs - you can write them out of order in the function call, so long as you explicitly state which one is which using its name and brackets.
+But what if we wanted to include email and NOT phone number, surely that's impossible because the email parameter hast to come after the phone number. Well actually no, this is whats so good about kwargs - you can write them out of order in the function call, so long as you explicitly state which one is which by name.
 ``` py
 register("Buggy", "Ada", "Lovelace", email="love.ada@thepast.com")
 ```
-This is why they're called key-word arguments, because the name of the parameter is important as youre likely to be using it a lot!
+This is why they're called key-word arguments!
 
-A common use for kwargs is to add extra options to functions, often in the form of booleans. Let's give the option to override existing usernames:
+A common use for kwargs is to add extra options to functions, sometimes in the form of booleans. Let's give the option to override existing usernames:
 ``` py
 def register(username, fname, lname, phone="n/a", email="n/a", override=False):
     if (username in accounts) and not override:
@@ -108,12 +108,14 @@ mrBlueBox ['Mathew', 'Smith', 'n/a', 'n/a']
 
 [CENTER CAM]
 ## Internal functions
-We know we can call other functions from inside a functions. You can also define functions within functions - they're called 'internal' or 'nested' functions. This can be super useful if the body of your outer function has to do something relatively complex multiple times - the same reason as why you'd use functions anywhere else, really. Keep in mind though that because of the rules of scoping, an inner function won't be usable anywhere outside its outer function. A lot of the time its easier to just define what would have been the inner function at the outermost (or 'global') scope. However, nested functions can be vey useful, and good for organization, just so long as your *absolutely sure* you won't need them anywhere else.
+We know we can call other functions from inside a functions. You can also define functions within functions - they're called 'internal' or 'nested' functions. This can be super useful if the body of your outer function has to do something relatively complex multiple times - the same reason as why you'd use functions anywhere else, really.
+
+Keep in mind though that an inner function won't be usable anywhere outside its outer function. However, nested functions can be vey useful, and good for organization, just so long as your *absolutely sure* you won't need them anywhere else.
 
 ## Introducing recursion
 Maybe by now you've thought to ask "hang on, if we can call one function from inside another, can we call a function from inside itself!?". Yes. Yes, you can.
 
-This is called recursion, and it opens up a whole world of exciting possibilities (as well as things that could potentially go wrong) which can be super useful, but also can be difficult to get your head around. It's something that really deserves it's own session - but we're going to briefly go over it now. 
+This is called recursion, and it opens up a whole world of exciting possibilities (as well as things that could potentially go wrong) which can be super useful. It's something that really deserves it's own session - but we're going to briefly go over it now. 
 
 Take a look at this example:
 ``` py
@@ -122,16 +124,16 @@ def foo(i):
     i = i + 1
     foo(i)
 ```
-Maybe you think this is just like like an infinite for loop, and will keep running quite happily forever. Unfortunately it's not so simple. Say we call our function foo for the first time, it increases i, and then it calls foo again. Remember that that first function call hasn't stopped yet - and it WON'T stop, not until the new foo call which IT made has stopped. And, of course, THAT one wont stop until its called ANOTHER foo, which will then call another, and another and so on all piled on top of each other.
+Maybe you think this is just like like an infinite while loop, and will keep running quite happily forever. Unfortunately it's not so simple. Say we call our function foo for the first time, it increases i, and then it calls foo again. Remember that that first function call hasn't stopped yet - and it WON'T stop, not until the new foo call which IT made has stopped. And, of course, THAT one wont stop until its called ANOTHER foo, which will then call another, and another and so on all piled on top of each other.
 
-Unlike while loop iterations, function calls need to be kept active in memory until they terminate. - so eventually we ARE GOING to run out of space. For this example, none of these function calls ever stop - ever return - because they're all waiting for the one above them to stop. Eventually, we ARE GOING to run out of space! 
+Unlike while loop iterations, function calls need to be kept active in memory until they terminate. For this example, none of these function calls ever stop - ever return - because they're all waiting for the one above them to stop. Eventually, we ARE GOING to run out of space! 
 
 What happens then, usually, is that the program environment sees what's happening, calls it a stack overflow (a special kind of error), and brings the whole thing to a stop. Sometimes this doesn't happen in time and the OS has to step in, freezing or terminating the program.
 
 If you're very very VERY unlucky, your entire computer might start to slow down, or even crash all together. Don't panic *[PAL'S GUIDE TO THE GALAXY: DON'T PANIC]*, modern systems are VERY unlikely to just let this happen. But still, much better to be careful.
 
 [SIDE CAM]
-This has all been doom and gloom, does this mean recursion is just stupid and dangerous? Actually, no - we just need to make sure that the call stack doesn't just keep growing in perpetuity. We do this by introducing a "base case", a case in which a recursive call is NOT made, and the process can return. Take a look:
+This has all been doom and gloom, does this mean recursion is just stupid and dangerous? Actually, no - we just need to make sure that the call stack doesn't just keep growing forever. We do this by introducing a "base case", a case in which a recursive call is NOT made, and the process can return. Take a look:
 ``` py
 def foo(i):
     print(i)
@@ -148,9 +150,9 @@ print(foo(1))
 ```
 All we've done here is introduce an if statement that will return out of the function once i reaches 10. Let's walk through it in action:
 
-The first time we call foo we pass it a value of i=1. It increases this to 2, and checks to see if it's greater than or equal to 10. It's not - so it calls foo again with i=2. This new call then does the same, increasing i to 3, and making a new call - and so on this continues until finally a call to foo is made with i = 9.
+The first time we call foo we pass it a value of i=1. It increases this to 2, and checks to see if it's greater than or equal to 10. It's not - so it calls foo again with i=2. This new call then does the same, increasing i to 3, and making a new call - and so on, and so on, until finally a call to foo is made with i = 9.
 
-This call increases i to 10 - which means the base case is met, and it gets to terminate without making another call: it returns 10. You can see that this value then gets returned all the way down the call stack until the call at the bottom finally terminates. We're done,and we get our final value - 10.
+This last call increases i to 10 - which means the right condition is met, and it gets to terminate without making another call: it returns 10. You can see that this value then gets returned all the way down the call stack until the call at the bottom finally terminates. We're done, and we get our final value - 10.
 
 This is classic example of a base-and-recursive case function, where the call stack only grows as high as it needs to - that is it keeps growing until some condition (the base case) it met, and the whole stack sort of collapses back to the original call, passing down any return value from the top call with it.
 
@@ -163,9 +165,9 @@ def bazz(x):
 ```
 How can we know that when bazz gets called x will be a number we can divide, and not some other data type we can't use like a string or a dictionary? 
 
-The short answer is that we can't. This is because Python follows a philosophy called 'dynamic typing' where the types of objects like variables and parameters don't need to be explicitly labeled in the code itself - Python is perfectly happy to wait until the program is actually running and just trust everything is the data type it's supposed to be.
+This is tricky because Python follows a philosophy called 'dynamic typing' where the types of objects like variables and parameters don't need to be explicitly labeled in the code itself - Python is perfectly happy to wait until the program is actually running and just trust everything is the data type it's supposed to be.
 
-But if something ISN'T the right data type, say we call bazz with a boolean, then this is obviously a problem. Luckily there is something we can do to prevent this. We can introduce type hints for our parameters.
+But if something ISN'T the right data type, say we call bazz with a boolean, then this is obviously a problem - we can't divide a boolean. Luckily there is something we can do to prevent this. We can introduce type hints for our parameters.
 ``` py
 def bazz(x: int):
     x_div = x / 2
@@ -193,7 +195,7 @@ def bazz(x: int) -> float:
     return x_div
 ```
 
-Remember type hints are completely optional! They actually change nothing at the low level. But they are favoured by a lot of people - it can just make your code feel neater if you know what every type is meant to - especially people used to other programming languages like Java where this kind of explicit (or *static* typing) is mandatory.
+Remember type hints are completely optional! They actually change nothing at the low level. But they are favoured by a lot of people - it can just make your code feel neater if you know what every type is meant to be - especially for people used to other programming languages like Java where this kind of explicit (or *static* typing) is mandatory.
 
 ## Summary
 With this we've covered everything we need to about functions. Throughout your coding career, you'll be seeing these a lot. You'll be writing your own functions of course, but you'll also have to use ones that have been written by other people. Having a solid understanding of Python functions - both how they work inside, and how they are used - is essential.

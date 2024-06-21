@@ -22,7 +22,7 @@ NameError: name 'scope' is not defined
 ```
 
 ## Recapping blocks
-We've already looked at flow of control statements like ifs and loops, and we've looked at how we define functions. This meens we should be familiar with the idea of blocks.
+We've already looked at flow of control statements like ifs and loops, and we've looked at how we define functions. This means we should be familiar with the idea of blocks.
 
 To recap, blocks are the ways we separate out lines of code into groups. We need them for flow-control statements to work, otherwise we wouldn't know which lines were part of a statement's body and which were just at the base level.
 
@@ -107,7 +107,7 @@ We get an error telling us that 'bazz_var' is not defined. But surely it must be
 
 This is because 'bazz_var' is not global. We defined it in bazz, which means we can only use it in bazz. It's a 'local' variable. Once the program exits, or 'returns', out of a function, all local variables are cleared from memory. The program sort of 'forgets' them, because it assumes they're no longer needed.
 
-Py the time the program we just looked at gets to line 8 - the problem line - 'bazz_var' is gone. It only ever existed inside bazz.
+By the time the program we just looked at gets to line 8 - the problem line - 'bazz_var' is gone. It only ever existed inside bazz.
 
 So why does Python do this? Well, there are a few reasons. The main one is to save space and stop programs taking up too much memory when they run. All those variables and function definitions DO NEED to be stored somewhere. As programs can grow to be very large, with potentially hundreds of functions and thousands of variables, can you imagine if the computer had to hold onto all of them at once? Much better to only load them when they're needed, and clear them away once they're not.
 
@@ -165,7 +165,7 @@ Although, overusing this feature, or really using it at all if it isn't absolute
 ## What about if, else, and loops?
 Do flow-control statements have their own local scopes, too? After all, they use code blocks just like function definitions.
 
-Well, actually no. Some languages, like java...
+Well, actually no. In some languages, like java...
 ``` java
 if (1 + 2 == 3) {
     String ohNo = "Oh no! This won't work!"
@@ -194,7 +194,7 @@ Traceback (most recent call last):
 NameError: name 'uh_oh' is not defined
 '''
 ```
-Better define them before, with some placeholder or default value
+Better define them before, with some placeholder or default value, just in case.
 ``` py
 aah = ""
 if 2 + 2 == 5:

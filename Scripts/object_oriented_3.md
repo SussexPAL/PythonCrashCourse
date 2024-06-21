@@ -8,7 +8,7 @@ Also it's a good idea to make sure you are aware of the difference between passi
 ## Defining multiple classes
 As you probably assumed, we can absolutely define multiple classes in the same Python program, just like how we can define multiple functions or variables. Let's add some more classes to our student example:
 
-Say in our model model university program we don't just want students, we want books and a library as well. Let's consider writing classes for each.
+Say in our model university program we don't just want students, we want books and a library as well. Let's consider writing classes for each.
 
 *[cut away to class diagrams here]*
 Our books should have:
@@ -77,9 +77,9 @@ First let's allow students to register to a library. We will do this by adding a
         self.members.add(student)
         print(student.name + ", welcome to our library!")
 ```
-This method will take a Student object (can you see that type parameter?) and checks to see if they are already a member using the `in` keyword against the `self.members` set. Not they are added to it, otherwise the method returns early. In either case a brief message is printed out.
+This method will take a Student object (can you see that type hint in the parameter?) and checks to see if they are already a member using the `in` keyword against the `self.members` set. Not they are added to it, otherwise the method returns early. In either case a brief message is printed out.
 
-We could also write this as a method of the Student class.
+We could also have implemented this same functionality by writing a method of the Student class. Let's see what that might have looked like.
 ``` py
     # In the Student class
     def register(self, library: Library):
@@ -90,7 +90,7 @@ We could also write this as a method of the Student class.
         library.members.add(self)
         print("I have now joined the library")
 ```
-See how similar it looks. We don't need both, just one, but if you do want to include both it a good idea to have one just be a call to the other in disguise. This saves you work, and prevents discrepancies.
+See how similar it looks - because it is doing the same thing, just from a different place. We don't need both, just one, but if you do want to include both it a good idea to have one just be a call to the other in disguise. This saves you work, and prevents discrepancies.
 ``` py
     # In the Student class
     def register(self, library: Library):
@@ -105,7 +105,7 @@ Next, we want to populate a library with books. We're going to write this one a 
         book = Book(title, author, year) 
         self.book_shelf.append(book)
 ```
-The actual variable 'book' will only stay in memory as a pointer for as long as the method is being run. But the actual OBJECT will persist, as it gets added to 'book_shelf'. So long as the library object stays in scope, the book will too.
+The actual variable 'book' is local, and so won't stay stay in memory outside of this method. But the actual OBJECT will persist, as it gets added to 'book_shelf', a property of the library. So long as the library object stays in scope, the book will too.
 
 Now we're going to add a method to allow a student to borrow a book from a library. Again, there are different ways we could do this. We could have this be:
 * a method of the student `student.borrow(book, library)`
@@ -202,7 +202,7 @@ campus_library.new_book("Waiting for Blender", "Delia Jeanna", 2015)
 campus_library.new_book("Waiting for Linux Desktop", "Zoë B'Text", 2016)
 ```
 
-We should see that the library will not allow book to be borrowed by students before they have registered - but once they have registered they may borrow up to one book at a time.
+We should see that the library will not allow books to be borrowed by students before they have registered - but once they have registered they may borrow up to one book at a time.
 ``` py
 # CALLING METHODS
 # Trying to borrow without registering
@@ -219,7 +219,7 @@ campus_library.register(student4)
 campus_library.loan_book(1, student2)
 campus_library.loan_book(2, student3)
 ```
-We should also see that no student can borrow another book if they have already taken one out, and no student can borrow a book that has been taken out b someone else.
+We should also see that no student can borrow another book if they have already taken one out, and no student can borrow a book that has been taken out by someone else.
 ``` py
 # Trying to borrow a second book
 campus_library.loan_book(0, student2)
@@ -233,7 +233,7 @@ campus_library.loan_book(2, student4)
 ## Summary
 This has been a run through of how we can get multiple classes to interact with each other - which we've seen by writing our first real complex, multi-part program!
 
-If this felt like a lot - if you didn't understand all of it at once - do not worry! We've come a long way from "Hello, World!", and this material isn't going anywhere, you can review it and take it at your own pace as long as you need. 
+If this felt like a lot - even if you didn't understand all of it at once - do not worry! We've come a long way from "Hello, World!", and this material isn't going anywhere, you can review it and take it at your own pace as long as you need. 
 
 The complete code for what we wrote in todays session is available, its a good idea to look through it yourself whatever level of understanding you feel you're currently at. Go through it, use it, tweak it, even try re-writing it for yourself!
 
