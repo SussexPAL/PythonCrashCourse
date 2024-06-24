@@ -36,7 +36,7 @@ Let's now modify our student class so that they can have a book of their own. Fo
 
 This is as simple as introducing a new field to the class definition. Note that we haven't given it as a constructor parameter, and by default the property is 'None'. A newly created student will have no book.
 
-We can set objects to be properties of other objects! In fact classes, once they've been properly defined, can be though of just like any other data type, and used in much the same way. See also that we've used type hinting, saying we want this property to be of type 'Book' - we use this syntax to type-hint variables.
+We can set objects to be properties of other objects! In fact classes, once they've been properly defined, can be thought of just like any other data type, and used in much the same way. See also that we've used type hinting, saying we want this property to be of type 'Book' - we use this syntax to type-hint variables.
 
 Finally, let's write our library class. Starting as usual with the constructor.
 
@@ -108,4 +108,4 @@ If this felt like a lot - even if you didn't understand all of it at once - do n
 
 The complete code for what we wrote in todays session is available, its a good idea to look through it yourself whatever level of understanding you feel you're currently at. Go through it, use it, tweak it, even try re-writing it for yourself!
 
-We're almost at the end of the programming fundamentals section of this corse. We have one last feature of OO programming yet to cover - inheritance - then you'll have everything you need to begin tackling programming and moving onto machine learning for yourself.
+We're almost at the end of the programming fundamentals section of this course. We have one last feature of OO programming yet to cover - inheritance - then you'll have everything you need to begin tackling programming and moving onto machine learning for yourself.
