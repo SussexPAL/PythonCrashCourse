@@ -107,7 +107,7 @@ Overriding is essentially redefining, or replacing an original definition with a
 
 When you override an attribute, it will be overridden for that subclass only - the superclass will be unchanged.
 
-In Python, you don't need any special syntax for this, it written just the same as any other method definition. But you do need to make sure you've gotten the name right - if the name doesn't match the original method or property of the superclass, you won't have overridden anything, you'll have just defined something new and the original will still be there.
+In Python, you don't need any special syntax for this, it's written just the same as any other method definition. But you do need to make sure you've gotten the name right - if the name doesn't match the original method or property of the superclass, you won't have overridden anything, you'll have just defined something new and the original will still be there.
 
 Re-writing a an overridden method is good if you want to completely change how it works, but here it seems kind of unnecessary: we're just changing one thing after all. Remember what we've said before about wanting to reduce redundancy in our code: "say something once, why say it again". Luckily there is a solution.
 

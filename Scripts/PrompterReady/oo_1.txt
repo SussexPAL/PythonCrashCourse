@@ -6,7 +6,7 @@ We've explored the base data types we'll be using, and some of the more high-lev
 
 One of the last fundamental features of Python we've yet tackle is that of classes and object oriented programming
 
-Using classes and object, we can define ways to structure data, and run functions, or use ones that have been defined by other developers
+Using classes and objects, we can define ways to structure data, and run functions, or use ones that have been defined by other developers
 
 This is an invaluable tool for designing and organizing our programs in a way that is both efficient for the computer at the low level, and intuitive and easy to visualize for us at a high level
 
@@ -90,7 +90,7 @@ Firstly, 'init' is short for initializer (which is another term for constructor)
 
 Next, the *self* field. As you may be able to guess, 'self' refers to the individual object of the class in question. In the case of the 'init' constructor method, this is the newly created object which we want to fill in the fields of. Every method of a class (with a few exceptions we won't be covering today) requires the 'self' object to be the first parameter of the method, even if the method doesn't have any other parameters otherwise. 
 
-Fun fact unlike 'init' and the other magic methods, we don't *need* to call it 'self', we can give it any valid name we want it it will still work, however out of convection 'self' is the name that's used pretty much everywhere, so it's highly recommended that we stick to it.
+Fun fact unlike 'init' and the other magic methods, we don't *need* to call it 'self', we can give it any valid name we want and it will still work, however out of convention 'self' is the name that's used pretty much everywhere, so it's highly recommended that we stick to it.
 
 Lastly, let's break down the syntax of the body of the method, and why it looks like we're defining a variable as itself. We'll focus on the first line as both lines work the same way. the key thing to note is that the variable we're assigning to isn't just 'name', it's `self.name`! 
 
