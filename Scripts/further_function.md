@@ -67,11 +67,10 @@ Here, we've given both new parameters default values of "n/a", as in not applica
 register("mrBlueBox", "David", "Tenant")
 register("I<3onions", "Jean", "Pierre", "4321 5678", "chef@kitchen.com")
 
-# HELLO EDITOR! THIS IS THE OUTPUT BTW!!!
 for item in accounts.items():
     print(item[0], item[1])
 
-'''
+''' OUTPUT
 registered okay!
 registered okay!
 mrBlueBox ['David', 'Tenant', 'n/a', 'n/a']
@@ -139,7 +138,7 @@ def foo(i):
     print(i)
     i = i + 1
 
-    if i >= 10:
+    if i >= 5:
         # This is our base case
         print("DONE!")
         return i

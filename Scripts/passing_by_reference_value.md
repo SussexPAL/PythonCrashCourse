@@ -44,12 +44,18 @@ The inside of the function call only sees the number 10. It doesn't know whether
 and it doesn't really care. 10 is 10, after all.
 
 This is because of how numbers are handled in the background by Python. Numbers are "immutable", they never change. We can move from one number to another, but each number itself is fixed. Think of it this way, if we just passed the value 10 directly...
-`foo(10)`
-`print(10)`
+
+```py
+foo(10)
+print(10)
+```
+
 ... we wouldn't expect this code to somehow change to the value of 10 so that `10 == 11`, that would be impossible, 10 is always 10 and 11 is always 11.
-`y = 10`
-`foo(y)`
-`print(y)`
+```py
+y = 10
+foo(y)
+print(y)
+```
 
 ## Passing by reference
 [SIDE CAM/CUT AWAY]
@@ -111,11 +117,18 @@ The objects that Python passes by name are, well, pretty much everything else:
 So why does it do this? It's got everything to do with said earlier about data being mutable or immutable. Numbers never change - when we add two number together, we're not changing either number, we're working out an entirely new one. The same goes for every other mathematical operator, as well as any operations on strings and booleans.
 
 We can even see this in the syntax. When we increased x, we didn't just change it we completely replaced it.
-`x = x + 1`
+
+```py
+x = x + 1
+```
+
 X now equals something different that it did before - the fact that its new value is based of the old one doesn't no longer matters, the old x is gone!
 
 But if x is an object and we change one of it's properties - then it's different.
-`x.num = x.num + 1`
+
+```py
+x.num = x.num + 1
+```
 x's '.num' property might have been swapped out - and it HAS been swapped out, 'x.num' is a new number now - but the actual object x remains. We didn't redefine x, just one of it's properties, potentially one of many.
 
 ## Summary

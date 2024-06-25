@@ -113,6 +113,12 @@ elif num = 3:
 ```
 ... because if at any point in the chain a condition is met, that then the corresponding body is run and the rest is just skipped. If the chain ends in an else...
 ``` py
+if num = 1:
+    print("That's a one!")
+elif num = 2:
+    print("That's a two!")
+elif num = 3:
+    print("That's a three!")
 else:
     print("I don't know what number that is...")
 ```

@@ -44,7 +44,9 @@ else:
 Last of this little trio is the XOR or 'zor' operator. This one is interesting (and not just xor is fun to say!). Again, it binds two booleans, and this time gives True if one BUT NOT BOTH statements are true.
 
 ``` py
-if bool_a or bool_b:
+# We use '^' to XOR booleans
+# usually found on the '6' key
+if bool_a ^ bool_b:
     print("One is True, one is false")
 else:
     print("Either both were false, or both were true")
