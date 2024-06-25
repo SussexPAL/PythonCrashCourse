@@ -10,15 +10,20 @@ Strings are quite simply: text. whether a single character, or an entire novel -
 
 Anything in speech marks will be interpreted by Python as one string. Important to note that, unlike brackets for mathematical and boolean expressions, quotations marks cannot be nested - there are no 'strings within strings' - just one at the beginning and one at the end.
 
-`message = "In Python, strings are easy!"`
-
+~~~py
+message = "In Python, strings are easy!"
+~~~
 If you need to include quotations marks in the string itself, you can preface each one with backslash. This is what we call and "escaped character"
 
-`message = "\"wow\", he said. \"That's so simple!\""`
+``` py
+message = "\"wow\", he said. \"That's so simple!\""
+```
 
 alternatively, you can replace the outer speech-marks with a pair of apostrophes.
 
-`message = '"wow", he said. "That\'s so simple!"'`
+``` py
+message = '"wow", he said. "That\'s so simple!"'
+```
 
 Just be aware that THEN you'll need to escape any internal apostrophes!
 
@@ -31,9 +36,17 @@ and literally thousands of other including alphabets from several languages and 
 * "that is \n and \t respectively"
 
 An important trick with strings is concatenation, which means to attach two strings together. In Python we can use addition to 'add' two strings:
-`message = "Hello, " + "World!"`
+
+``` py
+message = "Hello, " + "World!"
+```
+
 Only we're not really adding them at all. A plus sign between two strings (and they do BOTH need to be strings) denotes concatenation - the two strings will be joined together:
-`print(message)`
+
+``` py
+message = "Hello, " + "World!"
+print(message)
+```
 
 ## Numbers: integers vs floats
 Next a quick review of numbers. Storing numbers in Python was one of the very first things we looked at so it should already seem familiar. When we need a number, we just write one
@@ -62,6 +75,11 @@ Worth noting is that we can still use all the same mathematical operators on bot
 ## Booleans
 Next, let's recap booleans. Booleans are their own data type in Python, IE either true or false - which In python, we write as the english words 'True' and 'False' with a capital T and F respectively. Also, any boolean expressions, which remember ultimately evaluate to either true or false, are included in the boolean data type. That's really all there is to say.
 
+``` py
+bool_f = False
+bool_t = True
+```
+
 ## A quick word about None
 One last big important data type we haven't discussed yet is None.
 
@@ -73,7 +91,10 @@ Okay no let's explain that in a bit more detail!
 None is a value with it's own data type: the None type. None is used to encoded the absence of data. Surely we could already do that with 0 or 'False', but no! 0 is still an integer with a definite value *[SIDENOTE: or 0.0 for a float]*, the empty string is still a string, and false is still the boolean false and not true!
 
 We still need a way to represent data that just isn't there or hasn't been defined yet. This is quite often used is data collections (which we're going to learn about next time) to represent empty or missing values:
-`cookie_recipe = ["get some flour", None, None, "..?", "cookies!"]`
+
+```py
+cookie_recipe = ["get some flour", None, None, "..?", "cookies!"]
+```
 
 ## Implicit casting and operators
 These are four of the most important data types in Python. To recap:
@@ -85,26 +106,35 @@ These are four of the most important data types in Python. To recap:
 As you can probably imagine, we have to use certain data types for certain things, for example only numeric data types (ints and floats) can be used for mathematical expressions. However this does not mean that we can never convert between types: converting something from one data-type to another is called *casting*.
 
 Python does a lot of casting automatically, a good example of this division between integers, which we already discussed, which gives us a float:
+
 ~~~ py
 num1 = 5
 num2 = num1 / 2
 print(type(num1))
 print(type(num2))
 ~~~ 
+
 print itself is actually another very good example. Technically, print only works with strings, which means anything else has to be casted to a string before it can be printed. Lucky for us, Python does this automatically.
+
 ~~~ py
 print(2.5)
 print(False)
 ~~~ 
+
 This kind of automatic type conversion is called 'implicit casting'
 
 Explicit casting is when WE, the programmer, TELL the program we want to convert from one data-type to another. We do this by calling the name of the type we want to convert to as a function, and passing in brackets the value with whatever we want to convert from.
+
 ~~~ py
 int("1")
 string(10)
 ~~~ 
+
 Worth noting is that you can't necessarily cast from anything into anything else, it depends on the types and the data. You can convert any number into a string easily, but not every sting can be converted into a number. Attempting to convert data of one type to another where no such casted value exists gives us an error:
-`int("one")` 
+
+~~~ py
+int("one")
+~~~
 
 ## Summary
 Understanding data-types is an essential part of learning programming. It helps us better understand how the program "thinks", or perhaps more accurately how it doesn't, and how everything it DOES do needs to follow some kind of logic. It is out of these base data types we build more complex data structures, and use them in programs of our own. With this in mind, we're ready to start exploring the rest of what programming has to offer.  
@@ -116,9 +146,17 @@ When we finished off last time we hinted at how we can "build more complex data 
 
 ## Lists
 In every day speech, a 'list' means a sequence of something, anything, all written down in the same place for convenience. This is pretty much exactly what list means in programming, too. In Python, a list is declared using square brackets, like this:
-`my_list = []`
+
+```py
+my_list = []
+```
+
 inside those brackets we write the elements, or items, we want, separated by commas:
-`my_list  = ["bread", "milk", "apples", "eggs"]`
+
+```py
+my_list  = ["bread", "milk", "apples", "eggs"]
+```
+
 Those items can be pretty much whatever we want them to be: strings, floats, integers, booleans - we can even mix and match different data types in the same list. We can define elements as literal values, using expressions, or even with variables.
 
 Important to know is that lists are ordered, they're not just a jumbled set of elements! Each item comes after one item, and before another one (with the obvious exception of the start and end of the list). 
@@ -138,7 +176,9 @@ print(my_list)
 ~~~ 
 What we can't do is reference an item number that doesn't exist, or an "index out of bounds" as Python will call it in the error message you'll get if you try.
 ~~~ py
-# remember idx 4 would be the 5th element, and the 5th element doesn't exist, there are only 4!
+# remember idx 4 would be the 5th element, 
+# and the 5th element doesn't exist, 
+# there are only 4!
 print(my_list[4])
 ~~~ 
 
@@ -167,13 +207,27 @@ In computer science, we call this "mapping", that is the idea that one value poi
 Python's in-built dictionaries implement this mapping, that is they allow you to store and retrieve key-value pairs.
 
 In Python we can declare an empty dictionary like this:
-`my_dict = dict()`
+
+```py
+my_dict = dict()
+```
+
 Let's see how it works with a simple example, by mapping people by their names to their favorite colour. Dictionary items use a very similar syntax *[REFRESHER - syntax: the way code needs to be written in a certain language]* to lists, that is: the name of the dictionary followed by square brackets.
-`my_dict[]`
+
+```py
+my_dict[]
+```
+
 Only, instead of an index number (like for lists) it is in these square brackets we write our key. We then define it (that is, assign a value to the key) as whatever we want.
-`my_dict["alice"] = "blue"`
+
+```py
+my_dict["alice"] = "blue"
+```
 we access the value in much the same way.
-`print(my_dict["alice"])`
+
+```py
+print(my_dict["alice"])
+```
 Let's add a few more:
 ~~~ py
 my_dict["bob"] = "red"
