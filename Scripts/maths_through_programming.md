@@ -8,9 +8,9 @@ Python is just one programming language of literally *thousands* that are out th
 *[subtitle card]*
 The first thing we want to in Python is get to grips with "print" - which is what we use to get our program to write human readable messages when we run it. Print is the very first *function* we're going to use, we'll learn more about functions a little later in the course, for now just understand that they are calls for the program to do *something*, usually taking one or more *augments*. Print is often used so we can see what our program is doing while its still running, or to give a quick message on what it has done once it finished. For now, we're just going to have a bit of a play around with it!
 
-In python we write them like this: `print()`, that's the name of the function we want, followed (no space!) by opening and closing brackets. It's inside those brackets *[gesturing to/highlighting the brackets]* we put our arguments. Remember, print is used to write messages, so our argument is whatever we want that messages to be. It's something of a tradition in programming when learning a new language to have you're first printed messaged be "Hello, World!", so that's exactly what we're going to do.
+In python we write them like this: print(), that's the name of the function we want, followed (no space!) by opening and closing brackets. It's inside those brackets *[gesturing to/highlighting the brackets]* we put our arguments. Remember, print is used to write messages, so our argument is whatever we want that messages to be. It's something of a tradition in programming when learning a new language to have you're first printed messaged be "Hello, World!", so that's exactly what we're going to do.
 
-`print("Hello, World!")`
+print("Hello, World!")
 
 And that's it, we've got our first line of code! We can run this right now; the computer will get to this line, it will se we're calling a function 'print' with the argument "hello, world", and it already knows what that means, so it does everything it needs to in the background, and writes our message!
 
@@ -22,56 +22,57 @@ I mentioned I could use print to write out my favorite number - but what if I'm 
 
 It's very easy to define variables in Python, we just give it a name and then define what we want it to be using the equals symbol and some value on the right.
 
-`my_number = 5`
+my_number = 5
 
 It's worth noting that variable names in Python cannot have spaces. If we want more than one word, we usually separate them using an underscore (like we've done here). Now we can then use this variable anywhere we want to refer back to whatever value we defined it as.
 
-`print(my_number)`
+print(my_number)
 
 The eagle eyed amongst you may have noticed that we didn't use the speech marks we did in our "hello world" example. We only use them when we're writing *strings*, human readable pieces of text. We're going to learn more about exactly how that works in *data types* section, for now just keep it in the back of your mind and remember: plain text - speech marks, numbers and variables names - no speech marks.
 
 Going back to my_number, we can now change this any time we want and it's value changes with it. This is super helpful if we want to reference the same value at multiple points in our code, but only want to have to define it once, that way if we need to change it, we only need to change it's original definition.
 
-`my_number = 15`
-`print(my_number)`
-`print(my_number)`
+my_number = 15
+print(my_number)
+print(my_number)
 
 We can even redefine or update variables, that's give them new values after we've already defined them. Just remember that Python code is run sequentially line by line, so whenever we reference a variable it's going to be whatever it was *most recently* defined as at *that point* in the code.
 
-`my_number = 15`
-`print(my_number)`
-`my_number = 16`
-`print(my_number)` is different to...
+my_number = 15
+print(my_number)
+my_number = 16
+print(my_number) is different to...
 
-`my_number = 15`
-`my_number = 16`
-`print(my_number)`
-`print(my_number)`
+my_number = 15
+my_number = 16
+print(my_number)
+print(my_number)
 
 The only thing we CAN'T do is reference variables that don't exist, or at least haven't been defined yet by that line. This will cause an error or *Exception*, and usually when a program encounters an error it will just give up and stop working, which obviously we want to avoid!
 
-`print(not_defined)`
+print(not_defined)
 
-`print(my_other_number)`
-`my_other_number = 0`
+print(my_other_number)
+my_other_number = 0
 
 ## Introducing mathematical expressions
 *[subtitle card]*
 Briefly, to lead us onto our next topic, we're going to introduce some mathematical operators we can use in Python. Have a look at this:
 
-`my_number = 1 + 1`
-`print(my_number)`
+my_number = 1 + 1
+print(my_number)
 
 This works pretty much how you'd expect it to. We've defined my_number as 1 plus one, which we know is 2, and now every time we reference my_number we get the value 2. This doesn't just work for variable definitions, we can use it directly in the print statement.
 
-`print(2+2)`
+print(2+2)
 
 And we can write expressions that reference other variables
-
-`var1 = 5`
-`var2 = 7`
-`var3 = var1 + var2`
-`print(var3)`
+```py
+var1 = 5
+var2 = 7
+var3 = var1 + var2
+print(var3)
+```
 
 pretty much anywhere we can write a number or a variable, we can write a mathematical expression. Obviously, we can do a lot more than just basic addition, but THAT is what we're going to be talking about in our next topic!
 
@@ -92,29 +93,31 @@ We already looked at the plus operator last time, let's introduce a few more and
 Starting with subtraction *[zooming in/focusing/whatever on the symbol]*, we have the standard dash, which works pretty much exactly how you'd expect it to: much like for addition, we put it in between two numbers (or number expressions, or variables) remembering the space on either side, where the second number is subtracted for the first. Simple.
 
 *[some examples]*
-`my_var = 10 - 9`
-`my_other_var = 5 - 1 - 2`
-`my_negative_var = 0 - 1`
+``` py
+my_var = 10 - 9
+my_other_var = 5 - 1 - 2
+my_negative_var = 0 - 1
+```
 
 We use this same symbol to indicate negative values, as well! Only this time, *no space!* we put the symbol immediately before the value, and it becomes negative. Or, a positive if the original value would be negative, remember the rule of double-negatives!
-
-`my_negative_var = -1`
-`my_other_negative_var = -my_other_var`
-`double_negative = -my_negative_var`
-
+``` py
+my_negative_var = -1
+my_other_negative_var = -my_other_var
+double_negative = -my_negative_var
+```
 ### Multiplication
-Next multiplication. You may be used to seeing this symbol used for notification: `thing = 2 x 2`, this 'x' right here. But most programming languages don't use this, what if we had a variable called 'x'? how would the program know which one we were talking about? Instead we use this `thing = 2 * 2` *[cross out and replace 'x' symbol on original list of operation symbols]* asterisk instead. Most keyboards, including standard QWERTY ones, will have this on the 8 key. Beyond that there's no surprises, again this is an *infix* operator, so it goes *between* two values.
-
-`x = 12 * 3`
-`y = 1 * 1 * 1`
-`z = 2 * y`
-
+Next multiplication. You may be used to seeing this symbol used for notification: *[thing = 2 x 2]*, this 'x' right here. But most programming languages don't use this, what if we had a variable called 'x'? how would the program know which one we were talking about? Instead we use this thing = 2 * 2 *[cross out and replace 'x' symbol on original list of operation symbols]* asterisk instead. Most keyboards, including standard QWERTY ones, will have this on the 8 key. Beyond that there's no surprises, again this is an *infix* operator, so it goes *between* two values.
+```py
+x = 12 * 3
+y = 1 * 1 * 1
+z = 2 * y
+```
 ### Division
-Maybe you're used to seeing this symbol for division `thing = 2 ÷ 2`. Just like our last operator, this isn't the symbol used in most programming languages (including Python), but unlike multiplication this isn't done out of fear of confusion, just that most keyboards don't *have* a key for the division sign. Instead we use a simple forward-slash `thing = 2 / 2` *[as above, replace '÷' symbol]*, meant to resemble fractions (which, after all, is division). let's see it in action:
-
-`it_in_action = 5 / 2`
-`print(it_in_action)`
-
+Maybe you're used to seeing this symbol for division thing = 2 ÷ 2. Just like our last operator, this isn't the symbol used in most programming languages (including Python), but unlike multiplication this isn't done out of fear of confusion, just that most keyboards don't *have* a key for the division sign. Instead we use a simple forward-slash thing = 2 / 2 *[as above, replace '÷' symbol]*, meant to resemble fractions (which, after all, is division). let's see it in action:
+``` py
+it_in_action = 5 / 2
+print(it_in_action)
+```
 This raises a good point: Python DOES support decimal numbers, and they're written according to convention with a dot (period/full stop) to mark the decimal place. Doing division quite often leaves us with decimal numbers. Although, if you are familiar with division by remainder, we'll look at that in just a moment.
 
 ## Further maths operators
@@ -124,32 +127,48 @@ We've seen the big four, let's look at some more!
 * Brackets (parenthesis) *[Yes I know this isn't an operator leave me alone]*
 
 ### Modular division
-We just looked at division, where we divided out first value, the *dividend*, by the second, the *divisor* to get some answer *[show example equation `ans = 3 / 2`, with key terms and answer added]*. We also know that this is full division, so if our divisor is not a multiple of our dividend, then our answer will not be a whole number *[highlight that ans = 1.5]*, because the second value does not 'fit into' the first a whole amount of times without some remainder.
+We just looked at division, where we divided out first value, the *dividend*, by the second, the *divisor* to get some answer *[show example equation ans = 3 / 2, with key terms and answer added]*. We also know that this is full division, so if our divisor is not a multiple of our dividend, then our answer will not be a whole number *[highlight that ans = 1.5]*, because the second value does not 'fit into' the first a whole amount of times without some remainder.
 
-But what if it's exactly that remainder that we care about? This is when we use modular division, `quotient = 3 % 2` for which we use the percentage symbol (found on most keyboards on the 5 key), this will give us the value of the remainder (called the quotient) when the dividend is divided by the divisor.
+But what if it's exactly that remainder that we care about? This is when we use modular division, *[quotient = 3 % 2]* for which we use the percentage symbol (found on most keyboards on the 5 key), this will give us the value of the remainder (called the quotient) when the dividend is divided by the divisor.
 
-Don't get confused, this is NOT the same as doing full division, and then rounding down if we end up with a decimal *[show `11 % 2` = 5 with a big red line through it. Side note: we CAN do this with a double slash '//']*. Modular division gives us the quotient (the remainder) and ONLY the quotient. *[`11 % 2` = 1 with a big tick!]*. If we do modular division where the divisor IS a multiple of the dividend (IE when full division would give us a whole number) then the quotient will be 0 *[`10 / 2` = 5, `10 % 2` = 0]*
+```py
+quotient = 42 % 10
+print(quotient)
+```
 
-*[maybe talk about how we can use this to see if a number is odd/even by doing `x % 2`, idk if this bit is too long already...]*
+Don't get confused, this is NOT the same as doing full division, and then rounding down if we end up with a decimal *[show 11 % 2 = 5 with a big red line through it. Side note: we CAN do this with a double slash '//']*. Modular division gives us the quotient (the remainder) and ONLY the quotient. *[11 % 2 = 1 with a big tick!]*. If we do modular division where the divisor IS a multiple of the dividend (IE when full division would give us a whole number) then the quotient will be 0 *[10 / 2 = 5, 10 % 2 = 0]*
+
+*[maybe talk about how we can use this to see if a number is odd/even by doing x % 2, idk if this bit is too long already...]*
 
 ### Powers
 Next up is powers. If you're unfamiliar, a power is when we take a number and multiply it by itself a certain number of times. This is most commonly seen in squaring (the power of 2) and cubing (the power of 3) *[examples of 2 squared and 2 cubed, with workings]* but we can raise a number to the power of any number we want *[examples of 2 to the power of 2, 100, and 1]*. We can EVEN use zero, negatives, and decimals! *[examples of 2 to the power of 0, -2, and 25 to the power 0.5]* Although exactly how these are worked out goes a little beyond the scope of this topic, just know that Python can do it! 
 
-To do this we use a double asterisk `2 ** 2` between two numbers, where the first number (the base) is raised to the power of the second number (the exponent)
+To do this we use a double asterisk 2 ** 2 between two numbers, where the first number (the base) is raised to the power of the second number (the exponent)
+
+```py
+raised_to = 8 ** 2
+print(raised_to)
+```
 
 ### Brackets (parenthesis) 
-While not technically an operator, now is a good time to talk about brackets. In python, we can add brackets to an expression to explicitly state the order of operation. If you're familiar with BIDMAS, Python follows the exact same rules. If not, remember that Python will evaluate expressions in brackets FIRST, then (if there are any) powers, then division and multiplication, then addition and subtraction. *[show expression `(1 + 1)**2 / 2 + 1` being evaluated step by step]*
+While not technically an operator, now is a good time to talk about brackets. In python, we can add brackets to an expression to explicitly state the order of operation. If you're familiar with BIDMAS, Python follows the exact same rules. If not, remember that Python will evaluate expressions in brackets FIRST, then (if there are any) powers, then division and multiplication, then addition and subtraction. *[show expression (1 + 1)**2 / 2 + 1 being evaluated step by step]*
 
 Here are some examples where adding brackets is important:
-`a1 = 2 * 2 + 1`
-`a2 = 2 * (2 + 1)`
-`b1 = 2 ** 1 + 1`
-`b2 = 2 ** (1 + 1)`
-
+```py
+a1 = 2 * 2 + 1
+a2 = 2 * (2 + 1)
+b1 = 2 ** 1 + 1
+b2 = 2 ** (1 + 1)
+```
 Remember that any expression IN brackets still follows the same rules of order of evaluation. If we need to, we can nest brackets (brackets within brackets) just remember to make sure they're balanced!
 
-`c1 = 2 * (2 / 1 + 1)`
-`c1 = 2 * (2 / (1 + 1))`
+``` py
+c1 = 2 * (2 / 1 + 1)
+print(c1)
+
+c1 = 2 * (2 / (1 + 1))
+print(c1)
+```
 
 # Video 3 : Boolean logic and operators
 * Equality
@@ -165,26 +184,35 @@ A boolean can be only one of two things: *[some graphic here]* true, or false. N
 
 ## The equals operator, and introduction to boolean expressions
 Let's lake a look at a couple of examples:
-`1 + 1 == 2`
-`5 == 2 + 2`
-The first thing to note is the equals operator. We've already been using the equals sign for variable assignment, but that is NOT what we're doing here. Notice that we're using a double equals sign - just like how we use an asterisk for both multiplication and powers *[`5 * 2 == 10`, `5 ** 2 == 25`]*, the meaning of the equals sign is different when we double it up like this. The double equals `==` is the equality operator, which will evaluate to true if the value on the left is equal to the value on the right.
+
+```py
+1 + 1 == 2
+5 == 2 + 2
+```
+
+The first thing to note is the equals operator. We've already been using the equals sign for variable assignment, but that is NOT what we're doing here. Notice that we're using a double equals sign - just like how we use an asterisk for both multiplication and powers *[5 * 2 == 10, 5 ** 2 == 25]*, the meaning of the equals sign is different when we double it up like this. The double equals == is the equality operator, which will evaluate to true if the value on the left is equal to the value on the right.
 
 All of this has been has been the long and technically-correct way of explaining what was probably intuitively obvious: *[back to examples]* 1 plus 1 *is* 2, so this first statement is true. 5 is *not* the same as 2 plus 2, that's 4, four and five are obviously not the same value, so this statement is false.
 
 But it was worth taking the time to explain this carefully, because not all boolean expressions are that simple. Let's look at another example
-`x = 3`
-`2 ** x == x + 4`
+
+``` py
+x = 3
+print(2 ** x == x + 4)
+```
+
 This time we an expression on both sides, rather than a definite value. We also have a variable 'x'. But it works the exact same way, the expressions on either side. Remembering that x is 3:
-`2 ** x` is 8
-`x + 4` is 7
+
+2 ** x is 8
+x + 4 is 7
 So what we're really asking is:
-`8 == 7`
+8 == 7
 8 and 7 are different numbers, so this expression is false.
 
 ## Other common boolean operators
 Once we understand the basics of boolean logic that we've already talked about, introducing some more operators should not seem to intimidating. We're going to look at five more (although, at least 2 of them are just slightly different versions of each other...!). They're as follows:
-`x != y` this is the *inequality* operator, which will give you a true statement if x does NOT equal y.
-`x < y` this is the less-than operator, this statement will be true so long as x is LESS than y. Important to remember is that unlike equality which we can use for (pretty much) anything, this only works on numbers! We can't ask if one word or piece of text is "less" than another, that doesn't make sense! *[graphic `"hello" > "world"` showing some kind of error]*.
-`x <= y` This is the less-than OR EQUAL TO operator.  This is just like the above, only it will also give us true if x equals y.
-`x > y` lastly we have the greater-than...
-`x >= y` ... and greater-than-or-equal-to operators.
+x != y this is the *inequality* operator, which will give you a true statement if x does NOT equal y.
+x < y this is the less-than operator, this statement will be true so long as x is LESS than y. Important to remember is that unlike equality which we can use for (pretty much) anything, this only works on numbers! We can't ask if one word or piece of text is "less" than another, that doesn't make sense! *[graphic "hello" > "world" showing some kind of error]*.
+x <= y This is the less-than OR EQUAL TO operator.  This is just like the above, only it will also give us true if x equals y.
+x > y lastly we have the greater-than...
+x >= y ... and greater-than-or-equal-to operators.
