@@ -32,6 +32,13 @@ Programming and maths are intertwined. Look at how we can do basic operations wi
 
 #### Task 3 - Data types
 Understanding your data is key to making a program that uses it. This worksheet teaches you how to make different variables for different data, and how this is used.
+
+* recapping bools vs numbers
+* psych! There are actually TWO kinds of numbers (int vs float)
+* strings (maybe characters...?)
+* lists (fun fact strings can be treated like a list of chars)
+* dictionaries
+  
 [![datatypes](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_data_types.ipynb">Click here to view worksheet</a>
@@ -46,19 +53,34 @@ Today we have covered the basics of using the Python language. Keep practicing, 
 
 
 #### Task 2 - Flow of control
+
+* introducing scope
+* loop/iterator variables
+  
 [![flow](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_flow_of_control.ipynb">Click here to view worksheet</a>
 
 #### Task 3 - Functions
 What if we want to execute the same bit of code multiple times throughout different parts of our program. Copying and pasting it will look messy, instead we can write it once as a function and rcall it whenever we need it.
+* simple functions
+* parameters
+* return values
+* default parameters
+
+  
 [![functions](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_functions.ipynb">Click here to view worksheet</a>
 
 #### Task 4 - Understanding Errors & The Call Stack
 What does an error actually mean? The way that we can understand when our code breaks is understanding the error itself!
+* syntax error
+* overflow/timeout error
+* logic error
+* try catch
 
+  
 [![errors](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_understanding_errors.ipynb">Click here to view worksheet</a>
@@ -67,7 +89,11 @@ What does an error actually mean? The way that we can understand when our code b
 
 #### Task 1 - Object oriented programming (OOP)
 Object orientted programming is a practice of combining functionality into a blueprint that we call class. Lets say we have a video game with multiple players, instead of writing out code and variables to store all the player data, we have a player class that binds all this together.
-
+* introduce OO concepts
+* fields
+* methods
+* constructor
+  
 [![errors](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_object_oriented_programming.ipynb">Click here to view worksheet</a>
@@ -81,6 +107,13 @@ First of all we need to understand numpy arrays and plotting data before we can 
 
 #### Task 2 - Regression
 Regression models are some of the simplest ML models. In simple terms they fit a line to data, however there are a few different approaches to this. This worksheet guides you through loading in a dataset, visualising it, and training a model to predict the data.
+* data engineering practices
+* simple linear regression
+* multiple linear regression
+* logistic linear regression
+* evaluating and visualising results from models
+
+  
 [![Regression](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_4_regression.ipynb">Click here to view worksheet</a>
@@ -88,6 +121,11 @@ Regression models are some of the simplest ML models. In simple terms they fit a
 
 #### Task 1 - Nueral networks
 Nueral networks are some of the more exciting areas of machine learning and AI. This worksheet takes you through a nueral network, how to build one and train it on data. 
+* artificial neural network
+* convolutional neural network
+* standardisation and imputing
+
+  
 [![NN](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_5_neural_networks.ipynb">Click here to view worksheet</a>
