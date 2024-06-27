@@ -20,18 +20,18 @@ Before we get started, make sure to download the software to run the worksheets.
 [![Test video](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 #### Task 1 - Algorithmic thinking
-
+One of the hardest, but most important parts of programming is algorithmic thinking. Most courses gloss over this, but we want to install a problem solving mindset in you. This is not something that comes over night, but with practice. Doing <a href="https://leetcode.com/">Leetcode</a> questions, or other problem solving activities is the best way to keepthis skill up.
 [![Algorithmic thinking](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 
 #### Task 2 - Maths through programming
-
+Programming and maths are intertwined. Look at how we can do basic operations with Python
 [![maths](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_maths_through_programming.ipynb">Click here to view worksheet</a>
 
 #### Task 3 - Data types
-
+Understanding your data is key to making a program that uses it. This worksheet teaches you how to make different variables for different data, and how this is used.
 [![datatypes](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_data_types.ipynb">Click here to view worksheet</a>
@@ -51,11 +51,14 @@ Today we have covered the basics of using the Python language. Keep practicing, 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_flow_of_control.ipynb">Click here to view worksheet</a>
 
 #### Task 3 - Functions
+What if we want to execute the same bit of code multiple times throughout different parts of our program. Copying and pasting it will look messy, instead we can write it once as a function and rcall it whenever we need it.
 [![functions](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_functions.ipynb">Click here to view worksheet</a>
 
 #### Task 4 - Understanding Errors & The Call Stack
+What does an error actually mean? The way that we can understand when our code breaks is understanding the error itself!
+
 [![errors](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_understanding_errors.ipynb">Click here to view worksheet</a>
