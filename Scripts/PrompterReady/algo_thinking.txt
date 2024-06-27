@@ -36,10 +36,10 @@ Maybe this looks a little strange, and that okay. Remember, this is basically pr
 Algorithms are completely scalable for as much or as little detail as you need them to be depending on the context of the problem. Here we've made the assumption that whoever or whatever can interpret the individual instructions like "kettle.fill" or "PUT mug teabag"
 
 ... but if we needed to, or wanted to, we can break those instructions down even further.
-`* take kettle off stand`
-`* take kettle to tap`
-`* turn on tap`
-`* ... etc`
+* take kettle off stand
+* take kettle to tap
+* turn on tap
+* ... etc
 
 Or on the other hand if 'making tea' was just one step of a much larger algorithm (say making breakfast), and we knew whoever we were writing for knew how to make tea, we could condense it down to just one line.
 

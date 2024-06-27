@@ -31,7 +31,7 @@ We should be able to:
 Let's get started.
 
 Simplest to define will be the books. We're going to write a book class with 3 fields, all of which are passed as arguments to the constructor.
-~~~ py
+~~~ py define-book.png
 class Book:
     def __init__(self, title: str, author: str, year: int):
         self.title = title
@@ -41,7 +41,7 @@ class Book:
 See also that we've added some type hints, which we learned about in our 'further functions' session!
 
 Let's now modify our student class so that they can have a book of their own. For the purposes of this exercise, we'll say a student can only have one book at once.
-``` py
+``` py define-student.png
 class Student:
     def __init__(self, name):
         self.name = name
@@ -53,7 +53,7 @@ This is as simple as introducing a new field to the class definition. Note that 
 We can set objects to be properties of other objects! In fact classes, once they've been properly defined, can be thought of just like any other data type, and used in much the same way. See also that we've used type hinting, saying we want this property to be of type 'Book' - we use this syntax to type-hint variables.
 
 Finally, let's write our library class. Starting as usual with the constructor.
-```py
+```py define-library.png
 class Library:
     def __init__(self):
         # Notice the constructor doesn't take any parameters: all properties are given default values
@@ -66,7 +66,7 @@ This time the constructor doesn't take ANY arguments, every field is given some 
 
 ## Adding functionality
 First let's allow students to register to a library. We will do this by adding a method to the library class.
-```py
+```py define-register.png
     def register(self, student: Student):
         # This method registers an existing student to be a member of the library
         # unlike new_book, this doesn't create a new Student, instead one is passed-by-reference as an argument
@@ -80,7 +80,8 @@ First let's allow students to register to a library. We will do this by adding a
 This method will take a Student object (can you see that type hint in the parameter?) and checks to see if they are already a member using the `in` keyword against the `self.members` set. Not they are added to it, otherwise the method returns early. In either case a brief message is printed out.
 
 We could also have implemented this same functionality by writing a method of the Student class. Let's see what that might have looked like.
-``` py
+
+``` py more-register.png
     # In the Student class
     def register(self, library: Library):
         if self in library.members:
@@ -91,7 +92,7 @@ We could also have implemented this same functionality by writing a method of th
         print("I have now joined the library")
 ```
 See how similar it looks - because it is doing the same thing, just from a different place. We don't need both, just one, but if you do want to include both it a good idea to have one just be a call to the other in disguise. This saves you work, and prevents discrepancies.
-``` py
+``` py more-register-2
     # In the Student class
     def register(self, library: Library):
         # This is much better!
@@ -99,7 +100,7 @@ See how similar it looks - because it is doing the same thing, just from a diffe
 ```
 
 Next, we want to populate a library with books. We're going to write this one a bit different; rather than taking a book as a parameter, this method will create a new book based on the parameters given.
-``` py
+``` py new-book.png
     def new_book(self, title: str, author: str, year: int):
         # This method calls the book constructor itself!
         book = Book(title, author, year) 
@@ -115,7 +116,7 @@ Now we're going to add a method to allow a student to borrow a book from a libra
 Which one we choose depends on what we think is the design for our program. We're going to add it as a method of the library.
 
 Remember that we're storing our books in a list in a library. Instead of passing the book as an object, we'll want to reference them by index number. We'll start like this:
-``` py
+``` py loan-book.png
     def loan_book(self, book_idx, student):
             if student not in self.members:
                 print("sorry, you're not a member of the library, why not register?")
@@ -124,21 +125,21 @@ Remember that we're storing our books in a list in a library. Instead of passing
 We only want books to be accessible to students who are a member of the library, so the first thing we do in this method is to check if the student is not a member - if not we print a message and return from the method early.
 
 We also want to check that if the student already has a book on loan, for this we can an implicit 'is not None': any variable, like our book property of the student, will be read as 'False' if it is None - basically checking of the variable is empty!
-``` py
+``` py loan-book-2
         if student.book: # This is like saying "is not None"
             print("Sorry, you already have a book on loan")
             return
 ```
 
 Lastly, we want to prevent a student taking out a book that another student already has! We can do this another implicit 'is not None' check, only this time we want to know if it IS none, so we use the 'not' keyword.
-``` py
+``` py loan-book-3
         if not self.book_shelf[book_idx]:
             print("Sorry, that book has already been taken out")
             return
 ```
 
 Now the actual functionality. We want to remove a book at the given index from the bookshelf - replacing it with a None (like an empty space on the shelf). We that want to give that book to the student. Finally, just to be nice, we'll print out a little message!
-``` py
+``` py loan-book-4
         # Take the book of the shelf
         # Fill in the index-space we took it from with None
         book = self.book_shelf[book_idx]
@@ -151,7 +152,7 @@ Now the actual functionality. We want to remove a book at the given index from t
 ```
 
 Here's what it all looks like, feel free to return to this later or pause as long as you need.
-``` py
+``` py loan-book-5
     def loan_book(self, book_idx, student):
         # This method loans a book to a student, keeping a log of it in the loans field
         if student not in self.members:
@@ -180,13 +181,13 @@ Here's what it all looks like, feel free to return to this later or pause as lon
 ## Seeing it in action
 We're now going to walk through using the classes we've just defined. Let's say we're writing a completely fresh program that has imported the class definitions we just wrote
 *[SIDE NOTE: 'importing' is how we reference code from one Python program in another, it vital for big projects!]*
-``` py
+``` py import.png
 from oo_example import Student, Book, Library
 ```
 Let's get started.
 
 The first thing we're going to do is define some objects, we'll go for 4 students and one library. We're going to do this by calling the constructor for each Class.
-``` py
+``` py instancing-students
 student1 = Student("Mika")
 student2 = Student("Rick")
 student3 = Student("Vivian")
@@ -196,14 +197,14 @@ campus_library = Library()
 ```
 
 We're now going to populate our library with some books. 3 books would be disappointingly few for a real library, but it'll be enough for this example
-``` py
+``` py adding-books
 campus_library.new_book("Waiting for Godot", "Samuel Bucket", 2014)
 campus_library.new_book("Waiting for Blender", "Delia Jeanna", 2015)
 campus_library.new_book("Waiting for Linux Desktop", "Zoë B'Text", 2016)
 ```
 
 We should see that the library will not allow books to be borrowed by students before they have registered - but once they have registered they may borrow up to one book at a time.
-``` py
+``` py in-action
 # CALLING METHODS
 # Trying to borrow without registering
 campus_library.loan_book(0, student1)
@@ -220,7 +221,7 @@ campus_library.loan_book(1, student2)
 campus_library.loan_book(2, student3)
 ```
 We should also see that no student can borrow another book if they have already taken one out, and no student can borrow a book that has been taken out by someone else.
-``` py
+``` py in-action-2
 # Trying to borrow a second book
 campus_library.loan_book(0, student2)
 campus_library.loan_book(0, student3)

@@ -42,16 +42,16 @@ We're now going to practice that this problem-to-algorithm-to-solution process u
 
 What we would do is write out the step by step instructions for making tea such that they can be followed by anyone. We're going to write this as though it were a fake program, this style is called *'pseudocode'*, it gives us the structure and definition - and overall feel - of code, without the risk that something could go wrong if we make a minor grammatical mistake.
 
-`kettle.fill (enough water for mug)`
-`kettle.start`
-`GET teabag FROM box`
-`PUT mug teabag`
+kettle.fill (enough water for mug)
+kettle.start
+GET teabag FROM box
+PUT mug teabag
 
-`WAIT UNTIL kettle.done`
-`mug fill kettle.water`
+WAIT UNTIL kettle.done
+mug fill kettle.water
 
-`WAIT UNTIL minutes 2`
-`mug take_out teabag`
+WAIT UNTIL minutes 2
+mug take_out teabag
 
 *[might be worth holding on this for a bit, so people can give it a proper read, or at least doing the next few lines a bit more slowly]*
 
@@ -60,18 +60,18 @@ Maybe this looks a little strange, and that okay. Remember, this is basically pr
 Algorithms are completely scalable for as much or as little detail as you need them to be depending on the context of the problem. Here we've made the assumption that whoever or whatever can interpret the individual instructions like "kettle.fill" or "PUT mug teabag"
 
 ... but if we needed to, or wanted to, we can break those instructions down even further.
-`* take kettle off stand`
-`* take kettle to tap`
-`* turn on tap`
-`* ... etc`
+* take kettle off stand
+* take kettle to tap
+* turn on tap
+* ... etc
 
 Or on the other hand if 'making tea' was just one step of a much larger algorithm (say making breakfast), and we knew whoever we were writing for knew how to make tea, we could condense it down to just one line.
-`GET apple FROM fridge`
-`GET bread FROM cupboard`
-`PUT bread toaster`
-`toaster.start`
-`make_tea`
-`WAIT UNTIL toaster.done`
+GET apple FROM fridge
+GET bread FROM cupboard
+PUT bread toaster
+toaster.start
+make_tea
+WAIT UNTIL toaster.done
 It depends entirely on what already HAVE, what we assume we KNOW, and what we NEED. That is what we mean by the problem space. 
 
 # Bubble sort

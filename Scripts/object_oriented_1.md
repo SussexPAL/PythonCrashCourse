@@ -18,8 +18,12 @@ Once an object has been instanced (created) they become their own thing! Separat
 
 ## Defining the constructor
 We've learned what classes and objects are in theory. In practice, how can we implement them in Python? Python has it's own syntax for defining classes:
-`class Student:`
-`   # More here in a sec...!`
+
+```py
+class Student:
+   # More here in a sec...!
+```
+
 %Empty_class.png%
 Here we've started to define our own class using the *class* keyword. We've given it a name, starting with a capital letter by convention. The block below this line will be where we define our properties and methods. See how this looks very similar to how we define functions, only this time the keyword is different *[highlight `class` keyword %Empty_class_highlight.png%]* and we leave out the brackets.
 
@@ -28,10 +32,14 @@ Before we move on, there's one more thing to explain. Most implementations of OO
 *[show a newly created student with values of ??? for name and year, then being run through a constructor, and having it's fields filled in $Constructor.png%]*
 
 In Python, the constructor is written like this:
- `class Student:`
-`   def __init__(self, name, year):`
-`       self.name = name`
-`       self.year = year`
+
+``` py
+class Student:
+	def __init__(self, name, year):
+		self.name = name
+		self.year = year
+```
+
 %Constructor_python.png$
 Seeing as how we've already covered the basics of functions in Python, you should be able to make some sense of what is going on here, however you may be left with a few questions:
 * What does 'init' mean, and why the double underscores on either side?
