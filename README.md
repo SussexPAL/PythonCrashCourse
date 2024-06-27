@@ -34,9 +34,9 @@ Programming and maths are intertwined. Look at how we can do basic operations wi
 Understanding your data is key to making a program that uses it. This worksheet teaches you how to make different variables for different data, and how this is used.
 
 * recapping bools vs numbers
-* psych! There are actually TWO kinds of numbers (int vs float)
-* strings (maybe characters...?)
-* lists (fun fact strings can be treated like a list of chars)
+* int vs float
+* strings 
+* lists 
 * dictionaries
   
 [![datatypes](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
