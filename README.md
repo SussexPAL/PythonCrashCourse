@@ -44,6 +44,7 @@ Today we have covered the basics of using the Python language. Keep practicing, 
 
 #### Task 1 - statements/expressions/logic
 
+
 #### Task 2 - Flow of control
 [![flow](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
@@ -62,16 +63,28 @@ Today we have covered the basics of using the Python language. Keep practicing, 
 ### Day Three
 
 #### Task 1 - Object oriented programming (OOP)
+Object orientted programming is a practice of combining functionality into a blueprint that we call class. Lets say we have a video game with multiple players, instead of writing out code and variables to store all the player data, we have a player class that binds all this together.
+
+[![errors](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+
+<a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_object_oriented_programming.ipynb">Click here to view worksheet</a>
 
 ### Day 4
 
-#### Task 1 - Regression
+#### Task 1 - Scientific Python
+First of all we need to understand numpy arrays and plotting data before we can dive into machine learning models. 
+
+<a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_4_scientific_python.ipynb">Click here to view worksheet</a>
+
+#### Task 2 - Regression
+Regression models are some of the simplest ML models. In simple terms they fit a line to data, however there are a few different approaches to this. This worksheet guides you through loading in a dataset, visualising it, and training a model to predict the data.
 [![Regression](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_4_regression.ipynb">Click here to view worksheet</a>
 ### Day 5
 
 #### Task 1 - Nueral networks
+Nueral networks are some of the more exciting areas of machine learning and AI. This worksheet takes you through a nueral network, how to build one and train it on data. 
 [![NN](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_5_neural_networks.ipynb">Click here to view worksheet</a>
