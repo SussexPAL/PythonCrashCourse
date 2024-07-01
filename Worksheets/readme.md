@@ -4,9 +4,9 @@ Place worksheets you work on in the worksheets folder. The auto marker demo code
 Worksheets:
 
 Day 1
-Algorithmic thinking (0.33) Max
+Algorithmic thinking (0.33) Max -> Layton
 
-Installing and setting up VS Code + Python Environment (simple step-by-step video)
+Installing and setting up VS Code + Python Environment (simple step-by-step video) (offset to youutubers)
 
 ✓ -- Step by step - maths through programming, operators, variables (0.33) Hugo <font color="green">DONE</font>
 
@@ -14,9 +14,9 @@ Primitive data types & Arrays and dictionaries (0.33) George <font color="green"
 
 Day 2
 
-statements/expressions/logic (for understanding if/loop conditions) (with below) Val 
+statements/expressions/logic (for understanding if/loop conditions) (with below) Val --> Layton
 
-Flow of control (loops IFs ) (0.33) Val
+Flow of control (loops IFs ) (0.33) Val --> Layton
 
 Functions (0.33) George <font color="green">DONE</font>
 
@@ -24,7 +24,7 @@ Understanding Errors & The Call Stack (0.33) Val <font color="green">DONE</font>
 
 Day 3
 
-Classes + OOP features (1.0) Hugo
+Classes + OOP features (1.0) Hugo --> Chris
 
 Day 4
 
