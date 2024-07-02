@@ -10,6 +10,7 @@ Put very simply - a while loop is like an if statement, only where and if statem
 
 [SIDE CAM]
 Here's an example of a program that uses a while loop.
+**example-while-loop**
 ```py
 t = 10
 print("Starship Python launching in...")
@@ -38,6 +39,7 @@ Indeed we can - while there are a few cases for loops that are, or at least COUL
 *[Optional bit here but I appreciate I'm info dumping a bit]*
 [SIDE CAM]
  But we can, if we're feeling mischievous, do it deliberately just to see what happens. Just for fun, here's an example of the infamous 'while true' loop.
+ **infinite-while**
 ``` py
 while True:
     print("You guys ever watch Groundhog's Day?")
@@ -49,6 +51,7 @@ Usually what happens is that it really does just keep going until something forc
 
 ## For loops
 For loops are a bit different, they're also our first example of a statement that needs two keywords:
+**example-for.png**
 ``` py
 for item in iterable:
     print(item)
@@ -56,6 +59,7 @@ for item in iterable:
 For loops rely on some collection of items to work - in the context of a for loop we call this an iterable, that is something that can give us multiple elements to iterate through. The for loop will run once for each of those elements. Remember our collection data types like lists - these are great examples of iterables. let's see this in action.
 
 [SIDE CAM]
+**for-members-list**
 ``` py
 members = ["Gary", "Alex", "Neil"]
 
@@ -72,6 +76,7 @@ For this example, see how 'item' takes on the value of every name in the list, s
 The name of the loop variable doesn't actually matter too much. Some common names used by convention include "item", "element", and "i" - but so long as it's a valid variable name, and doesn't conflict with anything else, you can pick whatever. Just like any other variable, though, its advisable to pick a name that makes sense to you, and ideally will still make sense when you come back to it after not having looked it for a month...!
 
 For the above example *[put back on screen if theres room]*, "member", "name" or even "person" would have all been perfectly sensible choices, but maybe not "x", or "thing", or "ftftderf".
+**sensible-vs-not-sensible**
 
 ## Extra sugary bits
 That's it, just two different kinds of loops - 'for' and 'while'. But before we wrap up, there are a couple of fun features of loops that python has built in. They're also examples of what we call "syntactic sugar" - that is features of a language that don't add anything new, and don't make anything possible that wouldn't have been possible without them, but make the actual code simpler to write and easier to read.
@@ -80,6 +85,7 @@ Computer Scientists often like food metaphors, so, we use the metaphor that it m
 
 [SIDE CAM]
 The first is the 'continue' keyword
+**continue**
 ``` py
 my_list = [1, 2, 3, 4, 5]
 
@@ -93,6 +99,7 @@ Remember that loops, by nature, can run multiple times. We call each one of thos
 When a program encounters a 'continue' statement, it exits whatever iteration we're in early - and moves on to the next one. We can see here *[show code output]* that the number 3 doesn't get printed.
 
 Next up is 'break'
+**break**
 ``` py
 my_list = [1, 2, 3, 4, 5]
 
@@ -105,6 +112,7 @@ If you like, you can think of break as a 'super continue'. That is, it not only 
 
 [CENTER CAM]
 Finally, a brief word on loop variables. Did you know that we can have for loops with multiple loop variables? They look like this:
+**multiple-loop-variables**
 ``` py
 for item1, item2 in some_iterable
 ```
@@ -114,6 +122,7 @@ Remember we said dictionaries contain pairs of keys and values. By default, when
 
 [SIDE CAM]
 Here's what it looks like
+**for-members-dictionary**
 ``` py
 members = {
     "drums": "Neil",

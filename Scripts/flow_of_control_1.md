@@ -1,6 +1,7 @@
 [MAIN CAM]
 # Flow of control 1: If, then, else
 So; we've started exploring some basic programming. right now we're kind of using Python like a simple calculator. There's nothing wrong with this, but, we could go further. Everything we've written so far does the same thing every time we run it - that is we write lines of code, and when we run the program those lines are executed one at a time, in the order they were written. 
+**thing1-thing2.png**
 ``` py
 thing1 = "Hello"
 thing2 = "World!"
@@ -10,6 +11,7 @@ but what if we want our program to be more flexible? This is where we start look
 
 ## If
 Think back to data types and expressions, remember that we covered something called a "boolean" - a value that can be either True, or False, 1 or 0, yes or no. One of the primary uses of these booleans is flow control statements. Say we have a block of code and some boolean expression, and we want that block of code to run if, and ONLY if, that statement evaluates to True. Here's an example
+**password-no-ifs.png**
 [SIDE CAM OR CUT AWAY]
 ``` py
 password = "321"
@@ -27,6 +29,7 @@ We have some variable, which we have called 'password' *[underline/highlight pas
 
 [CENTER CAM]
 You can think of "if" as asking the computer "When executing this code, only run the following *if* this *condition* is true". The condition being some statement that will result in either True, or False. In Python, they're very simple to write:
+**if-password.png**
 ```py
 if password == "123":
     # The 'body' of our if statement
@@ -34,11 +37,15 @@ if password == "123":
 ```
 There's really only three things to it: the `if` keyword which starts the expression, the condition (that is the boolean) and the actual code inside the if statement - which we call the body. Once a running program reaches an if statement, the body will be run only if the condition is `True`, otherwise it will be completely ignored and skipped over, moving onto the next thing.
 
+**syntax-reminder.png**
 One thing worth explaining is the syntax of the body here *[REMINDER: Syntax - how the code needs to be written, what words and punctuation to use etc.]* as we'll be seeing this same syntax very often from here on out.
 
 [SIDE CAM]
 *[look at above code again]*
-Notice two things - the colon at the end of the first line, and space from the second line onwards between the left-side border. This is the way Python structures 'blocks' - that is groups of lines of code. The colon indicates that we're ready to enter into a new block of code. The spacing to the left that comes afterwards we call 'indentation' - this is done using the tab key on you keyboard, but should be added automatically by most IDEs *[REMINDER: IDE - the software your writing your code in]*. It is once this indentation stops that we will have left whichever block of code we were writing in, and have gone back to the one we were in before.
+Notice two things - the colon at the end of the first line, and space from the second line onwards between the left-side border. This is the way Python structures 'blocks' - that is groups of lines of code. The colon indicates that we're ready to enter into a new block of code. The spacing to the left that comes afterwards we call 'indentation' - this is done using the tab key on you keyboard, but should be added automatically by most IDEs 
+**ide-reminder.png**
+*[REMINDER: IDE - the software your writing your code in]*. It is once this indentation stops that we will have left whichever block of code we were writing in, and have gone back to the one we were in before.
+**blocks-and-indentation.png**
 ```py
 # No indentation - block A
 
@@ -55,6 +62,7 @@ Remember that the body of the if statement is only the block that comes immediat
 [CENTER/CUT AWAY]
 ## Else
 So, we can use if statements. And once we understand how code blocks work, we can use multiple if statements. Our example from earlier should now look something like this.
+**if-password-2.png**
 ``` py
 if password == "123":
     # First block
@@ -67,6 +75,7 @@ if print != "123": # Remember '!=' the inequality operator
 Our first if block will run if password is 123, the second will run if password is NOT 123. And this works perfectly for what we wanted. But we can make it better. It seems kind of silly to explicitly define another condition to just be the inverse of our first one - that is "if the password is NOT 123", "did they get the password wrong?" *[underline/highlight `print != "123"`]*, we should already know that based on whether or not the previous if statement worked. This is the perfect time to talk about the 'else' statement.
 
 [SIDE CAM]
+**if-else-password.png**
 ``` py
 if password == "123":
     print("welcome!")
@@ -74,6 +83,7 @@ else:
     print("incorrect password!")
 ```
 The else statement is, put simply, the inverse of an if statement. Notice how it doesn't have a condition, just the 'else' keyword, and a body - this is because it doesn't need one: an else statement wil run it's body if the previous if statement's condition was false. If you like, you can think of every else statement having an invisible condition which is added automatically...
+**if-else-password-invisible-condition.png**
 ``` py
 if password == "123":
     print("welcome!")
@@ -91,6 +101,7 @@ The thing about else/if pairs is that they're binary - that is when the code is 
 But in many situations there may be more than two options - we may want to check against three or four more possible conditions. This is where `elif` statements come in.
 
 [SIDE CAM]
+**if-elif-else-password.png**
 ``` py
 if password == "123":
     print("welcome!")
@@ -103,6 +114,7 @@ Elif statements (which is short for else-if) go between if and else statements. 
 
 [CUT AWAY or STAY ON SIDE CAM]
 an if, flowed by at least one elifs, make a chain. For each of the blocks - that is the bodies of each statement - in that chain, only one can end up actually being run...
+**chain.png**
 ``` py
 if num = 1:
     print("That's a one!")
@@ -112,6 +124,7 @@ elif num = 3:
     print("That's a three!")
 ```
 ... because if at any point in the chain a condition is met, that then the corresponding body is run and the rest is just skipped. If the chain ends in an else...
+**chain-with-else.png**
 ``` py
 if num = 1:
     print("That's a one!")
