@@ -5,7 +5,10 @@ These are actually all the fundamentals that we need to know, but that doesn't m
 
 [SIDE CAM]
 ## Key word arguments
-Remember from last time that we define function parameters in the brackets of our function signature. *[SIDE NOTE: The first line of a function definition, ie `def foo(x, y, z) is called the signature]* We said we had to give them valid and unique names.
+Remember from last time that we define function parameters in the brackets of our function signature. 
+**sidenote-signature**
+*[SIDE NOTE: The first line of a function definition, ie `def foo(x, y, z) is called the signature]* We said we had to give them valid and unique names.
+**accounts**
 ```py
 accounts = dict()
 
@@ -28,6 +31,7 @@ Here is an example of a simple function which takes three arguments. This functi
 So far so good - but it's not very flexible; it can ONLY take two argument, can't take less, can't take more - always two. Maybe that's not so much of a problem now, but what if we wanted to extend this to take extra optional details like phone number or email address, or what if we wanted the option to override existing usernames some but not all of the time.
 
 Well we could just define multiple functions. This would work sure, and in some cases it's enough, but all of those functions would have to have different names - you'd need to implement them all separately and then remember which one was which when you needed them. You might end up with...
+**bad-register-examples**
 * register(username, fname, lname)
 * register_and_override(username, fname, lname)
 * register_with_phone(username, fname, lname, phone_no)
@@ -39,11 +43,13 @@ You can see it gets pretty overwhelming pretty fast...
 In Python, there is a way to make functions more flexible - so that one function can be programmed to two different things depending on what - and how many - arguments it is given. And it comes in the form of key word arguments.
 
 Key word arguments - sometimes called "kwargs", opposed to "args": arguments - are arguments that may or may not be included in a function call, and if they are not they default back to a given value; typically some empty or failsafe value. We write them as so:
+**foo-kwarg**
 ```py
 def foo(a_kwarg=0):
     # etc...
 ```
 They are written the same as regular arguments, but with an equals and a default value. We can have as many key-word arguments as we want, we can even include both regular arguments and key-word arguments - although if we do this all your non keyword arguments must come first.
+**bar-kwargs**
 ```py
 def bar(an_arg, a_kwarg=0, another_kwarg=1):
     # etc...
@@ -51,6 +57,7 @@ def bar(an_arg, a_kwarg=0, another_kwarg=1):
 
 [SIDE CAM]
 Let's apply this to our register example, starting with phone number and email.
+**register-kwargs**
 ``` py
 def register(username, fname, lname, phone="n/a", email="n/a"):
     if username in accounts:
@@ -63,6 +70,8 @@ def register(username, fname, lname, phone="n/a", email="n/a"):
     return True
 ```
 Here, we've given both new parameters default values of "n/a", as in not applicable. You'll now see that we can call this function with or without these last two arguments.
+**register-calls**
+**register-calls-output**
 ``` py
 register("mrBlueBox", "David", "Tenant")
 register("I<3onions", "Jean", "Pierre", "4321 5678", "chef@kitchen.com")
@@ -78,12 +87,15 @@ I<3onions ['Jean', 'Pierre', '4321 5678', 'chef@kitchen.com']
 '''
 ```
 But what if we wanted to include email and NOT phone number, surely that's impossible because the email parameter hast to come after the phone number. Well actually no, this is whats so good about kwargs - you can write them out of order in the function call, so long as you explicitly state which one is which by name.
+**register-calls-2**
 ``` py
 register("Buggy", "Ada", "Lovelace", email="love.ada@thepast.com")
 ```
 This is why they're called key-word arguments!
 
 A common use for kwargs is to add extra options to functions, sometimes in the form of booleans. Let's give the option to override existing usernames:
+**register-kwargs-2**
+**register-kwargs-2-output**
 ``` py
 def register(username, fname, lname, phone="n/a", email="n/a", override=False):
     if (username in accounts) and not override:
@@ -117,6 +129,7 @@ Maybe by now you've thought to ask "hang on, if we can call one function from in
 This is called recursion, and it opens up a whole world of exciting possibilities (as well as things that could potentially go wrong) which can be super useful. It's something that really deserves it's own session - but we're going to briefly go over it now. 
 
 Take a look at this example:
+**infinite-recursive-foo**
 ``` py
 def foo(i):
     print(i)
@@ -129,10 +142,13 @@ Unlike while loop iterations, function calls need to be kept active in memory un
 
 What happens then, usually, is that the program environment sees what's happening, calls it a stack overflow (a special kind of error), and brings the whole thing to a stop. Sometimes this doesn't happen in time and the OS has to step in, freezing or terminating the program.
 
-If you're very very VERY unlucky, your entire computer might start to slow down, or even crash all together. Don't panic *[PAL'S GUIDE TO THE GALAXY: DON'T PANIC]*, modern systems are VERY unlikely to just let this happen. But still, much better to be careful.
+If you're very very VERY unlucky, your entire computer might start to slow down, or even crash all together. Don't panic 
+**pals-guide**
+*[PAL'S GUIDE TO THE GALAXY: DON'T PANIC]*, modern systems are VERY unlikely to just let this happen. But still, much better to be careful.
 
 [SIDE CAM]
 This has all been doom and gloom, does this mean recursion is just stupid and dangerous? Actually, no - we just need to make sure that the call stack doesn't just keep growing forever. We do this by introducing a "base case", a case in which a recursive call is NOT made, and the process can return. Take a look:
+**base-recursive-foo**
 ``` py
 def foo(i):
     print(i)
@@ -157,6 +173,7 @@ This is classic example of a base-and-recursive case function, where the call st
 
 ## Type hints
 Finally, a brief word on how different data types are used in functions by Python. Say we write a Python function which is meant to take a number, divide it by two, and return it. We'll define it as follows:
+**bazz-no-hints**
 ``` py
 def bazz(x):
     x_div = x / 2
@@ -167,6 +184,7 @@ How can we know that when bazz gets called x will be a number we can divide, and
 This is tricky because Python follows a philosophy called 'dynamic typing' where the types of objects like variables and parameters don't need to be explicitly labeled in the code itself - Python is perfectly happy to wait until the program is actually running and just trust everything is the data type it's supposed to be.
 
 But if something ISN'T the right data type, say we call bazz with a boolean, then this is obviously a problem - we can't divide a boolean. Luckily there is something we can do to prevent this. We can introduce type hints for our parameters.
+**bazz-hint**
 ``` py
 def bazz(x: int):
     x_div = x / 2
@@ -177,6 +195,7 @@ See how after variable x we added a colon, plus the name of the type we were exp
 So what does this actually do? The short answer is: nothing. They're really only there for you, and anyone else you're sharing the code with.
 
 The longer answer is technically nothing, that is Python runtime environment (the thing that actually makes your program run at the very core) completely ignores them. But depending on what extra tools you're using (such as your editor) these type hints can be picked up on, and used to automatically check for potential mistakes or inconsistencies in the code.
+**bazz-bad-call**
 ``` py
 # Uh oh.
 bazz("twenty")
@@ -184,10 +203,12 @@ bazz("twenty")
 If one such mistake is flagged up, your editor may alert you to it, a bit like a spelling mistake in a word processor. Some extra tools may even stop the program running before any inconsistencies are resolved.
 
 You can also use type hints for variables...
+**var-type-hint**
 ``` py
 number: int = 20
 ```
 and the return type of functions, although the syntax is slightly different: we use this funny arrow, written with a dash and a triangle bracket.
+**bazz-return-hint**
 ``` py
 def bazz(x: int) -> float:
     x_div = x / 2
