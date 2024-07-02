@@ -5,6 +5,8 @@ This topic will be a brief one, as there's not too much to cover, but it's both:
 We are of course talking about scope.
 
 We've hinted at scope before, and you may seen some of its effects in your own code - maybe something didn't work the way you expected, or you got an error you didn't understand. Today we're going to break it down.
+**what-is-scope**
+**what-is-scope-output**
 ``` py
 def What_is_scope():
     scope = "Let's find out!"
@@ -29,6 +31,7 @@ To recap, blocks are the ways we separate out lines of code into groups. We need
 We know that, in Python, we open a new block with a colon and indentation (that is, whitespace to the left of each line) and stay in that block until the indentation stops.
 
 We know that which block we're currently in depends on the amount of indentation...
+**recapping-blocks**
 ``` py
 # block a
 print("Look at this code!")
@@ -53,6 +56,8 @@ In programming, 'scope' has got everything to do with what code is in which bloc
 
 ## What is scope?
 In short, scope is about when and for how long Python stores things in memory. In Python, the scope of any definition (that is functions, variables and *classes* - which we'll get to later) is determined by which block it first appears in. This is easiest to see at the base level:
+**global-scope**
+**global-scope-output**
 ``` py
 # A global scope variable!
 my_var = "hello!"
@@ -70,6 +75,8 @@ hello!
 Any statements written outside of any blocks - that is no indentation - are said to be 'global' and will be accessible from anywhere in the program. See how we are still able to reference the global variable "my_var" from inside a function block. 
 
 That function 'foo' is also global, so we can call it from anywhere in the program.
+**bar-calls-foo**
+**bar-calls-foo-output**
 ``` py
 # Later in the same program
 def bar():
@@ -85,6 +92,8 @@ hello!
 ```
 
 Now let's look at another example. We're doing to define a new function, and we're going to decare a new variable inside it. Watch what happens if we try to reference that variable outside the function.
+**bazz-var**
+**bazz-var-output**
 ``` py
 def bazz():
     bazz_var = "Hello from bazz!"
@@ -115,6 +124,8 @@ The second is neatness. variables being local to the scope of a function means t
 
 ## Global vs Local
 Take a look at this:
+**global-vs-local**
+**global-vs-local-output**
 ``` py
 store = "fizz"
 def update_store(new_val):
@@ -137,6 +148,7 @@ We can try, we won't get an error, but it will be treaded like a new variable in
 So far as the computer is concerned, we've defined a completely new, local variable. One which coincidentally shares the name as a global one. But it's not the same.
 
 But what if we need to replace a global variable at the local level? Well generally speaking we don't. If a function is intended to override a variable, its more common to have it return that value, so it can be assigned at the right scope.
+**add-one**
 ``` py
 x = 1
 def add_one(y):
@@ -146,6 +158,7 @@ x = add_one(x)
 print(x)
 ```
 But, if we really *really* want to we can use the `global` keyword. This specifies that we're interested in the global property of that name, OR forces that property up to global scope if it wasn't already.
+**global-keyword**
 ``` py
 x = 1
 
@@ -166,6 +179,7 @@ Although, overusing this feature, or really using it at all if it isn't absolute
 Do flow-control statements have their own local scopes, too? After all, they use code blocks just like function definitions.
 
 Well, actually no. In some languages, like java...
+**java-example**
 ``` java
 if (1 + 2 == 3) {
     String ohNo = "Oh no! This won't work!"
@@ -173,6 +187,7 @@ if (1 + 2 == 3) {
 System.out.println(ohNo)
 ```
 ... this is the case, but Python only scopes objects inside functions and classes. 
+**phew-that-worked**
 ``` py
 if 1 + 2 == 3:
     phew = "Phew, that worked!"
@@ -181,6 +196,8 @@ print(phew)
 ```
 
 But a lot of time it's a good idea to write your code as if they do. Remember that the whole point of flow-control statements like if is that they're flexible. They can run as you need, as many times as you want, or even not at all. If your 'if' statement is meant do define some important variable you need to reference later, and that if statement ends up not running, you're stuck!
+**uh-oh-not-again**
+**uh-oh-not-again-output**
 ``` py
 if 2 + 2 == 5:
     uh_oh = "Uh oh! Not again!"
@@ -195,6 +212,7 @@ NameError: name 'uh_oh' is not defined
 '''
 ```
 Better define them before, with some placeholder or default value, just in case.
+**aah-much-better**
 ``` py
 aah = ""
 if 2 + 2 == 5:

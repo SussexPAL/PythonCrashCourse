@@ -12,6 +12,7 @@ Let's get started.
 ## Passing by value
 [SIDE CAM/CUT AWAY]
 Take a look at this.
+**foo-what-number**
 ```py
 def foo(x: int):
     # Takes a number x and adds 1 to it
@@ -23,6 +24,9 @@ y = 10
 foo(y)
 
 print(y)
+''' OUTPUT
+10
+'''
 ```
 What number do you think this program will print?
 
@@ -31,6 +35,7 @@ We have some variable y that gets passed to a call of function foo - 'foo' takes
 On the other hand, knowing what we know about how functions work, surely when foo is called y's value is passed to x. x only exists in the scope of the function, and it's x that gets increased from 10 to 11, not y. "What happens in foo, stays in foo", there's no return statement, and y itself never changes, so y = 10... right?
 
 Both are reasonable guesses, but surely it can only be one or the other? Let's run it and see what actually happens...
+**foo-what-number-output**
 *[we run the program, surprise: it's 10!]*
 It's 10! The value of 'y' stays at 10 even after it's passed through 'foo'. If this wasn't what you were expecting, let's take a second to break it down:
 
@@ -38,6 +43,7 @@ It's 10! The value of 'y' stays at 10 even after it's passed through 'foo'. If t
 Variable 'y' contains the number 10. When y is given as an argument to 'foo', it is that number 10 which is passed into the body of the function, and not the variable 'y' itself. We call this 'passing by value', so called because it is the VALUE and ONLY the value which is given to the function. 
 
 The inside of the function call only sees the number 10. It doesn't know whether it got that from:
+**got-from**
 * a variable *[y = 10 \n foo(y)]*
 * a literal number *[foo(10) ]*
 * or some other expression *[foo(5 + 5)]*
@@ -45,12 +51,14 @@ and it doesn't really care. 10 is 10, after all.
 
 This is because of how numbers are handled in the background by Python. Numbers are "immutable", they never change. We can move from one number to another, but each number itself is fixed. Think of it this way, if we just passed the value 10 directly...
 
+**foo-10**
 ```py
 foo(10)
 print(10)
 ```
 
 ... we wouldn't expect this code to somehow change to the value of 10 so that `10 == 11`, that would be impossible, 10 is always 10 and 11 is always 11.
+**foo-y**
 ```py
 y = 10
 foo(y)
@@ -60,6 +68,7 @@ print(y)
 ## Passing by reference
 [SIDE CAM/CUT AWAY]
 All that in mind, let's look at the following.
+**bar-numbox**
 ```py
 class NumBox:
     # This class is just a simple 'wrapper' for a single number, stored as a field
@@ -74,8 +83,15 @@ def bar(x: NumBox):
 a = NumBox(10)
 bar(a)
 print(a.num)
+
+'''
+11
+'''
+
 ```
-Here we've defined a new, but very simple class, which we've called NumBox. See NumBox has only property, the number 'num' which is defined at the constructor. *[SIDE NOTE: A class that contains one thing like this is called a 'wrapper'!]*
+Here we've defined a new, but very simple class, which we've called NumBox. See NumBox has only property, the number 'num' which is defined at the constructor. 
+**sidenote-wrapper**
+*[SIDE NOTE: A class that contains one thing like this is called a 'wrapper'!]*
 
 Our function bar takes a NumBox object and increases it's number property by one. Just like foo in our last example, it doesn't return anything, only modifying it's parameters.
 
@@ -84,7 +100,8 @@ Knowing what we know, we expect the printed value to be 10. Our variable a is de
 
 ... right?
 
-*[show code output. it's 10!]*
+**bar-numbox-output**
+*[show code output. it's 11!]*
 Except, no - surprise! - it was a trick question. But why, doesn't that contradict what we said happened in our first example? Well, this time things are different.
 
 Remember we said that integers were passed by value because they were imitable, that is they never change - 10 is 10, 11 is 11, and they always will be. Objects, of any class no mater how simple, are different - they are mutable: they're not constant, they can change, in fact most of them are changing all the time.
@@ -102,6 +119,7 @@ For items that are passed by name: the object is not copied across, but instead 
 
 [SIDE CAM]
 *[list on screen would be good]*
+**passed-by-name-vs-value**
 The objects Python passes by value are you primitive data types:
 * integers
 * floats
@@ -118,6 +136,7 @@ So why does it do this? It's got everything to do with said earlier about data b
 
 We can even see this in the syntax. When we increased x, we didn't just change it we completely replaced it.
 
+**redefining-x**
 ```py
 x = x + 1
 ```
@@ -126,6 +145,7 @@ X now equals something different that it did before - the fact that its new valu
 
 But if x is an object and we change one of it's properties - then it's different.
 
+**redefining-x-num**
 ```py
 x.num = x.num + 1
 ```
