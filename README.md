@@ -119,7 +119,7 @@ Object orientted programming is a practice of combining functionality into a blu
   
 [![errors](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
-<a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_object_oriented_programming.ipynb">Click here to view worksheet</a>
+<a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_3_object_oriented_programming.ipynb">Click here to view worksheet</a>
 
 ### Day 4
 
