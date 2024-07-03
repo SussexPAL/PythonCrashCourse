@@ -10,6 +10,27 @@ You will no doubt come into problems while coding, however many years of experie
 
 This course works by showing an associated video, and a link to the worksheet. You will need to download the worksheet by going to three horizontal dots near the top right of the screen and clicking download. OR you can hold down ```Ctrl``` ```Shift``` ```S``` to download the file. 
 
+## Contents
+1. [The course](#The-course)
+   1. [Day One](#Day-One)
+        1. [Algorithmic thinking](#)
+        2. [Maths through programming](#)
+        3. [Data types](#)
+   2. [Day Two](#Day-Two)
+        1. [statements/expressions/logic](#)
+        2. [Flow of control](#)
+        3. [Functions](#)
+        4. [Understanding Errors & The Call Stack](#)
+   3. [Day Three](#Day-Three)
+        1. [Object Oriented Programming](#) 
+   5. [Day Four](#Day-Four)
+        1. [Scientific Python](#)
+        2. [Regression](#)
+   7. [Day Five](#Day-Five)
+        1. [Nueral Networks](#)
+    
+---
+
 ## The course
 
 ### Day One
