@@ -73,7 +73,11 @@ Today we have covered the basics of using the Python language. Keep practicing, 
 ### Day two
 
 #### Task 1 - statements/expressions/logic
+Computers use logic, 1 for on or 0 for off. Binary, at the simplest level, is a computers language. This still holds true in coding. We have True (1) and False (0) when making choices. 
 
+[![flow](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+
+<a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_logic_expressions.ipynb">Click here to view worksheet</a>
 
 #### Task 2 - Flow of control
 
