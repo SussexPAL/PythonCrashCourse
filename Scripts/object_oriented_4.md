@@ -7,6 +7,7 @@ In OO design, inheritance means much the same thing. One class can inherit certa
 
 ## Inheritance in Python
 Let's write a class for a car. We'll have some properties which are set in the constructor, and some which are set as defaults. We'll also include a couple of methods
+**car-class.png**
 ``` py
 class Car:
     def __init__(self, num_plate: str, colour: str):
@@ -39,6 +40,7 @@ class Car:
 ```
 
 Now let's say we want to write another class for a specific model of car. Instead of copying out the whole definition again, let's use inheritance!
+**pal-car-1.png**
 ``` py
 class PalCar(Car):
 ```
@@ -47,6 +49,7 @@ This is the Syntax python uses for inheritance. Starting with the opening line o
 The syntax is very similar to writing parameters in a function, but don't get confused - they mean different things: one is for function definitions, the other is for class inheritance.
 
 inheritance means that everything 'Car' does, 'PalCar' will also do. If we were to just leave it here with no further definition...
+**pal-car-2.png**
 ``` py
 class PalCar(Car):
     # In Python, we can't *literally* leave expression bodies blank
@@ -56,17 +59,21 @@ class PalCar(Car):
 It would be completely identical to car. We call this a 'subclass', which makes Car the 'superclass' *[SIDE NOTE: other terms include "parent and child class" and "base and derived" class]*. If we changed the superclass, the subclass would change, too.
 
 From here we can add new attributes to PalCar, like methods and properties. Let's add a method for beeping the car horn!
+**pal-car-horn.png**
 ``` py
 class PalCar(Car):
     def horn(self):
         print("BEEEEP!!")
 ```
 Now let's see how these classes work - we'll create two objects, one of the super 'Car' class, the other of the sub 'PalCar' class.
+**instancing-cars.png**
 ``` py
 super_car_obj = Car("ABC 123", "white")
 sub_car_obj = PalCar("XYZ 765", "purple")
 ```
 We'll see that we can access any method or property of Car from the subclass PalCar, but if we try and access anything specific to PalCar from the Car superclass, we get an error!
+**calling-attributes.png**
+**calling-attributes-output.png**
 ``` py
 sub_car_obj.drive(10)
 sub_car_obj.add_fuel(5)
@@ -90,6 +97,7 @@ AttributeError: 'Car' object has no attribute 'horn'
 So far so good: we can inherit from a class, and add new properties to the subclass. But what if we also want to override properties of the superclass?
 
 Let's say we want every PalCar object to be purple. Remember that 'Car' takes colour as one of the constructor arguments, but we don't want this to be an option for PAL cars. To do this, we would need to override the constructor.
+**overriding-palcar-init.png**
 ``` py
 class PalCar(Car):
     def __init__(self, num_plate: str):
@@ -113,6 +121,8 @@ Re-writing a an overridden method is good if you want to completely change how i
 
 In python, we can use a special method called `super()`. Super allows a subclass to access any attributes of it's superclass. We do this by calling whichever method or property we want from a super call, like this:
 *[Maybe highlight the line where super() is used, so it stands out a bit more]*
+**thing-other-thing.png**
+**thing-other-thing-output.png**
 ``` py
 class Thing:
     def say_hello(self):
@@ -135,16 +145,20 @@ Hello, from the Thing class!
 ```
 
 This helps us with our car example: instead of rewriting the whole thing, let's just call the super constructor, but this time passing 'purple' as one of the arguments:
+**pal-car-super-call.png**
 ``` py
 class PalCar(Car):
     def __init__(self, num_plate: str): # No colour argument here...!
         super().__init__(num_plate, "purple") # It's passed to the super constructor as "purple"
 ```
-The super constructor will run as normal, just like we already wrote it. Notice that this time we did explicitly call the `__init__` by name - normally it's done automatically. Calls from super are one of the few times you will need to do this for 'magic methods' like init. *[REMINDER: magic or 'dunder' methods are special methods with double underscores on either side. They have special syntax for calling them.]*
+The super constructor will run as normal, just like we already wrote it. Notice that this time we did explicitly call the `__init__` by name - normally it's done automatically. Calls from super are one of the few times you will need to do this for 'magic methods' like init. 
+**magic-reminder.png**
+*[REMINDER: magic or 'dunder' methods are special methods with double underscores on either side. They have special syntax for calling them.]*
 
 One class can have multiple subclasses - and those subclasses can have subclasses of their own! This can grow into large 'family trees' of classes - with their own uses and levels of complexity - all inheriting from one common superclass.
 
 We could define flying cars with no wheels, self driving cars, even a "Super PalCar" subclass which you never need to refuel (somehow).
+**more-subclasses.png**
 ``` py
 class FlyingCar(Car):
     def __init__(self, num_plate: str, colour: str):
@@ -171,6 +185,7 @@ class SuperPalCar(PalCar):
 Can one class have multiple superclasses? That is, can we have a class inherit features from two different classes? The short answer is: yes!
 
 Python does allow for multiple inheritance...
+**future-car.png**
 ``` py
 class FutureCar(FlyingCar, SelfDrivingCar):
     pass
@@ -179,6 +194,8 @@ class FutureCar(FlyingCar, SelfDrivingCar):
 
 Python gets around this by having something called 'method resolution order'. If there is a conflict, one class takes priority, as determined by the order in which the superclasses where listed.
 
+**method-resolution-order.png**
+**method-resolution-order-output.png**
 ``` py
 class A:
     def foo(self):

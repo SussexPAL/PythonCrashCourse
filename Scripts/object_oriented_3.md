@@ -11,6 +11,7 @@ As you probably assumed, we can absolutely define multiple classes in the same P
 Say in our model university program we don't just want students, we want books and a library as well. Let's consider writing classes for each.
 
 *[cut away to class diagrams here]*
+**book-library-requirements.png**
 Our books should have:
 * a title
 * an author
@@ -23,6 +24,7 @@ Our library should have:
 *[Extra requirements on a separate list]*
 We also want these classes to work together.
 
+**our-requirements**
 We should be able to:
 * register students at a library
 * have students check out a book from a library, but ONLY if they are registered
@@ -109,6 +111,7 @@ Next, we want to populate a library with books. We're going to write this one a 
 The actual variable 'book' is local, and so won't stay stay in memory outside of this method. But the actual OBJECT will persist, as it gets added to 'book_shelf', a property of the library. So long as the library object stays in scope, the book will too.
 
 Now we're going to add a method to allow a student to borrow a book from a library. Again, there are different ways we could do this. We could have this be:
+**we-could-have.png**
 * a method of the student `student.borrow(book, library)`
 * a method of the book `book.borrow(student, library)`
 * Or a method of the library `library.loan_book(book, student)`
@@ -180,6 +183,7 @@ Here's what it all looks like, feel free to return to this later or pause as lon
 
 ## Seeing it in action
 We're now going to walk through using the classes we've just defined. Let's say we're writing a completely fresh program that has imported the class definitions we just wrote
+**side-note-importing**
 *[SIDE NOTE: 'importing' is how we reference code from one Python program in another, it vital for big projects!]*
 ``` py import.png
 from oo_example import Student, Book, Library
