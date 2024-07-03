@@ -62,6 +62,7 @@ Beyond that, class methods are really just like any other functions. They can ta
 Now we've seen how we define and access class fields (or properties) for classes in python. So far it's been pretty simple: we define a field in the class definition, we write our constructor such that it takes an argument for that field, then every time we run that constructor we pass in the values we want. 
 
 But, don't get the idea that there's a strict 1 to 1 relationship between properties, and constructor parameters. To illustrate how this is not always so, we'll introduce an entirely new example. Let's define a class to represent a 2d square, with a single property for it's area.
+**square-diagram.png**
 *[some kind of class diagram for class square with 1 property area]*
 
 You may be imagining a constructor that looks something like this:
