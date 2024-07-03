@@ -42,6 +42,7 @@ Before we get started, make sure to download the software to run the worksheets.
 
 #### Task 1 - Algorithmic thinking
 One of the hardest, but most important parts of programming is algorithmic thinking. Most courses gloss over this, but we want to install a problem solving mindset in you. This is not something that comes over night, but with practice. Doing <a href="https://leetcode.com/">Leetcode</a> questions, or other problem solving activities is the best way to keepthis skill up.
+
 [![Algorithmic thinking](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_algorithmic_thinking.ipynb">Click here to view worksheet</a>
