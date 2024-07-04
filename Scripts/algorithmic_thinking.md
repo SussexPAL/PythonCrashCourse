@@ -5,36 +5,45 @@
 ## What is an algorithm - and why are they so important?
 The aim of this course is to get us comfortable with writing code, designing programs to solve problems, and even using some simple machine learning. But we're not actually going to jump straight into the programming straight away (although we will be soon). Before we do that it's worth taking a little time to illustrate the kind of logic we want to use in order go from some problem space, to some potential solution, to a working implementation of that solution.
 
+**problem solution implementation.png**
 *[Some diagram: PROBLEM  -> SOLUTION -> IMPLEMENTATION]*
 
 For this, we want to practice *algorithmic thinking*. That is, breaking down the solution to a problem into an objective set of instructions. Instructions that could, in theory, be followed by anyone, anywhere; a bit like a cooking recipe...
+**cake furniture example.png**
 *[PROBLEM: I want to make a cake -> SOLUTION: a cake recipe -> IMPLEMENTATION: me making a cake]*
 ...or a assembly instructions for a piece of furniture. 
 *[PROBLEM: Un-assembled furniture  -> SOLUTION: assembly instructions -> IMPLEMENTATION: assemble furniture according to instructions]*
 In computer studies, we call this kind of sequential finite and definite set of instructions and *algorithm* with which we can write a solution in the form of a program.
+**problem solution algorithm implementation.png**
 *[Diagram changes: PROBLEM  -> POTENTIAL SOLUTION -> ALGORITHM -> PROGRAM]*
 
 To start this course, we'll spend some time focusing on the algorithm part, before we look at writing programs (which will be the majority of the course). The reason algorithms are so important is that they are context and platform independent and flexible in the way they're written, so long as that they are interpretable and correct.
 
 Compare this to programming. When working with a programming language, that language will have it's own rules as to exactly how things need to be written (called its syntax). Who ever is writing the program needs to understand and follow these rules, otherwise the program simply cannot be run.
 *[some deliberately slightly scary looking code here + DELIBERATE MISTAKE]*
-`thing: ThingType = get_thing()`
-`do_this(thing)`
-`thing.do_that(`
-`return`
+**code.deliberate-mistake.png**
+thing: ThingType = get_thing()
+do_this(thing)
+thing.do_that(
+return
 Remember: while computers are extremely smart, they can also be extremely stupid and stubborn, and refuse to work because you left out a closing bracket.
 *[circle incorrect brackets, and show program error, or crashing... I like the idea of a PAL themed BSoD personally...!]* 
+**PSOD.png**
 
 Algorithms, on the other hand, are a lot more forgiving. You algorithm still needs to make sense, and still needs to accomplish whatever it's trying to do. But beyond that, you can kind of write it however you want:
 * as a flowchart:
+**flowchart.png**
 *[START -> GET THING -> DO THIS -> DO THAT -> STOP]*
+**list instructions.png**
 * step by step instructions
     1) get the thing
     2) do this
     3) do that
 * or just written down in plain english...
+**english instructions.png**
 *["First, get the thing. Then do this. Finally, do that"]*
 ... or any other language you want language you want
+**chinese instructions.png**
 *["まず、 アレを手に入れる。 それからこれをする。 最後にあれをする。"]*
 
 # Writing an algorithm
@@ -42,6 +51,7 @@ We're now going to practice that this problem-to-algorithm-to-solution process u
 
 What we would do is write out the step by step instructions for making tea such that they can be followed by anyone. We're going to write this as though it were a fake program, this style is called *'pseudocode'*, it gives us the structure and definition - and overall feel - of code, without the risk that something could go wrong if we make a minor grammatical mistake.
 
+**kettle-pseudocode.png**
 kettle.fill (enough water for mug)
 kettle.start
 GET teabag FROM box
@@ -66,6 +76,7 @@ Algorithms are completely scalable for as much or as little detail as you need t
 * ... etc
 
 Or on the other hand if 'making tea' was just one step of a much larger algorithm (say making breakfast), and we knew whoever we were writing for knew how to make tea, we could condense it down to just one line.
+**breakfast-pseudocode.png**
 GET apple FROM fridge
 GET bread FROM cupboard
 PUT bread toaster
@@ -77,6 +88,9 @@ It depends entirely on what already HAVE, what we assume we KNOW, and what we NE
 # Bubble sort
 Making tea is a good example to start with when it comes to writing step-by-step algorithms. But it's unlikely to be the kind of problem we'll be writing code for any time soon. Lets look a similarly simple, but more abstract (more computer-y) example. The kind we very much would be writing code for: sorting a list of numbers.
 
+**each individual number has it's own png 'card' file**
+**also bubblearrows.png as a graphic for swapping them**
+**do as much or as little with hem as time allows**
 *[1, 17, 3, 16, 7, 14, 2, 20, 10, 18]*
 
 Lets break down the problem space here: 
