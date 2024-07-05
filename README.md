@@ -27,7 +27,7 @@ This course works by showing an associated video, and a link to the worksheet. Y
         1. [Scientific Python](#)
         2. [Regression](#)
    7. [Day Five](#Day-Five)
-        1. [Nueral Networks](#)
+        1. [Neural Networks](#)
     
 ---
 
@@ -146,7 +146,7 @@ Regression models are some of the simplest ML models. In simple terms they fit a
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_4_regression.ipynb">Click here to view worksheet</a>
 ### Day 5
 
-#### Task 1 - Nueral networks
+#### Task 1 - Neural networks
 Nueral networks are some of the more exciting areas of machine learning and AI. This worksheet takes you through a nueral network, how to build one and train it on data. 
 * artificial neural network
 * convolutional neural network
