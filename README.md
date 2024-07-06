@@ -126,9 +126,9 @@ Object orientted programming is a practice of combining functionality into a blu
   
 [![oop1](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc) 
 
-[![oop2](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+[![oop2](https://img.youtube.com/vi/BbnMbBm75h8&/0.jpg)](https://www.youtube.com/watch?v=BbnMbBm75h8&)
 
-[![oop3](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+[![oop3](https://img.youtube.com/vi/itr75oynL1Q/0.jpg)](https://www.youtube.com/watch?v=itr75oynL1Q)
 
 [![oop4](https://img.youtube.com/vi/Va-H-TAkfP8/0.jpg)](https://www.youtube.com/watch?v=Va-H-TAkfP8)
 
