@@ -124,7 +124,13 @@ Object orientted programming is a practice of combining functionality into a blu
 * methods
 * constructor
   
-[![errors](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+[![oop1](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc) 
+
+[![oop2](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+
+[![oop3](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+
+[![oop4](https://img.youtube.com/vi/Va-H-TAkfP8/0.jpg)](https://www.youtube.com/watch?v=Va-H-TAkfP8)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_3_object_oriented_programming.ipynb">Click here to view worksheet</a>
 
