@@ -157,7 +157,7 @@ Regression models are some of the simplest ML models. In simple terms they fit a
 * evaluating and visualising results from models
 
   
-[![Regression](https://img.youtube.com/vi/LuzKkEmDWn0/0.jpg)](https://www.youtube.com/watch?v=LuzKkEmDWn0)
+[![Regression](https://img.youtube.com/vi/Xj4yGV6XU3A/0.jpg)](https://www.youtube.com/watch?v=Xj4yGV6XU3A)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_4_regression.ipynb">Click here to view worksheet</a>
 ### Day 5
@@ -169,7 +169,7 @@ Nueral networks are some of the more exciting areas of machine learning and AI. 
 * standardisation and imputing
 
   
-[![NN](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+[![NN](https://img.youtube.com/vi/u2Yh6dQNCdo/0.jpg)](https://www.youtube.com/watch?v=u2Yh6dQNCdo)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_5_neural_networks.ipynb">Click here to view worksheet</a>
 
