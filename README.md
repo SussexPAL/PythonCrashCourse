@@ -87,7 +87,7 @@ Computers use logic, 1 for on or 0 for off. Binary, at the simplest level, is a 
 * introducing scope
 * loop/iterator variables
   
-[![flow1](https://img.youtube.com/vi/gj60K2j23YI/0.jpg)](https://www.youtube.com/watch?v=gj60K2j23YI)
+[![flow1](https://img.youtube.com/vi/eUvVqedh838/0.jpg)](https://www.youtube.com/watch?v=eUvVqedh838)
 
 [![flow2](https://img.youtube.com/vi/gj60K2j23YI/0.jpg)](https://www.youtube.com/watch?v=gj60K2j23YI)
 
@@ -129,7 +129,7 @@ Object orientted programming is a practice of combining functionality into a blu
 * methods
 * constructor
   
-[![oop1](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc) 
+[![oop1](https://img.youtube.com/vi/VMUkQRT8A-E/0.jpg)](https://www.youtube.com/watch?v=VMUkQRT8A-E) 
 
 [![oop2](https://img.youtube.com/vi/BbnMbBm75h8/0.jpg)](https://www.youtube.com/watch?v=BbnMbBm75h8)
 
