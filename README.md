@@ -102,7 +102,7 @@ What if we want to execute the same bit of code multiple times throughout differ
 * return values
 * default parameters
 
-[![functions1](https://img.youtube.com/vi/JQ5rdpqKpos/0.jpg)](https://www.youtube.com/watch?v=JQ5rdpqKpos)
+[![functions1](https://img.youtube.com/vi/RaS9R50k--c/0.jpg)](https://www.youtube.com/watch?v=RaS9R50k--c)
 
 [![functions2](https://img.youtube.com/vi/JQ5rdpqKpos/0.jpg)](https://www.youtube.com/watch?v=JQ5rdpqKpos)
 
