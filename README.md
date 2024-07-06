@@ -43,7 +43,7 @@ Before we get started, make sure to download the software to run the worksheets.
 #### Task 1 - Algorithmic thinking
 One of the hardest, but most important parts of programming is algorithmic thinking. Most courses gloss over this, but we want to install a problem solving mindset in you. This is not something that comes over night, but with practice. Doing <a href="https://leetcode.com/">Leetcode</a> questions, or other problem solving activities is the best way to keepthis skill up.
 
-[![Algorithmic thinking](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+[![Algorithmic thinking](https://img.youtube.com/vi/u-fkr8pa-p0&t=8s/0.jpg)](https://www.youtube.com/watch?v=u-fkr8pa-p0&t=8s)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_algorithmic_thinking.ipynb">Click here to view worksheet</a>
 
@@ -62,7 +62,9 @@ Understanding your data is key to making a program that uses it. This worksheet 
 * lists 
 * dictionaries
   
-[![datatypes](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+[![datatypes](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc) 
+
+[![datatypes2](https://img.youtube.com/vi/mArBkIrCDdM/0.jpg)](https://www.youtube.com/watch?v=mArBkIrCDdM) 
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_data_types.ipynb">Click here to view worksheet</a>
 
@@ -75,7 +77,7 @@ Today we have covered the basics of using the Python language. Keep practicing, 
 #### Task 1 - statements/expressions/logic
 Computers use logic, 1 for on or 0 for off. Binary, at the simplest level, is a computers language. This still holds true in coding. We have True (1) and False (0) when making choices. 
 
-[![flow](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+[![functions](https://img.youtube.com/vi/JQ5rdpqKpos/0.jpg)](https://www.youtube.com/watch?v=JQ5rdpqKpos)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_logic_expressions.ipynb">Click here to view worksheet</a>
 
@@ -84,7 +86,7 @@ Computers use logic, 1 for on or 0 for off. Binary, at the simplest level, is a 
 * introducing scope
 * loop/iterator variables
   
-[![flow](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+[![flow](https://img.youtube.com/vi/gj60K2j23YI/0.jpg)](https://www.youtube.com/watch?v=gj60K2j23YI)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_flow_of_control.ipynb">Click here to view worksheet</a>
 
@@ -95,8 +97,9 @@ What if we want to execute the same bit of code multiple times throughout differ
 * return values
 * default parameters
 
-  
-[![functions](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+[![functions1](https://img.youtube.com/vi/JQ5rdpqKpos/0.jpg)](https://www.youtube.com/watch?v=JQ5rdpqKpos)
+
+[![functions2](https://img.youtube.com/vi/JQ5rdpqKpos/0.jpg)](https://www.youtube.com/watch?v=JQ5rdpqKpos)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_functions.ipynb">Click here to view worksheet</a>
 
@@ -127,6 +130,8 @@ Object orientted programming is a practice of combining functionality into a blu
 
 ### Day 4
 
+[![Regression](https://img.youtube.com/vi/LuzKkEmDWn0/0.jpg)](https://www.youtube.com/watch?v=LuzKkEmDWn0)
+
 #### Task 1 - Scientific Python
 First of all we need to understand numpy arrays and plotting data before we can dive into machine learning models. 
 
@@ -141,7 +146,7 @@ Regression models are some of the simplest ML models. In simple terms they fit a
 * evaluating and visualising results from models
 
   
-[![Regression](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+[![Regression](https://img.youtube.com/vi/LuzKkEmDWn0/0.jpg)](https://www.youtube.com/watch?v=LuzKkEmDWn0)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_4_regression.ipynb">Click here to view worksheet</a>
 ### Day 5
