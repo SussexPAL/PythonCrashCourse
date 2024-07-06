@@ -115,8 +115,6 @@ What does an error actually mean? The way that we can understand when our code b
 * logic error
 * try catch
 
-  
-[![errors](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_understanding_errors.ipynb">Click here to view worksheet</a>
 
