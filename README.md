@@ -66,6 +66,7 @@ Understanding your data is key to making a program that uses it. This worksheet 
 
 [![datatypes2](https://img.youtube.com/vi/mArBkIrCDdM/0.jpg)](https://www.youtube.com/watch?v=mArBkIrCDdM) 
 
+
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_data_types.ipynb">Click here to view worksheet</a>
 
 #### Summary
@@ -86,7 +87,11 @@ Computers use logic, 1 for on or 0 for off. Binary, at the simplest level, is a 
 * introducing scope
 * loop/iterator variables
   
-[![flow](https://img.youtube.com/vi/gj60K2j23YI/0.jpg)](https://www.youtube.com/watch?v=gj60K2j23YI)
+[![flow1](https://img.youtube.com/vi/gj60K2j23YI/0.jpg)](https://www.youtube.com/watch?v=gj60K2j23YI)
+
+[![flow2](https://img.youtube.com/vi/gj60K2j23YI/0.jpg)](https://www.youtube.com/watch?v=gj60K2j23YI)
+
+[![Scope](https://img.youtube.com/vi/GIKhBCIH5wY/0.jpg)](https://www.youtube.com/watch?v=GIKhBCIH5wY) 
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_2_flow_of_control.ipynb">Click here to view worksheet</a>
 
