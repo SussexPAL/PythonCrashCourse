@@ -60,9 +60,9 @@ Understanding your data is key to making a program that uses it. This worksheet 
 * lists 
 * dictionaries
   
-[![datatypes](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc) 
+[![datatypes](https://img.youtube.com/vi/nsVPueieqzY/0.jpg)](https://www.youtube.com/watch?vnsVPueieqzY) 
 
-[![datatypes2](https://img.youtube.com/vi/mArBkIrCDdM/0.jpg)](https://www.youtube.com/watch?v=mArBkIrCDdM) 
+[![datatypes2](https://img.youtube.com/vi/EQppV-ffrZw/0.jpg)](https://www.youtube.com/watch?v=EQppV-ffrZw) 
 
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_data_types.ipynb">Click here to view worksheet</a>
