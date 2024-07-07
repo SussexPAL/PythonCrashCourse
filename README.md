@@ -46,7 +46,8 @@ One of the hardest, but most important parts of programming is algorithmic think
 
 #### Task 2 - Maths through programming
 Programming and maths are intertwined. Look at how we can do basic operations with Python
-[![maths](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
+
+[![maths](https://img.youtube.com/vi/GTaE5NSzItw/0.jpg)](https://www.youtube.com/watch?v=GTaE5NSzItw)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_maths_through_programming.ipynb">Click here to view worksheet</a>
 
