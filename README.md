@@ -49,6 +49,10 @@ Programming and maths are intertwined. Look at how we can do basic operations wi
 
 [![maths](https://img.youtube.com/vi/GTaE5NSzItw/0.jpg)](https://www.youtube.com/watch?v=GTaE5NSzItw)
 
+[![maths2](https://img.youtube.com/vi/_XvHuiKWipE/0.jpg)](https://www.youtube.com/watch?v=_XvHuiKWipE)
+
+
+
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_maths_through_programming.ipynb">Click here to view worksheet</a>
 
 #### Task 3 - Data types
