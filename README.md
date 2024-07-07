@@ -38,7 +38,6 @@ Today we have prepared a few work sheets to get you started. Today will be focus
 
 Before we get started, make sure to download the software to run the worksheets. We will be working with notebooks, which are easy ways to learn to code. Notebooks can run online with <a href="https://colab.research.google.com/">Google Colab</a>, or run locally with software such as <a href="https://code.visualstudio.com/">VSCode</a>. We have set this course up to run in VSCode, which will require a few things to set up. The benefits of colab is you have access to better performing computers, as the notebooks run on Google's servers. The downside is it requires a stable internet connection. VSCode runs locally, which means all your code is stored on your computer. 
 
-[![Test video](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
 
 #### Task 1 - Algorithmic thinking
 One of the hardest, but most important parts of programming is algorithmic thinking. Most courses gloss over this, but we want to install a problem solving mindset in you. This is not something that comes over night, but with practice. Doing <a href="https://leetcode.com/">Leetcode</a> questions, or other problem solving activities is the best way to keepthis skill up.
