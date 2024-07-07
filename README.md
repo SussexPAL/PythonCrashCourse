@@ -4,8 +4,6 @@
 
 Welcome to the Python crash course! In this course we have prepared videos and worksheets to teach you the basics of thee topics. We have split the topics into days, but go at your own pace. Maybe you speed through all the work sheets in one day, maybe it takes you a number of weeks. This page will still be here for you to use as educational material long after you start the cash course. 
 
-[![Intro video](https://img.youtube.com/vi/HSeTorzswvc/0.jpg)](https://www.youtube.com/watch?v=HSeTorzswvc)
-
 You will no doubt come into problems while coding, however many years of experience someone has in programming, Google is still your best friend! Sites such as <a href="https://stackoverflow.com/">Stack Overflow</a>, <a href="https://www.w3schools.com/python/">W3schools</a>.
 
 This course works by showing an associated video, and a link to the worksheet. You will need to download the worksheet by going to three horizontal dots near the top right of the screen and clicking download. OR you can hold down ```Ctrl``` ```Shift``` ```S``` to download the file. 
