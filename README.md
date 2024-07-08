@@ -68,6 +68,7 @@ Understanding your data is key to making a program that uses it. This worksheet 
 
 [![datatypes2](https://img.youtube.com/vi/EQppV-ffrZw/0.jpg)](https://www.youtube.com/watch?v=EQppV-ffrZw) 
 
+[![refval](https://img.youtube.com/vi/mArBkIrCDdM/0.jpg)](https://www.youtube.com/watch?v=mArBkIrCDdM) 
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_data_types.ipynb">Click here to view worksheet</a>
 
