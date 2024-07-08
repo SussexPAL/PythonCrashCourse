@@ -51,7 +51,7 @@ Programming and maths are intertwined. Look at how we can do basic operations wi
 
 [![maths2](https://img.youtube.com/vi/_XvHuiKWipE/0.jpg)](https://www.youtube.com/watch?v=_XvHuiKWipE)
 
-
+[![maths3](https://img.youtube.com/vi/0uBWvzF91i8/0.jpg)](https://www.youtube.com/watch?v=0uBWvzF91i8)
 
 <a href="https://github.com/SussexPAL/PythonCrashCourse/blob/main/Worksheets/day_1_maths_through_programming.ipynb">Click here to view worksheet</a>
 
